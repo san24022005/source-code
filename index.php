@@ -19,8 +19,8 @@
 
         </div>
         
-        <div id="footer">  
-            
-        </div>
+        <?php
+            load_footer();
+        ?>
     </body>
 </html>

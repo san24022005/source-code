@@ -65,13 +65,17 @@
 }
 #header .nav .subnav {
     display: none;
-    float: left;
 }
 
 .nav > li {
     display: inline-block;
     float: left;
     position: relative;
+}
+
+.header .nav li:hover {
+    color: #000;
+    background-color: #ccc;
 }
 
 .nav li a {
