@@ -1,3 +1,7 @@
+:root {
+    --main-color: #f0e6d0;
+}
+/* START : TOP */
 #top {
     border: 1px solid #00000020;
     overflow: hidden;
@@ -32,4 +36,70 @@
 #top-nav a:hover {
     color: red;
 }
+/* END : TOP */
 
+/* START : HEADER */
+#header {
+    background-color: var(--main-color);
+    height: 60px;
+    position: fixed;
+    top: 44px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+}
+
+#header .logo {
+    display: inline-block;
+    height: 100%;
+    width: 60px;
+    background: url(../images/logo.png) top center / cover no-repeat;
+}
+
+#header .nav{
+    display: inline-block;
+    height: 100%;
+    line-height: 60px;
+    margin-left: 20px;
+}
+#header .nav .subnav {
+    display: none;
+    float: left;
+}
+
+.nav > li {
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+
+.nav li a {
+    padding: 0 24px;
+    line-height: 48px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Ẩn sub-nav mặc định */
+.sub-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+/* Hiện sub-nav khi hover vào li */
+.nav li:hover .sub-nav {
+    display: block;
+}
+
+/* Style cho các item trong sub-nav */
+.sub-nav li a {
+    padding: 12px 16px;
+    color: #333;
+}
