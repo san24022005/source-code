@@ -1,18 +1,18 @@
 <?php   
     function load_top()
     {
-        require('widget/top.php');
+        require('./widget/top.php');
     }
 	function load_header()
 	{
-		require('widget/header.php');
+		require('./widget/header.php');
 	}
     function load_slider()
     {
-        require('widget/slider.php');
+        require('./widget/slider.php');
     }
     function load_footer()
     {
-        require('widget/footer.php');
+        require('./widget/footer.php');
     }
 ?>
