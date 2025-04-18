@@ -40,3 +40,6 @@
     </div>
 </body>
 </html>
+<?php
+    load_footer();
+?>
