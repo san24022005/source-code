@@ -35,7 +35,7 @@
                 <button class="social facebook">Facebook</button>
                 <button class="social google">Google</button>
             </div>
-            <p class="register">Bạn mới biết đến BT shop? <a href="#"> Đăng ký</a></p>
+            <p class="reg">Bạn mới biết đến BT shop? <a href="register.php"> Đăng ký</a></p>
         </div>
     </div>
 </body>

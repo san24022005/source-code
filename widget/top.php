@@ -30,7 +30,7 @@
             <li>
                 <div class="register-btn">
                     <i class="register-btn ti-user"></i>
-                    <a href="">Đăng ký</a>
+                    <a href="register.php">Đăng ký</a>
                 </div>
             </li>
         </div>        
