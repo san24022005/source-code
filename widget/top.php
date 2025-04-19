@@ -23,13 +23,13 @@
         <div class="right-top">
             <li>
                 <div class="login-btn">
-                    <i class="login-btn ti-shift-right"></i>
+                    <i class="login-icon ti-shift-right"></i>
                     <a href="login.php">Đăng nhập</a>
                 </div>
             </li>
             <li>
                 <div class="register-btn">
-                    <i class="register-btn ti-user"></i>
+                    <i class="register-icon ti-user"></i>
                     <a href="register.php">Đăng ký</a>
                 </div>
             </li>

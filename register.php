@@ -16,29 +16,35 @@
 </head>
 <body>
     <div class="register">
-        <div class="left-register">
+        <div class="left-panel">
             <img src="./accsets/images/logo.png" alt="BT Shop Logo" class="logo">
             <h2>BT SHOP</h2>
             <p>Vua của các quý ông</p>
         </div>
-        <div class="right-register">
-                <h2>TẠO TÀI KHOẢN</h2>
+        <div class="right-panel">
+            <div class="back-home">
+                <i class="back-icon ti-angle-left"></i>
+                <a href="index.php">Trang chủ</a>
+            </div>
+            <h2>TẠO TÀI KHOẢN</h2>
 
-                <button class="social-btn google">Đăng nhập Google</button>
-                <button class="social-btn facebook">Đăng nhập Facebook</button>
+            <button class="social-btn google">
+                <i class="gg-icon ti-google"></i>
+                Google
+            </button>
+            <button class="social-btn facebook">
+                <i class="face-icon ti-facebook"></i>
+                Facebook
+            </button>
 
-                <form action="dangky.php" method="post">
-                    <input class="form-input" type="text" name="ten" placeholder="Tên" required>
-                    <input class="form-input" type="text" name="ho" placeholder="Họ" required>
-                    <input class="form-input" type="email" name="email" placeholder="Email" required>
-                    <input class="form-input" type="password" name="matkhau" placeholder="Mật khẩu" required>
-	                <input class="form-input" type="password" name="nhaplaimatkhau" placeholder="Nhập lại mật khẩu" required>
-                    <button type="submit" class="btn-submit">ĐĂNG KÝ</button>
-                </form>
-
-                <div class="back-link">
-                    <a href="#">Trở về</a>
-                </div>
+            <form action="dangky.php" method="post">
+                <input type="text" name="ten" placeholder="Tên" required>
+                <input type="text" name="ho" placeholder="Họ" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="matkhau" placeholder="Mật khẩu" required>
+	            <input type="password" name="nhaplaimatkhau" placeholder="Nhập lại mật khẩu" required>
+                <button type="submit" class="btn-submit">ĐĂNG KÝ</button>
+            </form>
         </div>
     </div>  
 </body>

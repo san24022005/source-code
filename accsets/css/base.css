@@ -16,8 +16,28 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: red;
+}
+
 h2 {
     text-align: center;
     margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(67, 142, 227);
+    color: var(--main-color);
+    border:none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0057B7;
+    border: 1px solid rgb(154, 58, 58);
 }
 

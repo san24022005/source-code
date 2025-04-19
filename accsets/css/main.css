@@ -59,14 +59,14 @@
 }
 
 #header .logo {
-    display: inline-block;
+    float: left;
     height: 100%;
     width: 60px;
     background: url(../images/logo.png) top center / cover no-repeat;
 }
 
 #header .nav {
-    display: inline-block;
+    float: left;
     height: 100%;
     line-height: 60px;
     margin-left: 20px;
@@ -81,7 +81,7 @@
 }
 
 .nav > li:hover > a,
-#nav .subnav li:hover a {
+#header .nav-icon li:hover {
     color: #000;
     background-color: #ccc;
 }
@@ -117,6 +117,17 @@
 
 .sub-nav li:hover {
     background-color: #ccc;
+}
+
+#header .nav-icon li {
+    float: right;
+    line-height: 60px;
+    padding: 0 20px;
+}
+
+.nav-icon .icon {
+    font-size: 20px;
+    color: var(--main-color);
 }
 
 /* END : HEADER */
