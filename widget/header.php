@@ -32,4 +32,23 @@
         <li><a href="">Đồng phục</a></li>
         <li><a href="">Tây phục</a></li>
     </ul>
+
+    <ul class="nav-icon">
+        <li>
+            <a href="">
+                <i class="icon ti-search"></i>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="icon ti-shopping-cart"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="">
+                <i class="icon ti-user"></i>
+            </a>
+        </li>
+    </ul>
 </div>
