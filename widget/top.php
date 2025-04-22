@@ -9,7 +9,7 @@
             <li>
                 <div class="email-btn">
                     <i class="mail-icon ti-email"></i>
-                    <a href="">cskh@khavico.com</a>
+                    <a href="mailto:cskh@khavico.com">cskh@khavico.com</a>
                 </div>
             </li>
             <li>
