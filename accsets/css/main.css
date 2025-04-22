@@ -138,9 +138,11 @@
     height: 1000px;
     width: 1000px;
 }
+
 /* END : PRODUCT */
 
 /* START : FOOTER */
+
 #footer {
     background-color: rgb(18, 153, 211);
     height: 500px;
@@ -177,4 +179,8 @@
     font-size: 12px;
     text-align: justify;
     line-height: 24px;
+}
+
+.footer-box .icon-footer {
+    margin-right: 6px;
 }
