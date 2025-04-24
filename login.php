@@ -29,8 +29,8 @@
 
             <form action ="login.php" method="POST">
                 <input type="text" name="username" placeholder="Email/Số điện thoại/Tên dăng nhập" required>
-                <input type="password" name="password" placehorder="Mật khẩu" required>
-                <button type="submit" class="btn-submit">ĐĂNG NHẬP</button>
+                <input type="password" name="password" placeholder="Mật khẩu" required>
+                <button type="submit">ĐĂNG NHẬP</button>
             </form>
 
             <div class="options">
