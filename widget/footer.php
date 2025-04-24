@@ -26,7 +26,6 @@
                             <a href="">cskh@khavico.com</a>
                         </li>
                     </ul>
-
             </div>
             </li>
 
@@ -54,7 +53,6 @@
                 </div>           
             </li>
                  
-           
             <li>
                 <div class="footer-box">
                 <h3>Liên kết nhanh</h3>
@@ -83,8 +81,6 @@
                     </ul>
                 </div>
             </li>
-
-                
 
             <li>
                 <div class="footer-box">
