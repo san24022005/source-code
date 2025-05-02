@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php'); // Chuyển hướng nếu người dùng chưa đăng nhập
+    exit;
+}
+
+echo "Chào mừng, " . $_SESSION['username'] . "!<br>";
+echo "Họ tên: " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . "<br>";
+echo '<a href="logout.php">Đăng xuất</a>';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

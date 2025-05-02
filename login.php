@@ -2,6 +2,41 @@
     require 'site.php';
     load_top();
 ?>
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Kết nối CSDL
+    $conn = mysqli_connect("localhost", "root", "123456", "QLBH");
+
+    if (!$conn) {
+        die("Kết nối thất bại: " . mysqli_connect_error());
+    }
+
+    // Kiểm tra tên đăng nhập và mật khẩu
+    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_assoc($result);
+
+    if ($user && $password === $user['password']) {
+        // Đăng nhập thành công
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['firstname'] = $user['ten'];
+        $_SESSION['lastname'] = $user['ho'];
+    
+        header('Location: index.php');
+        exit;
+    } else {
+        echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!'); window.history.back();</script>";
+    }
+    
+
+    mysqli_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">    
 <head>
@@ -52,6 +87,10 @@
             <p class="reg">Bạn mới biết đến BT shop? <a href="register.php"> Đăng ký</a></p>
         </div>
     </div>
+
+    <?php
+	 
+	?>
 </body>
 </html>
 <?php
