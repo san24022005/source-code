@@ -2,6 +2,55 @@
     require 'site.php';
     load_top();
 ?>
+<?php
+session_start();
+
+// Kết nối đến MySQL
+$conn = mysqli_connect("localhost", "root", "123456", "QLBH");
+
+if (!$conn) {
+    die("Không thể kết nối CSDL: " . mysqli_connect_error());
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Nhận dữ liệu từ form
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirm = $_POST['nhaplaimatkhau'];
+
+    // Kiểm tra mật khẩu có khớp không
+    if ($password !== $confirm) {
+        echo "<script>alert('Mật khẩu không khớp!'); window.history.back();</script>";
+        exit();
+    }
+
+    // Kiểm tra tên đăng nhập đã tồn tại chưa
+    $sql_check = "SELECT * FROM users WHERE username = '$username'";
+    $result = mysqli_query($conn, $sql_check);
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>alert('Tên đăng nhập đã tồn tại.'); window.history.back();</script>";
+        exit();
+    }
+
+    // Thêm người dùng vào CSDL
+    $sql_insert = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+
+    if (mysqli_query($conn, $sql_insert)) {
+        $_SESSION['username'] = $username;
+        $_SESSION['firstname'] = $firstname;
+        $_SESSION['lastname'] = $lastname;
+
+        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
+    } else {
+        echo "Lỗi khi đăng ký: " . mysqli_error($conn);
+    }
+
+    // Đóng kết nối sau khi hoàn thành
+    mysqli_close($conn);
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -37,16 +86,17 @@
                 Facebook
             </button>
 
-            <form action="dangky.php" method="post">
-                <input type="text" name="ten" placeholder="Tên" required>
-                <input type="text" name="ho" placeholder="Họ" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="matkhau" placeholder="Mật khẩu" required>
+            <form action="register.php" method="post">
+                <input type="text" name="firstname" placeholder="Tên" required>
+                <input type="text" name="lastname" placeholder="Họ" required>
+                <input type="text" name="username" placeholder="Tên đăng nhập" required>
+                <input type="password" name="password" placeholder="Mật khẩu" required>
 	            <input type="password" name="nhaplaimatkhau" placeholder="Nhập lại mật khẩu" required>
                 <button type="submit" class="btn-submit">ĐĂNG KÝ</button>
             </form>
         </div>
     </div>  
+
 </body>
 </html>
 <?php
