@@ -33,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!'); window.history.back();</script>";
     }
     
-
     mysqli_close($conn);
 }
 ?>
@@ -48,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./accsets/css/main.css">
 </head>
+
 <body>
     <div class="login-container">
         <div class="left-panel">
@@ -87,10 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p class="reg">Bạn mới biết đến BT shop? <a href="register.php"> Đăng ký</a></p>
         </div>
     </div>
-
-    <?php
-	 
-	?>
 </body>
 </html>
 <?php

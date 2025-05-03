@@ -6,9 +6,6 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-echo "Chào mừng, " . $_SESSION['username'] . "!<br>";
-echo "Họ tên: " . $_SESSION['firstname'] . " " . $_SESSION['lastname'] . "<br>";
-echo '<a href="logout.php">Đăng xuất</a>';
 ?>
 
 <!DOCTYPE html>

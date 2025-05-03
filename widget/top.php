@@ -22,10 +22,19 @@
 
         <div class="right-top">
             <li>
-                <div class="login-btn">
-                    <i class="login-icon ti-shift-right"></i>
-                    <a href="login.php">Đăng nhập</a>
-                </div>
+            <div class="login-btn">
+                <i class="login-icon ti-shift-right"></i>
+                <a href="<?php echo isset($_SESSION['username']) ? '#' : 'login.php'; ?>">
+                    <?php
+                        if (isset($_SESSION["username"])) {
+                            echo $_SESSION["username"];
+                        } else {
+                            echo "Đăng nhập";
+                        }
+                    ?>
+                </a>
+        </div>
+
             </li>
             <li>
                 <div class="register-btn">

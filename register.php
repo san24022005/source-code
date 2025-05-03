@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./accsets/css/login.css">
 </head>
+
 <body>
     <div class="register">
         <div class="left-panel">
@@ -70,17 +71,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h2>BT SHOP</h2>
             <p>Vua của các quý ông</p>
         </div>
+
         <div class="right-panel">
             <div class="back-home">
                 <i class="back-icon ti-angle-left"></i>
                 <a href="index.php">Trang chủ</a>
             </div>
+
             <h2>TẠO TÀI KHOẢN</h2>
 
             <button class="social-btn google">
                 <i class="gg-icon ti-google"></i>
                 Google
             </button>
+
             <button class="social-btn facebook">
                 <i class="face-icon ti-facebook"></i>
                 Facebook
@@ -96,7 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         </div>
     </div>  
-
 </body>
 </html>
 <?php
