@@ -3,18 +3,18 @@
         <div class="left-top">
             <li>
                 <div class="mobile-btn">
-                    <i class="mobile-icon ti-mobile"></i>
+                    <i class="top-icon ti-mobile"></i>
                 </div>
             </li>
             <li>
                 <div class="email-btn">
-                    <i class="mail-icon ti-email"></i>
+                    <i class="top-icon ti-email"></i>
                     <a href="mailto:cskh@khavico.com">cskh@khavico.com</a>
                 </div>
             </li>
             <li>
                 <div class="contact-btn">
-                    <i class="contact-icon ti-location-pin"></i>
+                    <i class="top-icon ti-location-pin"></i>
                     <a href="">Liên hệ</a>
                 </div>
             </li>
@@ -23,8 +23,8 @@
         <div class="right-top">
             <li>
             <div class="login-btn">
-                <i class="login-icon ti-shift-right"></i>
-                <a href="<?php echo isset($_SESSION['username']) ? '#' : 'login.php'; ?>">
+                <i class="top-icon ti-shift-right"></i>
+                <a href="<?php echo isset($_SESSION['username']) ? 'login.php' : 'login.php'; ?>">
                     <?php
                         if (isset($_SESSION["username"])) {
                             echo $_SESSION["username"];
@@ -38,7 +38,7 @@
             </li>
             <li>
                 <div class="register-btn">
-                    <i class="register-icon ti-user"></i>
+                    <i class="top-icon ti-user"></i>
                     <a href="register.php">Đăng ký</a>
                 </div>
             </li>

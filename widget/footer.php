@@ -1,7 +1,5 @@
 <div id="footer">
     <div id="top-footer">
-        <ul>
-            <li>
             <div class="footer-box">
                 <div class="logo">
                     <a href="index.php"></a>
@@ -31,9 +29,7 @@
                     </li>
                 </ul>
             </div>
-            </li>
 
-            <li>
             <div class="footer-box">
                 <h3>Hệ thống điểm bán</h3>
                 
@@ -59,9 +55,7 @@
                     </li>
                     </ul>  
             </div>           
-            </li>
-                 
-            <li>
+            
             <div class="footer-box">
                 <h3>Liên kết nhanh</h3>
 
@@ -89,15 +83,11 @@
                     </li>
                 </ul>
             </div>
-            </li>
-
-            <li>
+            
             <div class="footer-box">
                 <h3>Hỗ trợ khách hàng</h3>
             </div>
-            </li>
-
-            <li>
+            
             <div class="footer-box">
                 <h3>Hỗ trợ khách hàng</h3>
                 <ul>
@@ -115,7 +105,6 @@
                     </li>
                 </ul>
             </div>    
-        </ul>
     </div>
     <div id="bottom-footer">
         <div class="copyright">
