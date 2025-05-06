@@ -51,7 +51,7 @@
                 <i class="menu-icon ti-menu"></i>
 
                 <ul class="sub-menu">
-                    <li><a href="">
+                    <li><a href="../menu/myaccount.php">
                         <i class="sub-menu-icon ti-user"></i>
                         My account
                         <?php
