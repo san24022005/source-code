@@ -24,7 +24,7 @@
             <li>
             <div class="login-btn">
                 <i class="top-icon ti-shift-right"></i>
-                <a href="<?php echo isset($_SESSION['username']) ? 'login.php' : 'login.php'; ?>">
+                <a href="<?php echo isset($_SESSION['username']) ? '../login/login.php' : '../login/login.php'; ?>">
                     <?php
                         if (isset($_SESSION["username"])) {
                             echo $_SESSION["username"];
@@ -39,7 +39,7 @@
             <li>
                 <div class="register-btn">
                     <i class="top-icon ti-user"></i>
-                    <a href="register.php">Đăng ký</a>
+                    <a href="../login/register.php">Đăng ký</a>
                 </div>
             </li>
         </div>        

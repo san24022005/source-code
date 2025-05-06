@@ -87,7 +87,7 @@
                         Giới thiệu về BT SHOP
                     </a></li>
 
-                    <li><a href="">
+                    <li><a href="../login/logout.php">
                         <i class="sub-menu-icon ti-shift-right"></i>
                         Đăng xuất
                     </a></li>

@@ -1,13 +1,13 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['username'])) {
-    header('Location: login.php'); // Chuyển hướng nếu người dùng chưa đăng nhập
+    echo "<script>
+        alert('Bạn chưa đăng nhập!');
+        window.location.href = 'login/login.php';
+    </script>";
     exit;
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,6 +19,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     </head>
     <body>
+        <div class="main">
         <?php
             require 'site.php';
             load_top();
@@ -32,5 +33,6 @@ if (!isset($_SESSION['username'])) {
         <?php
             load_footer();
         ?>
+        </div>
     </body>
 </html>

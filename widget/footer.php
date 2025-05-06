@@ -108,7 +108,7 @@
     </div>
     <div id="bottom-footer">
         <div class="copyright">
-            <p>Copyright © 2023 BT Shop. All rights reserved.</p>
+            <p>Copyright © 2025 BT Shop. All rights reserved.</p>
         </div>
         <div class="social-media">
             <a href="#"><i class="copy-r-icon ti-facebook"></i></a>
