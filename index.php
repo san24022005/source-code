@@ -24,11 +24,10 @@ if (!isset($_SESSION['username'])) {
             require 'site.php';
             load_top();
             load_header();
-            load_slider();
+            load_products();
+        
         ?>
-        <div id="products">
-
-        </div>
+        
         
         <?php
             load_footer();

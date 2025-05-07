@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Kiểm tra tên đăng nhập đã tồn tại chưa
-    $sql_check = "SELECT * FROM users WHERE username = '$username'";
+    $sql_check = "SELECT * FROM khachhang WHERE username = '$username'";
     $result = mysqli_query($conn, $sql_check);
     if (mysqli_num_rows($result) > 0) {
         echo "<script>alert('Tên đăng nhập đã tồn tại.'); window.history.back();</script>";
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Thêm người dùng vào CSDL
-    $sql_insert = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    $sql_insert = "INSERT INTO khachhang (username, password) VALUES ('$username', '$password')";
 
     if (mysqli_query($conn, $sql_insert)) {
         $_SESSION['username'] = $username;

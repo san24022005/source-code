@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Kiểm tra tên đăng nhập và mật khẩu
-    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $sql = "SELECT * FROM khachhang WHERE username = '$username'";
     $result = mysqli_query($conn, $sql);
     $user = mysqli_fetch_assoc($result);
 

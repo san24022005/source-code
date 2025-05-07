@@ -11,6 +11,10 @@
     {
         require('widget/slider.php');
     }
+    function load_products()
+    {
+        require('widget/products.php');
+    }
     function load_footer()
     {
         require('widget/footer.php');

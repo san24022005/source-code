@@ -6,7 +6,7 @@ $makh=$_SESSION['username'];
 <div class="myaccount">
     <div class="myaccount-container">
         <div class="myaccount-header">
-            <h2>Thông tin tài khoản</h2>
+            <h2>Thông tin tài khoản</h2>===============
             <p>Chào mừng bạn đến với BT Shop</p>
         </div>
         <div class="myaccount-content">
