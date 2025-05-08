@@ -29,7 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Kiểm tra tên đăng nhập đã tồn tại chưa
     $sql_check = "SELECT * FROM khachhang WHERE username = '$username'";
     $result = mysqli_query($conn, $sql_check);
+    if (!$result) {
+        die("Lỗi truy vấn: " . mysqli_error($conn));
+    }
     if (mysqli_num_rows($result) > 0) {
+
         echo "<script>alert('Tên đăng nhập đã tồn tại.'); window.history.back();</script>";
         exit();
     }
