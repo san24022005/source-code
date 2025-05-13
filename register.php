@@ -1,5 +1,5 @@
 <?php
-    require '../site.php';
+    require 'site.php';
     load_top();
 ?>
 <?php
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['firstname'] = $firstname;
         $_SESSION['lastname'] = $lastname;
 
-        echo "<script>alert('Đăng ký thành công!'); window.location='../index.php';</script>";
+        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
     } else {
         echo "Lỗi khi đăng ký: " . mysqli_error($conn);
     }
@@ -61,17 +61,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BT Shop</title>
-    <link rel="stylesheet" href="../accsets/css/login.css">
-    <link rel="stylesheet" href="../accsets/css/base.css">
-    <link rel="stylesheet" href="../accsets/css/grid.css">
-    <link rel="stylesheet" href="../accsets/fonts/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="../accsets/css/main.css">
+    <link rel="stylesheet" href="accsets/css/login.css">
+    <link rel="stylesheet" href="accsets/css/base.css">
+    <link rel="stylesheet" href="accsets/css/grid.css">
+    <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="accsets/css/main.css">
 </head>
 
 <body>
     <div class="register">
         <div class="left-panel">
-            <img src="../accsets/images/logo.png" alt="BT Shop Logo" class="logo">
+            <img src="accsets/images/logo.png" alt="Logo" class="logo">
             <h2>BT SHOP</h2>
             <p>Vua của các quý ông</p>
         </div>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="right-panel">
             <div class="back-home">
                 <i class="back-icon ti-angle-left"></i>
-                <a href="../index.php">Trang chủ</a>
+                <a href="index.php">Trang chủ</a>
             </div>
 
             <h2>TẠO TÀI KHOẢN</h2>

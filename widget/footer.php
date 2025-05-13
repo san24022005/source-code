@@ -1,9 +1,11 @@
 <div id="footer">
     <div id="top-footer">
             <div class="footer-box">
-                <div class="logo">
-                    <a href="index.php"></a>
-                </div>
+                
+                    <a href="index.php">
+                        <img src="accsets/images/logo.png" alt="Logo" class="logo">
+                    </a>
+                
                
                 <ul>
                     <li>Thương hiệu thời trang nam cao cấp, 
@@ -84,9 +86,6 @@
                 </ul>
             </div>
             
-            <div class="footer-box">
-                <h3>Hỗ trợ khách hàng</h3>
-            </div>
             
             <div class="footer-box">
                 <h3>Hỗ trợ khách hàng</h3>
@@ -104,7 +103,11 @@
                         <a href="">Hướng dẫn bảo hành</a>
                     </li>
                 </ul>
-            </div>    
+            </div>   
+            
+            <div class="footer-box">
+
+            </div>
     </div>
     <div id="bottom-footer">
         <div class="copyright">

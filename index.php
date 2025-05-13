@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('Bạn chưa đăng nhập!');
-        window.location.href = 'login/login.php';
+        window.location.href = 'login.php';
     </script>";
     exit;
 }
@@ -25,13 +25,12 @@ if (!isset($_SESSION['username'])) {
             load_top();
             load_header();
             load_products();
-        
-        ?>
-        
-        
-        <?php
             load_footer();
         ?>
+        </div>
+
+        <div class="modal-buy">
+            
         </div>
     </body>
 </html>

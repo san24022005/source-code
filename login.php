@@ -1,5 +1,5 @@
 <?php
-    require '../site.php';
+    require './site.php';
     load_top();
 ?>
 <?php
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['firstname'] = $user['ten'];
         $_SESSION['lastname'] = $user['ho'];
     
-        header('Location: ../index.php');
+        header('Location: index.php');
         exit;
     } else {
         echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu!'); window.history.back();</script>";
@@ -44,24 +44,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Đăng nhập BT SHOP</title>
-    <link rel="stylesheet" href="../accsets/css/login.css">
-    <link rel="stylesheet" href="../accsets/css/base.css">
-    <link rel="stylesheet" href="../accsets/css/grid.css">
-    <link rel="stylesheet" href="../accsets/fonts/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="../accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/login.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/grid.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./accsets/css/main.css">
 </head>
 
 <body>
     <div class="login-container">
         <div class="left-panel">
-            <img src= "../accsets/images/logo.png" alt="BT Shop Logo" class="logo">
+            <img src="./accsets/images/logo.png" alt="Logo" class="logo">
             <h2>BT SHOP</h2>
             <p>Vua của các quý ông</p>
         </div>
         <div class ="right-panel">
             <div class="back-home">
                 <i class="back-icon ti-angle-left"></i>
-                <a href="../index.php">Trang chủ</a>
+                <a href="index.php">Trang chủ</a>
             </div>
             <h2>ĐĂNG NHẬP</h2>
 
@@ -93,5 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 </html>
 <?php
+    load_products();
     load_footer();
 ?>
