@@ -1,7 +1,9 @@
 <div id="header">
-    <div class="logo">
-        <a href="index.php"></a>
-    </div>
+    
+        <a href="index.php">
+            <img src="accsets/images/logo.png" alt="Logo" class="logo">
+        </a>
+    
 
     <ul class="nav">
         <li>
@@ -39,20 +41,24 @@
         <li><a href="">Tây phục</a></li>
     </ul>
 
-    <ul class="nav-icon">
+    <ul class="nav-right">
         <li>
             <a href="">
-                <i class="search-icon ti-search"></i>
+                <i class="nav-icon search-icon ti-search"></i>
             </a>
         </li>
 
-        <li class="menu">
-            <a href="">
-                <i class="menu-icon ti-menu"></i>
+        <li><a href="">
+            <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
+        </a></li>
 
-                <ul class="sub-menu">
-                    <li><a href="../menu/myaccount.php">
-                        <i class="sub-menu-icon ti-user"></i>
+        <li class="setting">
+            <a href="">
+                <i class="nav-icon setting-icon ti-settings"></i>
+
+                <ul class="sub-setting">
+                    <li><a href="myaccount.php">
+                        <i class="sub-setting-icon ti-user"></i>
                         My account
                         <?php
                             if (isset($_SESSION["username"])) {
@@ -63,32 +69,27 @@
                         ?>
                     </a></li>
                     <li><a href="">
-                        <i class="sub-menu-icon ti-shopping-cart"></i>
-                        Giỏ hàng
-                    </a></li>
-
-                    <li><a href="">
-                        <i class="sub-menu-icon ti-package"></i>
+                        <i class="sub-setting-icon ti-package"></i>
                         Đơn hàng của tôi
                     </a></li>
 
                     <li><a href="">
-                        <i class="sub-menu-icon ti-book"></i>
+                        <i class="sub-setting-icon ti-book"></i>
                         Điều khoản dịch vụ
                     </a></li>
 
                     <li><a href="">
-                        <i class="sub-menu-icon ti-help"></i>
+                        <i class="sub-setting-icon ti-help"></i>
                         Hỗ trợ khách hàng
                     </a></li>
 
                     <li><a href="">
-                        <i class="sub-menu-icon ti-info"></i>
+                        <i class="sub-setting-icon ti-info"></i>
                         Giới thiệu về BT SHOP
                     </a></li>
 
-                    <li><a href="../login/logout.php">
-                        <i class="sub-menu-icon ti-shift-right"></i>
+                    <li><a href="./logout.php">
+                        <i class="sub-setting-icon ti-shift-right"></i>
                         Đăng xuất
                     </a></li>
                 </ul>

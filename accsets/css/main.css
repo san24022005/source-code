@@ -62,8 +62,7 @@
 #header .logo {
     float: left;
     height: 100%;
-    width: 60px;
-    background: url(../images/logo.png) top center / cover no-repeat;
+    width: 60px;  
 }
 
 #header .nav {
@@ -73,13 +72,13 @@
     margin-left: 20px;
 }
 
-.nav > li , .menu {
+.nav > li , .setting {
     display: inline-block;
     position: relative;
 }
 
 .nav > li:hover > a,
-#header .nav-icon li:hover {
+#header .nav-right li:hover {
     color: var(--main-color);
     background-color: var(--main-bg2-color);
 }
@@ -104,7 +103,7 @@
 }
 
 .nav li:hover .sub-nav,
-  .menu:hover .sub-menu{
+  .setting:hover .sub-setting {
     display: block;
 }
 
@@ -113,48 +112,47 @@
     display: block;
 }
 
-.sub-nav li:hover, .sub-menu li:hover a {
+.sub-nav li:hover, .sub-setting li:hover a {
     color: var(--main-color);
     background-color: rgb(92, 184, 223);
 }
 
-#header .nav-icon {
+#header .nav-right {
     float: right;
     line-height: 60px;
 }
 
-.sub-nav li a, .sub-menu li a {
+.sub-nav li a, .sub-setting li a {
     color: var(--main-color);
     line-height: 60px;
     display: block;
     padding: 0 12px;
 }
-.sub-menu li a {
+.sub-setting li a {
     font-size: 14px;
 }
 
-.nav-icon > li {
+.nav-right > li {
     display: inline-block;
 }
 
-.menu {
+.setting {
     line-height: 60px;
     display: block;
-    padding: 0 12px;
 }
 
-.sub-menu {
+.sub-setting {
     display: none; 
     position: absolute;
     top: 100%;
     right: 0;
     background-color: var(--main-bg2-color);
     min-width: 200px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     z-index: 2;
 }
 
-.sub-menu li {
+.sub-setting li {
     height: 60px;
     display: block;
     white-space: nowrap;
@@ -162,14 +160,13 @@
     border-radius: 4px;
 }
 
-.nav-icon .search-icon,
- .nav-icon .menu-icon {
+.nav-right .nav-icon {
     font-size: 20px;
-    margin: 0 10px;
+    padding: 0 16px;
     color: var(--main-color);
 }
 
-.sub-menu .sub-menu-icon {
+.sub-setting .sub-setting-icon {
     font-size: 12px;
     padding: 0 5px;
 }
@@ -178,8 +175,100 @@
 /* START : PRODUCT */
 
 #products {
-    margin-top: 100px;
-    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+	width: 100%;
+    margin-top: 80px;
+}
+
+/* Mỗi sản phẩm */
+.product {
+    width: 220px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Ảnh sản phẩm */
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product img:hover {
+    opacity: 0.8;
+}
+
+/* Tên sản phẩm */
+.product h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Giá gốc */
+.product p {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+}
+
+/* Danh sách size + giá bán */
+.product ul {
+    list-style: none;
+    padding: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.product ul strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product ul li {
+    border-top: 1px solid #eee;
+    padding: 5px 0;
+}
+
+.product ul li:first-child {
+    border-top: none;
+}
+
+.product .btn {
+    margin: 3px;;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 768px) {
+    .product {
+        width: 45%;
+    }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
 }
 
 /* END : PRODUCT */
@@ -200,9 +289,6 @@
 #footer .logo {
     height: 150px;
     width: 150px;
-    background: url(../images/logo.png) center / cover no-repeat;
-    margin: 0;
-    display: block;
 }
 
 #top-footer .footer-box {
