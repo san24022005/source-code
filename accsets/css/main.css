@@ -185,15 +185,22 @@
 }
 
 /* Mỗi sản phẩm */
+
 .product {
-    width: 220px;
-    background: #fff;
-    border-radius: 10px;
-    margin: 15px;
-    padding: 15px;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    margin: 10px; 
+    float: left; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    box-sizing: border-box;
 }
+
+/* Desktop & Tablet (4 sản phẩm mỗi hàng) */
+
 
 .product:hover {
     transform: translateY(-8px);
@@ -226,7 +233,6 @@
     color: #888;
     text-align: center;
     margin-bottom: 10px;
-    text-decoration: line-through;
 }
 
 /* Danh sách size + giá bán */
@@ -341,3 +347,26 @@
     color: var(--main-color);
 }
 /* END : FOOTER */
+
+.modal-buy {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-buy.show {
+    display: block;
+}
+
+.modal-buy .modal-container {
+    height: 1000px;
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+}
+

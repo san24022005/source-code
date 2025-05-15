@@ -24,16 +24,15 @@ if (!$result) {
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='product' style='border:1px solid #ccc; padding:10px; margin:10px; width:200px; float:left; text-align:center'>";
+        echo "<div class='product'>";
         echo "<img src='{$row['url']}' width='150' height='150'/>";
         echo "<h3>{$row['tensp']}</h3>";
         echo "<p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p>";
 
         // Các nút chức năng
-        echo "<button class='btn' onclick=\"alert('Mua ngay: {$row['tensp']}')\">Mua ngay</button>";
+        echo "<a href='shopping.php?masp={$row['masp']}'><button class='btn btn-buy' onclick=\"alert('Mua ngay: {$row['tensp']}')\">Mua ngay</button></a>";
         echo "<button class='btn' onclick=\"alert('Đã thêm vào giỏ: {$row['tensp']}')\">Thêm vào giỏ</button> ";
         echo "<a href='chitiet.php?masp={$row['masp']}'><button class='btn'>Xem chi tiết</button></a>";
-
         echo "</div>";
     }
 } else {
@@ -41,3 +40,5 @@ if ($result->num_rows > 0) {
 }
 ?>
 </div>
+
+<script src="accsets/js/shopping.js"></script>

@@ -19,4 +19,14 @@
     {
         require('widget/footer.php');
     }
+
+    function connect()
+    {
+        require('connect.php');
+    }
+
+    function load_modal()
+    {
+        require('widget/shopping.php');
+    }
 ?>

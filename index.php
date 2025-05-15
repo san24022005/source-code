@@ -28,9 +28,5 @@ if (!isset($_SESSION['username'])) {
             load_footer();
         ?>
         </div>
-
-        <div class="modal-buy">
-            
-        </div>
     </body>
 </html>

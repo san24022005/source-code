@@ -61,8 +61,8 @@
                         <i class="sub-setting-icon ti-user"></i>
                         My account
                         <?php
-                            if (isset($_SESSION["username"])) {
-                                echo "({$_SESSION['username']})";
+                            if (isset($_SESSION["name"])) {
+                                echo "({$_SESSION['name']})";
                             } else {
                                 echo "Đăng nhập";
                             }
