@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Kiểm tra tên đăng nhập và mật khẩu
-    $sql = "SELECT * FROM taikhoan WHERE username = '$username'";
+    $sql = "SELECT * FROM taikhoan, khachhang WHERE username = '$username' and taikhoan.username = khachhang.makh";
     $result = mysqli_query($conn, $sql);
     if (!$result) {
         die("Lỗi truy vấn: " . mysqli_error($conn));
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user && $password === $user['password']) {
         // Đăng nhập thành công
         $_SESSION['username'] = $user['username'];
-        $_SESSION['firstname'] = $user['name'];
+        $_SESSION['name'] = $user['hoten'];
     
         header('Location: index.php');
         exit;

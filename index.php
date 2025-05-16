@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('Bạn chưa đăng nhập!');
@@ -29,4 +31,23 @@ if (!isset($_SESSION['username'])) {
         ?>
         </div>
     </body>
+
 </html>
+
+<script>
+    const buyBtns = document.querySelector('.js-mua-ngay')
+
+    function showModalBuy() {
+        modal.classList.add('show');
+    }
+
+    for (const buyBtn of buyBtns) {
+        buyBtn.addEventListener('click', showModalBuy() );
+    }
+    const closeBtn = document.querySelector('.close-btn');
+    const modal = document.querySelector('.modal');
+
+    closeBtn.addEventListener('click', function() {
+        modal.classList.remove('.show');
+    });
+</script>

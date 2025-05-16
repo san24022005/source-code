@@ -38,9 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Thêm người dùng vào CSDL
-    $sql_insert_khachhang = "INSERT INTO khachhang (makh, doanhso) VALUES ('$username', 0)";
+    $sql_insert_khachhang = "INSERT INTO khachhang (makh, doanhso, hoten) VALUES ('$username', 0, '$name')";
     $sql_insert_taikhoan = "INSERT INTO taikhoan (username, password) VALUES ('$username', '$password')";
-    $sql_insert_thongtin = "INSERT INTO thongtin (makh, hoten) VALUES ('$username', '$name')";
+    $sql_insert_thongtin = "INSERT INTO thongtin_lienhe (makh) VALUES ('$username')";
 
     if (!mysqli_query($conn, $sql_insert_khachhang)) {
         echo "Lỗi khi thêm vào bảng khachhang: " . mysqli_error($conn);
@@ -54,14 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (!mysqli_query($conn, $sql_insert_thongtin)) {
         echo "Lỗi khi thêm vào bảng thongtin: " . mysqli_error($conn);
-         $_SESSION['username'] = $username;
-        $_SESSION['name'] = $name;
-
-        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
-    } else {
-        echo "Lỗi khi đăng ký: " . mysqli_error($conn);
-    
         exit();
+    } else {
+        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
+        $_SESSION['username'] = $username;
+        $_SESSION['name'] = $name;
     }
     // Đóng kết nối sau khi hoàn thành
     mysqli_close($conn);

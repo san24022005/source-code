@@ -40,3 +40,7 @@ button:hover {
     background-color: #0057B7;
 }
 
+td {
+    text-align: left;
+    vertical-align: top; /* nếu bị căn giữa theo chiều dọc */
+}

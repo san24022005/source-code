@@ -9,6 +9,7 @@
     border: 1px solid #00000020;
     overflow: hidden;
     padding: 5px 0;
+    height: 44px;
     position: fixed;
     top: 0;
     left: 0;
@@ -237,7 +238,6 @@
 
 /* Danh sách size + giá bán */
 .product ul {
-    list-style: none;
     padding: 0;
     font-size: 13px;
     color: #555;
@@ -260,8 +260,16 @@
 }
 
 .product .btn {
-    margin: 3px;;
+    margin: 4px 6px;
 }
+
+.product table {
+    width: 90%;
+    border-collapse: collapse;
+    padding: 0 auto;
+}
+
+
 
 /* Responsive cho tablet */
 @media (max-width: 768px) {
@@ -347,26 +355,3 @@
     color: var(--main-color);
 }
 /* END : FOOTER */
-
-.modal-buy {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-buy.show {
-    display: block;
-}
-
-.modal-buy .modal-container {
-    height: 1000px;
-    width: 80%;
-    margin: 50px auto;
-    background-color: #fff;
-}
-
