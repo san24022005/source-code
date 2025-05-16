@@ -27,6 +27,6 @@
 
     function load_modal()
     {
-        require('widget/shopping.php');
+        require('shopping.php');
     }
 ?>

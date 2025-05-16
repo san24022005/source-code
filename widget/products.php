@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
         echo "</tr>";
 
         echo "<tr>";
-        echo "<td colspan='2'><a href='shopping.php?masp={$row['masp']}' class='btn btn-buy' onclick=\"alert('Mua ngay: {$row['tensp']}')\">
+        echo "<td colspan='2'><a href='shopping.php?masp={$row['masp']}' class='btn btn-buy js-mua-ngay' onclick=\"alert('Mua ngay: {$row['tensp']}')\">
                 <button type='button' class='btn'>Mua ngay</button></a></td>";
         echo "</tr>";
         echo "</table>";

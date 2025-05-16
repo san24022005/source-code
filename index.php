@@ -29,25 +29,7 @@ if (!isset($_SESSION['username'])) {
             load_products();
             load_footer();
         ?>
-        </div>
+        </div>     
     </body>
-
 </html>
 
-<script>
-    const buyBtns = document.querySelector('.js-mua-ngay')
-
-    function showModalBuy() {
-        modal.classList.add('show');
-    }
-
-    for (const buyBtn of buyBtns) {
-        buyBtn.addEventListener('click', showModalBuy() );
-    }
-    const closeBtn = document.querySelector('.close-btn');
-    const modal = document.querySelector('.modal');
-
-    closeBtn.addEventListener('click', function() {
-        modal.classList.remove('.show');
-    });
-</script>

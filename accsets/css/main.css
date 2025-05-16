@@ -296,8 +296,9 @@
 }
 
 #footer #top-footer {
-    height: 95vh;
-    display: block;
+     display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng khi thiếu chỗ */
+    justify-content: space-between;
 }
 
 #footer .logo {
@@ -305,11 +306,14 @@
     width: 150px;
 }
 
-#top-footer .footer-box {
-    width: 16%;
+#footer #top-footer .footer-box {
+    position: relative;
+    top: 0;
+    width: 192px;
     height: 90%;
-    margin: 50px 2% 0;
-    float: left;
+    margin: 50px 8px 0;
+    display: inline-block;
+    padding: 5px 0;
 }
 
 #footer .footer-box h3 {
@@ -318,9 +322,6 @@
     margin-bottom: 10px;
 }
 
-.footer-box {  
-    padding: 5px 0;
-}
 
 .footer-box li {
     font-size: 12px;
