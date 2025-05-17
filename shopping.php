@@ -117,6 +117,10 @@ $masp = $conn->real_escape_string($_GET['masp']);
                     }
                     ?>
                 </tr>
+                    
+                    <tr class="modal-thanhtoan">
+                        <td colspan="2"><h3>Chi tiết thanh toán</h3></td>
+                    </tr>
 
                 <tr>
                     <td class="tieude-gia">
@@ -126,13 +130,14 @@ $masp = $conn->real_escape_string($_GET['masp']);
                         <p>Thành tiền:</p>
                     </td>
                     <td class="gia">
+                        <h3> </h3>
                         <p><span id="dongia" data-dongia="<?php echo $row['gia']; ?>"><?php echo number_format($row['gia']); ?></span> VNĐ</p>
                         <p><strong>Miễn phí</strong></p>
                         <p>0đ</p>
                         <p><span id="thanhtien"><?php echo number_format($row['gia']); ?></span> VNĐ</p>
                     </td>
                 </tr>
-
+               
                 <tr>
                     <td colspan="2">
                         <div class="modal-footer">

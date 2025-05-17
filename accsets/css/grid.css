@@ -65,3 +65,14 @@
 .modal-container .gia {
     text-align: right;
 }
+
+.modal-container .modal-thanhtoan h3 {
+    padding: 10px 0;
+}
+
+.label-khachhang a {
+    background-color: var(--main-bg2-color);
+    color: var(--main-color);
+    display: inline-block;
+    padding: 4px;
+}
