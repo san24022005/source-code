@@ -9,6 +9,7 @@
     border: 1px solid #00000020;
     overflow: hidden;
     padding: 5px 0;
+    height: 44px;
     position: fixed;
     top: 0;
     left: 0;
@@ -185,15 +186,22 @@
 }
 
 /* Mỗi sản phẩm */
+
 .product {
-    width: 220px;
-    background: #fff;
-    border-radius: 10px;
-    margin: 15px;
-    padding: 15px;
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    margin: 10px; 
+    float: left; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    box-sizing: border-box;
 }
+
+/* Desktop & Tablet (4 sản phẩm mỗi hàng) */
+
 
 .product:hover {
     transform: translateY(-8px);
@@ -226,12 +234,10 @@
     color: #888;
     text-align: center;
     margin-bottom: 10px;
-    text-decoration: line-through;
 }
 
 /* Danh sách size + giá bán */
 .product ul {
-    list-style: none;
     padding: 0;
     font-size: 13px;
     color: #555;
@@ -254,7 +260,13 @@
 }
 
 .product .btn {
-    margin: 3px;;
+    margin: 4px 6px;
+}
+
+.product table {
+    width: 90%;
+    border-collapse: collapse;
+    padding: 0 auto;
 }
 
 /* Responsive cho tablet */
@@ -282,8 +294,9 @@
 }
 
 #footer #top-footer {
-    height: 95vh;
-    display: block;
+     display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng khi thiếu chỗ */
+    justify-content: space-between;
 }
 
 #footer .logo {
@@ -291,11 +304,14 @@
     width: 150px;
 }
 
-#top-footer .footer-box {
-    width: 16%;
+#footer #top-footer .footer-box {
+    position: relative;
+    top: 0;
+    width: 192px;
     height: 90%;
-    margin: 50px 2% 0;
-    float: left;
+    margin: 50px 8px 0;
+    display: inline-block;
+    padding: 5px 0;
 }
 
 #footer .footer-box h3 {
@@ -304,9 +320,6 @@
     margin-bottom: 10px;
 }
 
-.footer-box {  
-    padding: 5px 0;
-}
 
 .footer-box li {
     font-size: 12px;

@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('Bạn chưa đăng nhập!');
@@ -27,10 +29,7 @@ if (!isset($_SESSION['username'])) {
             load_products();
             load_footer();
         ?>
-        </div>
-
-        <div class="modal-buy">
-            
-        </div>
+        </div>     
     </body>
 </html>
+

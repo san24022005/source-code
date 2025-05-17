@@ -14,8 +14,7 @@ if (!$conn) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Nhận dữ liệu từ form
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
+    $name = $_POST['name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $confirm = $_POST['nhaplaimatkhau'];
@@ -27,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Kiểm tra tên đăng nhập đã tồn tại chưa
-    $sql_check = "SELECT * FROM khachhang WHERE username = '$username'";
+    $sql_check = "SELECT * FROM taikhoan WHERE username = '$username'";
     $result = mysqli_query($conn, $sql_check);
     if (!$result) {
         die("Lỗi truy vấn: " . mysqli_error($conn));
@@ -39,18 +38,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Thêm người dùng vào CSDL
-    $sql_insert = "INSERT INTO khachhang (username, password) VALUES ('$username', '$password')";
+    $sql_insert_khachhang = "INSERT INTO khachhang (makh, doanhso, hoten) VALUES ('$username', 0, '$name')";
+    $sql_insert_taikhoan = "INSERT INTO taikhoan (username, password) VALUES ('$username', '$password')";
+    $sql_insert_thongtin = "INSERT INTO thongtin_lienhe (makh) VALUES ('$username')";
 
-    if (mysqli_query($conn, $sql_insert)) {
-        $_SESSION['username'] = $username;
-        $_SESSION['firstname'] = $firstname;
-        $_SESSION['lastname'] = $lastname;
-
-        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
-    } else {
-        echo "Lỗi khi đăng ký: " . mysqli_error($conn);
+    if (!mysqli_query($conn, $sql_insert_khachhang)) {
+        echo "Lỗi khi thêm vào bảng khachhang: " . mysqli_error($conn);
+        exit();
     }
 
+    if (!mysqli_query($conn, $sql_insert_taikhoan)) {
+        echo "Lỗi khi thêm vào bảng taikhoan: " . mysqli_error($conn);
+        exit();
+    }
+
+    if (!mysqli_query($conn, $sql_insert_thongtin)) {
+        echo "Lỗi khi thêm vào bảng thongtin: " . mysqli_error($conn);
+        exit();
+    } else {
+        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
+        $_SESSION['username'] = $username;
+        $_SESSION['name'] = $name;
+    }
     // Đóng kết nối sau khi hoàn thành
     mysqli_close($conn);
 }
@@ -95,8 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </button>
 
             <form action="register.php" method="post">
-                <input type="text" name="firstname" placeholder="Tên" required>
-                <input type="text" name="lastname" placeholder="Họ" required>
+                <input type="text" name="name" placeholder="Họ và Tên" required>
                 <input type="text" name="username" placeholder="Tên đăng nhập" required>
                 <input type="password" name="password" placeholder="Mật khẩu" required>
 	            <input type="password" name="nhaplaimatkhau" placeholder="Nhập lại mật khẩu" required>
