@@ -1,0 +1,75 @@
+
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  background: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.form-row {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+.form-row label {
+  width: 150px;
+  font-weight: bold;
+}
+.form-row input, .form-row select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-actions {
+  text-align: left;
+  margin-top: 20px;
+}
+.btn {
+  background-color: #5c6670;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #444;
+}
+.avatar {
+  float: right;
+  text-align: center;
+}
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #eee;
+  object-fit: cover;
+}
+.avatar small {
+  display: block;
+  margin-top: 5px;
+  color: #777;
+  font-size: 12px;
+}
+.btn-edit {
+    background-color: #6c757d; /* xám đậm */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #5a6268;
+}
