@@ -7,38 +7,38 @@
 
     <ul class="nav">
         <li>
-            <a href="">
+            <a href="#ao">
                 Áo
                 <i class="down-icon ti-angle-down"></i>
             </a>
 
             <ul class="sub-nav">
-                <li><a href="">Áo polo dài tay</a></li>
-                <li><a href="">Áo thun dài tay</a></li>
-                <li><a href="">Áo khoác</a></li>
-                <li><a href="">Áo sơ mi</a></li>
-                <li><a href="">Áo Tshirt</a></li>
+                <li><a href="#polodaitay">Áo polo dài tay</a></li>
+                <li><a href="#aothundaitay">Áo thun dài tay</a></li>
+                <li><a href="#aokhoac">Áo khoác</a></li>
+                <li><a href="#aosomi">Áo sơ mi</a></li>
+                <li><a href="#aotshirt">Áo Tshirt</a></li>
             </ul>
         </li>
 
         <li>
-            <a href="">
+            <a href="#quan">
                 Quần
                 <i class="down-icon ti-angle-down"></i>
             </a>
 
             <ul class="sub-nav">
-                <li><a href="">Quần âu</a></li>
-                <li><a href="">Quần short</a></li>
-                <li><a href="">Quần jean</a></li>
+                <li><a href="#quanau">Quần âu</a></li>
+                <li><a href="#quanshort">Quần short</a></li>
+                <li><a href="#quanjean">Quần jean</a></li>
             </ul>
         </li>
 
-        <li><a href="">Đồ bộ</a></li>
+        <li><a href="#dobo">Đồ bộ</a></li>
 
-        <li><a href="">Đồng phục</a></li>
+        <li><a href="#dongphuc">Đồng phục</a></li>
 
-        <li><a href="">Tây phục</a></li>
+        <li><a href="#tayphuc">Tây phục</a></li>
     </ul>
 
     <ul class="nav-right">
