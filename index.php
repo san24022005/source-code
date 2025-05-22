@@ -1,4 +1,4 @@
-<?php
+<i?php
 session_start();
 
 
@@ -25,7 +25,6 @@ if (!isset($_SESSION['username'])) {
     html, body {
         scroll-behavior: smooth;
     }
-
     </style>
     <body>
         <div class="main">
@@ -39,60 +38,49 @@ if (!isset($_SESSION['username'])) {
         ?>
         </div>
         <!-- Modal hiển thị sản phẩm -->
-<!-- Modal hiển thị sản phẩm -->
-<div id="modal-mua-ngay" class="modal" style="display:none;">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="modal-tensp"></h2>
-    <img id="modal-img" src="" width="150" height="150" alt="Sản phẩm">
-    <p id="modal-gia"></p>
+        
+        <div id="modal-mua-ngay" class="modal" style="display:none;">
+            <table class="modal-content" cellspacing="0" cellpadding="8">
+            <tr>
+                <td colspan="2"><i class="ti-close close"></i></td>
+            </tr>
+            <tr>
+                <!-- Cột 1: Ảnh -->
+                <td rowspan="8" style="width: 250px">
+                    <img id="modal-img" src="" alt="Sản phẩm" style="width: 100%;">
+                </td>
+                <td rowspan="8" class="ngancach"></td>
 
-    <label for="modal-size">Chọn size:</label>
-    <select id="modal-size"></select>
+                <!-- Cột 2: Tên sản phẩm -->
+                <td class="modal-tesp"><h2 id="modal-tensp"></h2></td>
+            </tr>
+            <tr>
+                <td class="modal-gia"><p id="modal-gia"></p></td>
+            </tr>
+            <tr>
+                <td class="modal-size">
+                    <label for="modal-size">Chọn size:</label>
+                    <select id="modal-size"></select>
+                </td>
+            </tr>
+            <tr>
+                <td class="modal-soluong">
+                    <label for="modal-qty">Số lượng:</label>
+                    <input type="number" id="modal-qty" min="1" value="1"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="note"><p id="modal-max-note"></p></td>
+            </tr>
+            <tr>
+                <td class="btn-xacnhan-mua">
+                    <button id="btn-xacnhan" class="btn">Xác nhận mua</button>
+                </td>
+            </tr>
+            </table>
+        </div>
 
-    <label for="modal-qty">Số lượng:</label>
-    <input type="number" id="modal-qty" min="1" value="1" />
-
-    <p id="modal-max-note" style="color:red;"></p>
-
-    <button id="btn-xacnhan" class="btn">Xác nhận mua</button>
-  </div>
-</div>
-
-
-<style>
-.modal {
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: flex; align-items: center; justify-content: center;
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  position: relative;
-  text-align: center;
-}
-
-.close {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-#modal-img {
-  margin: 10px 0;
-}
-</style>
-
-<script src="accsets/js/shopping.js"></script>
-   
+        <script src="accsets/js/shopping.js"></script>
     </body>
 </html>
 
