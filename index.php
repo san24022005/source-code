@@ -33,6 +33,7 @@ if (!isset($_SESSION['username'])) {
             require 'site.php';
             load_top();
             load_header();
+            load_slider();
             load_products();
             load_footer();
         ?>
