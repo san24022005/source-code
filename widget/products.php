@@ -56,15 +56,13 @@ if ($result_danhmuc->num_rows > 0) {
                     echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
                     echo "<td><a href='details.php?masp={$row['masp']}' class='btn'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
                     echo "</tr><tr>";
-                    echo "<td colspan='2'>
-    <button 
-        type='button' 
-        class='btn js-mua-ngay' 
-        data-masp='{$row['masp']}'
-        data-tensp='{$row['tensp']}'
-        data-gia='" . number_format($row['gia']) . "'
+                    echo "<td colspan='2'>";
+    echo "<button type='button' class='btn js-mua-ngay' 
+        data-masp='{$row['masp']}' 
         data-img='{$row['url']}'
-    >Mua ngay</button>
+        data-tensp='{$row['tensp']}'
+        data-gia='{$row['gia']}'>Mua ngay</button>
+
 </td>";
 
 echo "</table>";
