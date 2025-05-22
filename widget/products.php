@@ -53,12 +53,21 @@ if ($result_danhmuc->num_rows > 0) {
                     echo "<tr><td colspan='2'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
 
 
-                    echo "<tr><td><button type='button' class='btn btn-giohang' onclick=\"alert('Đã thêm vào giỏ: {$row['tensp']}')\"><i class='ti-shopping-cart'></i></button></td>";
+                    echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
                     echo "<td><a href='details.php?masp={$row['masp']}' class='btn'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
                     echo "</tr><tr>";
-                    echo "<td colspan='2'><a href='shopping.php?masp={$row['masp']}' class='btn btn-buy js-mua-ngay' onclick=\"alert('Mua ngay: {$row['tensp']}')\">
-                        <button type='button' class='btn'>Mua ngay</button></a></td>";
-                    echo "</tr></table>";
+                    echo "<td colspan='2'>
+    <button 
+        type='button' 
+        class='btn js-mua-ngay' 
+        data-masp='{$row['masp']}'
+        data-tensp='{$row['tensp']}'
+        data-gia='" . number_format($row['gia']) . "'
+        data-img='{$row['url']}'
+    >Mua ngay</button>
+</td>";
+
+echo "</table>";
 
                     echo "</div>";
                 }
