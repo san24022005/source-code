@@ -241,7 +241,7 @@
 }
 
 /* Block danh mục lớn */
-#products > div {
+#products .danhmuc {
     flex: 1 1 100%; /* chiếm full chiều rộng */
     margin-bottom: 40px;
     background: #fff;
@@ -251,7 +251,7 @@
 }
 
 /* Tiêu đề danh mục */
-#products > div > h1 {
+#products .danhmuc h1 {
     font-size: 28px;
     color: #222;
     margin-bottom: 20px;
@@ -260,7 +260,7 @@
 }
 
 /* Block kiểu sản phẩm trong mỗi danh mục */
-#products > div > div {
+#products .danhmuc .kieu {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -268,7 +268,7 @@
 }
 
 /* Tiêu đề kiểu */
-#products > div > div > h2 {
+#products .danhmuc .kieu h2 {
     flex-basis: 100%;
     font-size: 22px;
     color: #444;
@@ -302,6 +302,10 @@
     margin-bottom: 10px;
 }
 
+.product .img {
+    height: 50%;
+}
+
 .product img:hover {
     opacity: 0.8;
 }
@@ -314,6 +318,10 @@
     text-align: center;
 }
 
+.product .name-prd {
+    height: 20%;
+}
+
 /* Giá sản phẩm */
 .product p {
     font-size: 14px;
@@ -322,15 +330,20 @@
     margin-bottom: 10px;
 }
 
+.product .price-prd {
+    height: 10%;
+}
+
 /* Nút chức năng trong sản phẩm */
 .product .btn {
     margin: 2px;
+    height: 40px;
 }
 
 /* Table nút */
-
 .product table {
     width: 90%;
+    height: 100%;
     margin: 0 auto;
   
 }
@@ -340,6 +353,11 @@
     height: 40px;
 }
 
+.product .btn-giohang,
+.product .btn-muangay,
+.product .btn-detail {
+    height: 10%;
+}
 
 
 /* Responsive cho tablet */
@@ -457,6 +475,7 @@
     height: 500px;
     position: relative;
     text-align: center;
+    animation: slideDown 0.4s ease;
 }
 
 .modal .modal-content .ngancach {
@@ -528,5 +547,16 @@
 
 .modal .modal-content .modal-tesp {
     height: 40px
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 /* END : MODAL */

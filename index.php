@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('Bạn chưa đăng nhập!');
@@ -39,7 +38,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <!-- Modal hiển thị sản phẩm -->
         
-        <div id="modal-mua-ngay" class="modal" style="display:none;">
+        <div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
             <table class="modal-content" cellspacing="0" cellpadding="8">
             <tr>
                 <td colspan="2"><i class="ti-close close"></i></td>
@@ -74,13 +73,14 @@ if (!isset($_SESSION['username'])) {
             </tr>
             <tr>
                 <td class="btn-xacnhan-mua">
-                    <button id="btn-xacnhan" class="btn">Xác nhận mua</button>
+                  <button id="btn-xacnhan" class="btn">Tiến hành thanh toán</button>
                 </td>
             </tr>
             </table>
         </div>
 
         <script src="accsets/js/shopping.js"></script>
+        <!-- <script src="accsets/js/modal.js"></script> -->
     </body>
 </html>
 
