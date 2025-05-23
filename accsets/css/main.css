@@ -457,6 +457,7 @@
     height: 500px;
     position: relative;
     text-align: center;
+    animation: slideDown 0.4s ease;
 }
 
 .modal .modal-content .ngancach {
@@ -528,5 +529,16 @@
 
 .modal .modal-content .modal-tesp {
     height: 40px
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 /* END : MODAL */

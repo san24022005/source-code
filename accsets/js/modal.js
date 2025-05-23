@@ -1,13 +1,13 @@
 document.getElementById("btn-xacnhan").addEventListener("click", function () {
-    const masp = document.querySelector(".js-mua-ngay[data-masp]").getAttribute("data-masp");
+    const masp = modal.dataset.masp;
     const size = modalSize.value;
     const soluong = modalQty.value;
 
-    // Tạo query string
-    const query = `masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+    if (!masp) {
+        alert("Lỗi: Mã sản phẩm không hợp lệ.");
+        return;
+    }
 
-    // Ví dụ chuyển hướng tới file mua.php với query
-    window.location.href = "shopping.php?" + query;
-
-    // Nếu muốn gửi bằng fetch/post cũng được, nhưng bạn nói là muốn query string
+    const url = `shopping.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+    document.getElementById("xacnhan-link").href = url;
 });

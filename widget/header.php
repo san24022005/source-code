@@ -13,7 +13,7 @@
             </a>
 
             <ul class="sub-nav">
-                <li><a href="#polodaitay">Áo polo dài tay</a></li>
+                <li><a href="#aopolodaitay">Áo polo dài tay</a></li>
                 <li><a href="#aothundaitay">Áo thun dài tay</a></li>
                 <li><a href="#aokhoac">Áo khoác</a></li>
                 <li><a href="#aosomi">Áo sơ mi</a></li>

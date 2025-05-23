@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal-mua-ngay");
     const closeBtn = modal.querySelector(".close");
@@ -24,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
             modalTensp.textContent = tensp;
             modalGia.textContent = "Giá: " + gia + " VNĐ";
             modalImg.src = img;
+
+            modal.dataset.masp = masp; // GÁN MÃ SẢN PHẨM CHO MODAL
 
             // Gọi Ajax để lấy size
             fetch("get_sizes.php?masp=" + masp)
@@ -65,5 +66,19 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("click", (e) => {
         if (e.target === modal) modal.style.display = "none";
     });
+
+    document.getElementById("btn-xacnhan").addEventListener("click", function () {
+    const masp = modal.dataset.masp;
+    const size = modalSize.value;
+    const soluong = modalQty.value;
+
+    if (!masp) {
+        alert("Lỗi: Mã sản phẩm không hợp lệ.");
+        return;
+    }
+
+    const url = `shopping.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+    window.location.href = url; // ✅ Chuyển hướng trực tiếp
 });
 
+});
