@@ -1,69 +1,74 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal-mua-ngay");
-    const closeBtn = modal.querySelector(".close");
-    const muaNgayButtons = document.querySelectorAll(".js-mua-ngay");
-
+    const modalImg = document.getElementById("modal-img");
     const modalTensp = document.getElementById("modal-tensp");
     const modalGia = document.getElementById("modal-gia");
-    const modalImg = document.getElementById("modal-img");
     const modalSize = document.getElementById("modal-size");
     const modalQty = document.getElementById("modal-qty");
-    const modalNote = document.getElementById("modal-max-note");
+    const btnXacNhan = document.getElementById("btn-xacnhan");
+    const maxNote = document.getElementById("modal-max-note");
 
-    let currentSizes = {}; // lưu {size: soluong}
+    let currentMasp = ""; // ✅ Biến toàn cục lưu mã sản phẩm
 
-    muaNgayButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const masp = btn.getAttribute("data-masp");
-            const tensp = btn.getAttribute("data-tensp");
-            const gia = btn.getAttribute("data-gia");
-            const img = btn.getAttribute("data-img");
+    // Gán sự kiện cho nút "Mua ngay"
+    document.querySelectorAll(".js-mua-ngay").forEach(btn => {
+        btn.addEventListener("click", function () {
+            // Lấy thông tin sản phẩm từ button
+            currentMasp = this.getAttribute("data-masp");
+            const img = this.getAttribute("data-img");
+            const tensp = this.getAttribute("data-tensp");
+            const gia = this.getAttribute("data-gia");
 
-            // Cập nhật thông tin
-            modalTensp.textContent = tensp;
-            modalGia.textContent = "Giá: " + gia + " VNĐ";
+            // Gán vào modal
             modalImg.src = img;
+            modalTensp.textContent = tensp;
+            modalGia.textContent = `Giá: ${parseFloat(gia).toLocaleString()} VNĐ`;
+            modalQty.value = 1;
+            maxNote.textContent = "";
 
-            // Gọi Ajax để lấy size
-            fetch("get_sizes.php?masp=" + masp)
+            // Gọi Ajax lấy size từ PHP (tuỳ bạn triển khai)
+            fetch(`get_size.php?masp=${currentMasp}`)
                 .then(res => res.json())
                 .then(data => {
                     modalSize.innerHTML = "";
-                    currentSizes = {};
-                    data.forEach(item => {
-                        const opt = document.createElement("option");
-                        opt.value = item.size;
-                        opt.textContent = `${item.size} (Tồn: ${item.soluong})`;
-                        modalSize.appendChild(opt);
-                        currentSizes[item.size] = parseFloat(item.soluong);
+                    data.forEach(sizeData => {
+                        const option = document.createElement("option");
+                        option.value = sizeData.size;
+                        option.textContent = `${sizeData.size} (${sizeData.soluong} cái)`;
+                        option.setAttribute("data-max", sizeData.soluong);
+                        modalSize.appendChild(option);
                     });
-                    modalQty.value = 1;
-                    updateQtyLimit();
-                    modal.style.display = "flex";
                 });
+
+            // Hiện modal
+            modal.style.display = "block";
         });
     });
 
-    modalSize.addEventListener("change", updateQtyLimit);
-    modalQty.addEventListener("input", updateQtyLimit);
+    // Cập nhật thông báo tối đa khi chọn size
+    modalSize.addEventListener("change", function () {
+        const selected = modalSize.options[modalSize.selectedIndex];
+        const max = selected.getAttribute("data-max");
+        maxNote.textContent = `Tối đa: ${max} cái`;
+        modalQty.max = max;
+    });
 
-    function updateQtyLimit() {
-        const selectedSize = modalSize.value;
-        const maxQty = currentSizes[selectedSize] || 1;
-        const qtyInput = parseInt(modalQty.value);
-        modalQty.max = maxQty;
-        if (qtyInput > maxQty) {
-            modalNote.textContent = `Chỉ còn tối đa ${maxQty} sản phẩm cho size này`;
-            modalQty.value = maxQty;
-        } else {
-            modalNote.textContent = "";
+    // Sự kiện nút xác nhận mua
+    btnXacNhan.addEventListener("click", function () {
+        const size = modalSize.value;
+        const soluong = modalQty.value;
+
+        if (!currentMasp || !size || soluong < 1) {
+            alert("Vui lòng chọn size và số lượng hợp lệ.");
+            return;
         }
-    }
 
-    closeBtn.addEventListener("click", () => modal.style.display = "none");
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) modal.style.display = "none";
+        const query = `masp=${encodeURIComponent(currentMasp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+        window.location.href = "shopping.php?" + query;
+    });
+
+    // Đóng modal
+    document.querySelector(".ti-close").addEventListener("click", function () {
+        modal.style.display = "none";
     });
 });
-
