@@ -451,6 +451,7 @@
 .modal .modal-content {
     background-color: #fff;
     padding: 20px;
+    margin: auto;
     border-radius: 10px;
     width: 700px;
     height: 500px;
@@ -528,6 +529,4 @@
 .modal .modal-content .modal-tesp {
     height: 40px
 }
-
-
 /* END : MODAL */
