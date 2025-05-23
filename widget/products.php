@@ -22,7 +22,7 @@ if ($result_danhmuc->num_rows > 0) {
         $id_danhmuc = vn_to_str($danhmuc);
 
 
-        echo "<div id='$id_danhmuc'>";
+        echo "<div id='$id_danhmuc' class='danhmuc'>";
         echo "<h1>$danhmuc</h1>";
 
         // Lấy các kiểu theo danh mục
@@ -36,7 +36,7 @@ if ($result_danhmuc->num_rows > 0) {
                 $kieu = $row_kieu['kieu'];
                 $id_kieu = vn_to_str($kieu);
 
-                echo "<div id='$id_kieu'>";
+                echo "<div id='$id_kieu' class='kieu'>";
                 echo "<h2>$kieu</h2>";
 
                 // Lấy sản phẩm theo danh mục và kiểu
@@ -48,25 +48,23 @@ if ($result_danhmuc->num_rows > 0) {
                 while ($row = $result_sp->fetch_assoc()) {
                     echo "<div class='product'>";
                     echo "<table><tr>";
-                    echo "<td colspan='2'><a href='details.php?masp={$row['masp']}'><img src='{$row['url']}' width='150' height='150'/></a></td></tr>";
-                    echo "<tr><td colspan='2'><h3>{$row['tensp']}</h3></td></tr>";
-                    echo "<tr><td colspan='2'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
+                    echo "<td colspan='2' class='img'><a href='details.php?masp={$row['masp']}'><img src='{$row['url']}' width='150px' height='150px'/></a></td></tr>";
+                    echo "<tr><td colspan='2' class='name-prd'><h3>{$row['tensp']}</h3></td></tr>";
+                    echo "<tr><td colspan='2' class='price-prd'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
 
 
                     echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
-                    echo "<td><a href='details.php?masp={$row['masp']}' class='btn'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
+                    echo "<td class='btn-details'><a href='details.php?masp={$row['masp']}'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
                     echo "</tr><tr>";
-                    echo "<td colspan='2'>";
-    echo "<button type='button' class='btn js-mua-ngay' 
-        data-masp='{$row['masp']}' 
-        data-img='{$row['url']}'
-        data-tensp='{$row['tensp']}'
-        data-gia='{$row['gia']}'>Mua ngay</button>
+                    echo "<td colspan='2' class='btn-muangay'>";
+                    echo "<button type='button' class='btn js-mua-ngay' 
+                        data-masp='{$row['masp']}' 
+                        data-img='{$row['url']}'
+                        data-tensp='{$row['tensp']}'
+                        data-gia='{$row['gia']}'>Mua ngay</button>
+                        </td>";
 
-</td>";
-
-echo "</table>";
-
+                    echo "</table>";
                     echo "</div>";
                 }
 

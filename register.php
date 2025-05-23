@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Lỗi khi thêm vào bảng thongtin: " . mysqli_error($conn);
         exit();
     } else {
-        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
         $_SESSION['username'] = $username;
         $_SESSION['name'] = $name;
+        echo "<script>alert('Đăng ký thành công!'); window.location='index.php';</script>";
     }
     // Đóng kết nối sau khi hoàn thành
     mysqli_close($conn);
