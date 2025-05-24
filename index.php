@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./accsets/css/main.css">
         <link rel="stylesheet" href="./accsets/css/base.css">
-        <link rel="stylesheet" href="./accsets/css/grid.css">
+        <link rel="stylesheet" href="./accsets/css/table.css">
         <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     </head>
     <style>
@@ -80,7 +80,6 @@ if (!isset($_SESSION['username'])) {
         </div>
 
         <script src="accsets/js/shopping.js"></script>
-        <!-- <script src="accsets/js/modal.js"></script> -->
     </body>
 </html>
 
