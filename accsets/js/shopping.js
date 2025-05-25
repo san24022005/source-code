@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function updateRowspan() {
   const td = document.getElementById("responsive-modal");
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 660) {
     td.rowSpan = 1; // Mobile
   } else {
     td.rowSpan = 8; // PC

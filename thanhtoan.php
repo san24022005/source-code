@@ -23,25 +23,7 @@ if (!isset($_POST['masp'], $_POST['size'], $_POST['quantity'])) {
 $masp = $conn->real_escape_string($_POST['masp']);
 $size = $conn->real_escape_string($_POST['size']);
 $soluong = (float)$_POST['quantity'];
-$username = $conn->real_escape_string($_SESSION['username']);
-
-// Lấy mã khách hàng từ session username
-$sql_kh = "SELECT makh FROM khachhang WHERE makh = '$username'";
-$result_kh = $conn->query($sql_kh);
-if (!$result_kh || $result_kh->num_rows === 0) {
-    die("Không tìm thấy khách hàng.");
-}
-$makh = $result_kh->fetch_assoc()['makh'];
-
-// Lấy hóa đơn gần nhất với trạng thái 'Hủy'
-$sql_hd = "SELECT soHD FROM hoadon 
-           WHERE makh = '$makh' AND trangthai = 'Hủy' 
-           ORDER BY ngayHD DESC LIMIT 1";
-$result_hd = $conn->query($sql_hd);
-if (!$result_hd || $result_hd->num_rows === 0) {
-    die("Không tìm thấy hóa đơn để thêm chi tiết.");
-}
-$soHD = $result_hd->fetch_assoc()['soHD'];
+$soHD = $conn->real_escape_string($_POST['soHD'] ?? '');
 
 // Lấy giá bán từ sản phẩm
 $sql_gia = "SELECT gia FROM sanpham WHERE masp = '$masp'";
@@ -49,11 +31,11 @@ $result_gia = $conn->query($sql_gia);
 if (!$result_gia || $result_gia->num_rows === 0) {
     die("Không tìm thấy sản phẩm.");
 }
-$gia = (float)$result_gia->fetch_assoc()['gia'];
+$giaban = (float)$result_gia->fetch_assoc()['gia'];
 
 // Thêm vào chitiethoadon
 $sql_insert = "INSERT INTO chitiethoadon (soHD, masp, size, soluong, giaban) 
-               VALUES ('$soHD', '$masp', '$size', $soluong, $gia)";
+               VALUES ('$soHD', '$masp', '$size', $soluong, $giaban)";
 
 if ($conn->query($sql_insert)) {
     // Cập nhật trạng thái hóa đơn từ 'Hủy' → 'Đang xử lý'
@@ -65,6 +47,6 @@ if ($conn->query($sql_insert)) {
 exit();
 
 } else {
-    echo "<p class='error'>❌ Lỗi khi thêm chi tiết hóa đơn: " . $conn->error . "</p>";
+    echo "<p class='error'>Lỗi khi thêm chi tiết hóa đơn: " . $conn->error . "</p>";
 }
 ?>

@@ -163,6 +163,7 @@ load_top();
                         <input type="hidden" name="masp" value="<?php echo htmlspecialchars($masp); ?>">
                         <input type="hidden" name="size" value="<?php echo htmlspecialchars($size); ?>">
                         <input type="hidden" name="quantity" value="<?php echo $soluong; ?>">
+                        <input type="hidden" name="soHD" value="<?php echo $soHD; ?>">
                         <button type="submit" class="btn btn-buy">Đặt hàng</button>
                     </div>
                 </td>

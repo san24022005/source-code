@@ -1,6 +1,6 @@
 .left-panel {
     width: 50%;
-    height: 100vh;
+    height: 100%;
     color: var(--main-color);
     display: flex;
     flex-direction: column;
@@ -128,7 +128,7 @@ form input {
         height: 50vh;
         position: relative;
         top: 44px;
-        right: 0; 
+        right: 40px; 
         left: 0; 
     }
 
@@ -144,18 +144,11 @@ form input {
 
 @media (max-width: 480px) {
     .left-panel {
-        width: 0%;
-        height: 50vh;
         display: none;
-        position: relative;
-        top: 0;
-        right: 0; 
-        left: 0; 
     }
 
     .right-panel {
         width: 100%;
-        height: 100vh;
         position: relative;
         top: 0;
         right: 0; 
