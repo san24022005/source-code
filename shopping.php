@@ -13,6 +13,55 @@ if (!isset($_GET['masp'], $_GET['size'], $_GET['soluong'])) {
 $masp = $conn->real_escape_string($_GET['masp']);
 $size = $conn->real_escape_string($_GET['size']);
 $soluong = (int)$_GET['soluong'];
+$username = $conn->real_escape_string($_SESSION['username']);
+
+$sql = "SELECT masp, tensp, gia, url, mota, kieu FROM sanpham WHERE masp = '$masp'";
+$result = $conn->query($sql);
+
+if (!$result || $result->num_rows === 0) {
+die("<p>Không tìm thấy sản phẩm.</p>");
+}
+
+$row = $result->fetch_assoc();
+
+$sql_kh = "SELECT kh.makh, hoten, thongtin_lienhe, ngaysinh, sodt 
+            FROM khachhang kh 
+            JOIN thongtin_lienhe tt ON kh.makh = tt.makh 
+            WHERE kh.makh = '$username'";
+$result_kh = $conn->query($sql_kh);
+$kh = $result_kh->fetch_assoc();
+function generateSoHD($conn) {
+    $sql = "SELECT soHD FROM hoadon ORDER BY soHD DESC LIMIT 1";
+    $result = $conn->query($sql);
+    
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $lastSoHD = $row['soHD'];
+        $num = (int)substr($lastSoHD, 2); // bỏ 'HD' và lấy số
+        $newNum = $num + 1;
+    } else {
+        $newNum = 1;
+    }
+    
+    return 'HD' . str_pad($newNum, 3, '0', STR_PAD_LEFT); // HD001, HD002, ...
+}
+
+// Tạo số hóa đơn mới
+$soHD = generateSoHD($conn);
+$makh = $kh['makh'];
+$manv = 'NV01'; // cố định như yêu cầu
+$trigia = $row['gia'] * $soluong;
+$trangthai = 'Hủy';
+$ngayHD = date('Y-m-d');
+
+// Kiểm tra xem hóa đơn đã tồn tại cho session này chưa để tránh trùng
+$sql_insertHD = "INSERT INTO hoadon (soHD, ngayHD, makh, manv, trigia, trangthai)
+                VALUES ('$soHD', '$ngayHD', '$makh', '$manv', '$trigia', '$trangthai')";
+
+if (!$conn->query($sql_insertHD)) {
+    echo "<p class='error'>Lỗi tạo hóa đơn: " . $conn->error . "</p>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -47,14 +96,7 @@ load_top();
             <tr>
                 <td rowspan="6" class="label-image">
                     <?php
-                    $sql = "SELECT masp, tensp, gia, url, mota, kieu FROM sanpham WHERE masp = '$masp'";
-                    $result = $conn->query($sql);
-
-                    if (!$result || $result->num_rows === 0) {
-                        die("<p>Không tìm thấy sản phẩm.</p>");
-                    }
-
-                    $row = $result->fetch_assoc();
+                    
                     echo "<img src='{$row['url']}' width='100%'/>";?>
                 </td>
 
@@ -79,17 +121,9 @@ load_top();
                         exit();
                     }
 
-                    $username = $conn->real_escape_string($_SESSION['username']);
-                    $sql_kh = "SELECT kh.makh, hoten, thongtin_lienhe, ngaysinh, sodt 
-                               FROM khachhang kh 
-                               JOIN thongtin_lienhe tt ON kh.makh = tt.makh 
-                               WHERE kh.makh = '$username'";
-                    $result_kh = $conn->query($sql_kh);
-
                     if (!$result_kh || $result_kh->num_rows === 0) {
                         echo "<p>Không tìm thấy thông tin khách hàng.</p>";
                     } else {
-                        $kh = $result_kh->fetch_assoc();
                         echo "<h3>Thông tin giao hàng</h3>";
                         echo "<p><strong>Họ tên:</strong> {$kh['hoten']}</p>";
                         echo "<p><strong>Địa chỉ:</strong> {$kh['thongtin_lienhe']}</p>";

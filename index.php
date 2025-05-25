@@ -39,44 +39,9 @@ if (!isset($_SESSION['username'])) {
         <!-- Modal hiển thị sản phẩm -->
         
         <div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
-            <table class="modal-content" cellspacing="0" cellpadding="8">
-            <tr>
-                <td colspan="2"><i class="ti-close close"></i></td>
-            </tr>
-            <tr>
-                <!-- Cột 1: Ảnh -->
-                <td rowspan="8" style="width: 250px">
-                    <img id="modal-img" src="" alt="Sản phẩm" style="width: 100%;">
-                </td>
-                <td rowspan="8" class="ngancach"></td>
-
-                <!-- Cột 2: Tên sản phẩm -->
-                <td class="modal-tesp"><h2 id="modal-tensp"></h2></td>
-            </tr>
-            <tr>
-                <td class="modal-gia"><p id="modal-gia"></p></td>
-            </tr>
-            <tr>
-                <td class="modal-size">
-                    <label for="modal-size">Chọn size:</label>
-                    <select id="modal-size"></select>
-                </td>
-            </tr>
-            <tr>
-                <td class="modal-soluong">
-                    <label for="modal-qty">Số lượng:</label>
-                    <input type="number" id="modal-qty" min="1" value="1"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="note"><p id="modal-max-note"></p></td>
-            </tr>
-            <tr>
-                <td class="btn-xacnhan-mua">
-                  <button id="btn-xacnhan" class="btn">Tiến hành thanh toán</button>
-                </td>
-            </tr>
-            </table>
+            <?php
+            load_modal();
+            ?>
         </div>
 
         <script src="accsets/js/shopping.js"></script>
