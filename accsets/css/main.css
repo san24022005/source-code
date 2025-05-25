@@ -46,18 +46,25 @@
 #top .top-icon {
     font-size: 12px;
 }
+
+@media (max-width: 768px) {
+    #top-nav .left-top {
+        display: none;
+    }
+}
 /* END : TOP */
 
 /* START : HEADER */
 #header {
-    background-image: linear-gradient(0, var(--main-bg1-color), var(--main-bg2-color));
     height: 60px;
+    background-image: linear-gradient(0, var(--main-bg1-color), var(--main-bg2-color));
     position: fixed;
     top: 44px;
     left: 0;
     right: 0;
     z-index: 1;
     display: block;
+    /* overflow: hidden; */
 }
 
 #header .logo {
@@ -171,6 +178,28 @@
     font-size: 12px;
     padding: 0 5px;
 }
+
+@media (max-width: 768px) {
+    .nav > li {
+        margin-top: 60px;
+        display: block;
+    }
+
+    #header .logo {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .nav > li {
+        margin-top: 60px;
+        display: block;
+    }
+
+    #header .logo {
+        display: none;
+    }
+}
 /* END : HEADER */
 
 /* START : SLIDER */
@@ -242,7 +271,7 @@
 
 /* Block danh mục lớn */
 #products .danhmuc {
-    flex: 1 1 100%; /* chiếm full chiều rộng */
+    flex: 1 1 100%; /* cho phép co giãn và đặt kích thước tối thiểu */
     margin-bottom: 40px;
     background: #fff;
     padding: 15px;
@@ -285,7 +314,6 @@
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    box-sizing: border-box;
 }
 
 /* Hover sản phẩm */
@@ -361,20 +389,28 @@
 
 
 /* Responsive cho tablet */
-@media (max-width: 768px) {
-    #products > div > div {
-        justify-content: center;
-    }
-
+@media (min-width: 768px) and (max-width: 1024px) {
     .product {
-        width: 45%;
+        width: 31.5%;
     }
 }
 
 /* Responsive cho mobile */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    #products {
+        padding: 0;
+    }
+
     .product {
+        width: 46%;
+    }
+
+    .product table {
         width: 100%;
+    }
+
+    .product .btn {
+        padding: 0;
     }
 }
 
@@ -471,7 +507,7 @@
     padding: 20px;
     margin: auto;
     border-radius: 10px;
-    width: 700px;
+    width: 60vw;
     height: 500px;
     position: relative;
     text-align: center;
@@ -491,15 +527,21 @@
     cursor: pointer;
 }
 
-.modal h2 {
+.modal h3 {
     font-size: 28px;
     padding: 20px 0 0;
+    margin: 0 0 30px 30px;
+    text-align: center;
     display: block;
     color: var(--main-bg1-color);
 }
 
 .modal #modal-img {
     margin: 10px 0;
+}
+
+.modal img {
+    width: 100%;
 }
 
 .modal .modal-content .modal-gia {
@@ -509,8 +551,14 @@
     font-weight: 700;
 }
 
-.modal .modal-content .btn-xacnhan {
+.modal .modal-content #btn-xacnhan {
     height: 40px;
+    width: 250px;
+    margin: auto;
+}
+
+.modal .modal-content .btn-xacnhan-mua {
+    text-align: center;
 }
 
 .modal .modal-content .modal-size {
@@ -521,7 +569,7 @@
 }
 
 .modal .modal-content .modal-size select {
-    width: 30%;
+    width: 116px;
     height: 30px;
     font-size: 14px;
     padding: 5px;
@@ -535,7 +583,7 @@
 }
 
 .modal .modal-content .modal-soluong input {
-    width: 30%;
+    width: 116px;
     height: 30px;
     font-size: 14px;
     padding: 5px;
@@ -545,8 +593,12 @@
     height: 200px;
 }
 
-.modal .modal-content .modal-tesp {
+.modal .modal-tesp {
     height: 40px
+}
+
+.modal p, .modal label {
+    margin-left: 40px;
 }
 
 @keyframes slideDown {
@@ -558,5 +610,36 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@media (max-width: 740px) and (min-width: 320px) {
+    .modal p, .modal label, .modal h3 {
+        margin-left: 0;
+        margin: 0 0 5px 5px;
+    }
+
+    .modal .modal-content {
+        width: 75vw;
+        height: 70vh;;
+    }
+
+    .modal .modal-content .note {
+        height: 10px;
+    }
+
+    .modal img {
+        max-height: 275px;
+    }
+
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .modal p, .modal label, .modal h3 {
+        margin-left: 10px;
+    }
+
+    .modal .modal-content .note {
+        height: 100px;
+    }
 }
 /* END : MODAL */

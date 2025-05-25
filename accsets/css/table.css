@@ -1,0 +1,165 @@
+:root {
+    --main-bg1-color: #0057B7;
+    --main-bg2-color: rgb(18, 153, 211);
+    --main-color: #fff;
+}
+
+/* START : LABEL SHOPPING */
+.label-shopping {
+    width: 100%;
+    height: 100%;
+}
+
+.label-shopping .label-shopping-container {
+    width: 95%;
+    margin: 48px auto 20px;
+    padding: 10px;
+}
+
+.label-shopping .home-page {
+    margin-left: -20px;
+    width: 176px;
+    padding: 10px;
+    position: fixed;
+    z-index: 2;
+    background-color: #ccc;
+}
+
+.label-shopping .home-page:hover {
+    background-color: #aaa;
+    color: #000;
+}
+
+.label-shopping h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: blue
+}
+
+.label-shopping .label-shopping-table {
+    width: 100%;
+    height: 100%;
+}
+
+.label-shopping-table .label-image {
+    width: 55%;
+}
+
+.label-shopping-table .label-image img {
+    width: 100%;
+    max-height: 650px;
+    border-radius: 10px;
+}
+
+.label-shopping-table .label-thongtinsp {
+    width: 35%;
+    height: 20%;
+}
+
+.label-shopping-table .label-thongtinsp h3 {
+    font-size: 20px;
+    color: var(--main-bg1-color);
+    padding: 8px;
+    text-align: center;
+}
+
+.label-shopping-table .label-thongtinsp p {
+    font-size: 16px;
+    padding: 4px;
+}
+
+.label-shopping-table .label-khachhang {
+    width: 35%;
+    height: 30%;
+    text-align: justify;
+}
+
+.label-shopping-table .label-khachhang .btn-thaydoi {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin-top: 8px;
+    background-color: var(--main-bg2-color);
+    border-radius: 6px;
+}
+
+.label-shopping-table .label-khachhang .btn-thaydoi a {
+    color: var(--main-color);
+    line-height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.label-shopping-table .label-khachhang .btn-thaydoi:hover {
+    background-color: var(--main-bg1-color);
+}
+
+.label-shopping-table .label-khachhang h3 {
+    font-size: 20px;
+    color: var(--main-bg1-color);
+    padding: 8px;
+    text-align: center;
+}
+
+.label-shopping-table .label-khachhang p {
+    font-size: 16px;
+    padding: 4px;
+}
+
+.label-shopping-table .label-thanhtoan {
+    width: 35%;
+    height: 5%;
+}
+
+.label-shopping-table .label-thanhtoan h3 {
+    font-size: 20px;
+    color: var(--main-bg1-color);
+    padding: 8px;
+    text-align: center;
+}
+
+.label-shopping-table .tieude-gia,
+.label-shopping-table .gia {
+    width: 17.5%;
+    height: 25%;
+}
+
+.label-shopping-table .tieude-gia p,
+.label-shopping-table .gia p {
+    font-size: 16px;
+    padding: 4px;
+}
+
+.label-shopping-table .gia {
+    text-align: right;
+}
+
+.label-shopping-table .label-btn {
+    width: 35%;
+    height: 10%;
+}
+
+.label-shopping-table .label-mota {
+    width: 100%;
+    padding: 10px;
+    text-align: justify;
+}
+
+.label-shopping-table .label-mota h3 {
+    font-size: 20px;
+    color: var(--main-bg1-color);
+    padding: 8px;
+}
+
+.label-shopping-table .label-mota p {
+    font-size: 16px;
+    padding: 4px;
+    margin-left: 12px;
+}
+
+.label-shopping-table .label-ngancach {
+    width: 5%;
+    height: 90%;
+}
+/* END : LABEL SHOPPING */
