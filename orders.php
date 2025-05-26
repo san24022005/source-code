@@ -44,6 +44,10 @@ while ($row = $result->fetch_assoc()) {
 <head>
     <meta charset="UTF-8">
     <title>Đơn hàng của tôi</title>
+    <link rel="stylesheet" href="accsets/css/base.css">
+    <link rel="stylesheet" href="accsets/css/table.css">
+    <link rel="stylesheet" href="accsets/css/main.css">
+    <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
     <style>
         body {
             font-family: Arial;
