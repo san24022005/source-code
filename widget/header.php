@@ -30,7 +30,7 @@
             <ul class="sub-nav">
                 <li><a href="#quanau">Quần âu</a></li>
                 <li><a href="#quanshort">Quần short</a></li>
-                <li><a href="#quanjean">Quần jean</a></li>
+                <li><a href="#quanjeans">Quần jean</a></li>
             </ul>
         </li>
 
