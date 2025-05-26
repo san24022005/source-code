@@ -16,14 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $sodt = $_POST['sodt'];
     $ngaysinh = $_POST['ngaysinh'];
-    $diachi = $_POST['diachi'];
 
-    // Phân tích địa chỉ (giả định đúng định dạng: nhà, xã, huyện, tỉnh)
-    $parts = explode(',', $diachi);
-    $sonha = trim($parts[0]);
-    $capxa = trim($parts[1]);
-    $caphuyen = trim($parts[2]);
-    $captinh = trim($parts[3]);
+    $sonha = isset($_POST['sonha']) ? trim($_POST['sonha']) : '';
+    $capxa = isset($_POST['xa']) ? trim($_POST['xa']) : '';
+    $caphuyen = isset($_POST['huyen']) ? trim($_POST['huyen']) : '';
+    $captinh = isset($_POST['tinh']) ? trim($_POST['tinh']) : '';
 
     // Cập nhật CSDL
     $stmt1 = $conn->prepare("UPDATE khachhang SET hoten=?, ngaysinh=? WHERE makh=?");
@@ -52,70 +49,68 @@ $user = $result->fetch_assoc();
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Thông tin đăng nhập</title>
-  <link rel="stylesheet" href="myaccount.css">
+  <meta charset="UTF-8" />
+  <title>Thông tin khách hàng</title>
+  <link rel ="stylesheet" href="myaccount.css">
 </head>
 <body>
-<form method="POST">
-<div class="container">
-  <h2>Thông tin đăng nhập</h2>
-  <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
-  <hr>
+<form method="POST" autocomplete="off">
+  <div class="container">
+    <h2>Thông tin đăng nhập</h2>
+    <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+    <hr>
 
-  <div class="form-row">
-    <label>Tên đăng nhập</label>
-    <input type="text" value="<?= htmlspecialchars($username) ?>" readonly>
-  </div>
+    <div class="form-row">
+      <label>Tên đăng nhập</label>
+      <input type="text" value="<?= htmlspecialchars($username) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Họ tên</label>
-    <input type="text" name="hoten" value="<?= htmlspecialchars($user['hoten']) ?>" readonly>
-  </div>
+    <div class="form-row">
+      <label>Họ tên</label>
+      <input type="text" name="hoten" value="<?= htmlspecialchars($user['hoten']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Email</label>
-    <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" readonly>
-  </div>
+    <div class="form-row">
+      <label>Email</label>
+      <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Số điện thoại</label>
-    <input type="text" name="sodt" value="<?= htmlspecialchars($user['sodt']) ?>" readonly>
-  </div>
+    <div class="form-row">
+      <label>Số điện thoại</label>
+      <input type="text" name="sodt" value="<?= htmlspecialchars($user['sodt']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Giới tính</label>
-    <input type="radio" name="gender" checked disabled> Nam
-    <input type="radio" name="gender" disabled> Nữ
-    <input type="radio" name="gender" disabled> Khác
-  </div>
+    <div class="form-row">
+      <label>Ngày sinh</label>
+      <input type="date" name="ngaysinh" value="<?= htmlspecialchars($user['ngaysinh']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Ngày sinh</label>
-    <input type="date" name="ngaysinh" value="<?= $user['ngaysinh'] ?>" readonly>
-  </div>
+    <div class="address">
+      <label><strong>Địa chỉ</strong></label>
+      <input type="text" placeholder="Số nhà, tên đường" name="sonha" value="<?= htmlspecialchars($user['sonha']) ?>" readonly />
+      <input type="text" placeholder="Phường / Xã" name="xa" value="<?= htmlspecialchars($user['capxa']) ?>" readonly />
+      <input type="text" placeholder="Quận / Huyện" name="huyen" value="<?= htmlspecialchars($user['caphuyen']) ?>" readonly />
+      <input type="text" placeholder="Tỉnh / Thành phố" name="tinh" value="<?= htmlspecialchars($user['captinh']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Địa chỉ</label>
-    <input type="text" name="diachi" value="<?= htmlspecialchars($user['sonha'] . ', ' . $user['capxa'] . ', ' . $user['caphuyen'] . ', ' . $user['captinh']) ?>" readonly>
+    <div class="form-actions">
+      <button class="btn" type="submit">Lưu</button>
+      <button class="btn-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <button class="btn" type="submit">Lưu</button>
-    <button class="btn-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
-  </div>
-</div>
 </form>
 
 <script>
-function enableEdit() {
+  function enableEdit() {
     const inputs = document.querySelectorAll("input:not([type=radio])");
     inputs.forEach(el => {
-        el.removeAttribute("readonly");
-        el.removeAttribute("disabled");
+      el.removeAttribute("readonly");
+      el.removeAttribute("disabled");
+      el.style.backgroundColor = "#fff";
+      el.style.cursor = "text";
     });
     alert("Bạn có thể chỉnh sửa thông tin bây giờ!");
-}
+  }
 </script>
 </body>
 </html>
