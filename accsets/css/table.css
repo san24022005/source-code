@@ -16,20 +16,6 @@
     padding: 10px;
 }
 
-.label-shopping .home-page {
-    margin-left: -20px;
-    width: 176px;
-    padding: 10px;
-    position: fixed;
-    z-index: 2;
-    background-color: #ccc;
-}
-
-.label-shopping .home-page:hover {
-    background-color: #aaa;
-    color: #000;
-}
-
 .label-shopping h2 {
     text-align: center;
     margin-bottom: 40px;

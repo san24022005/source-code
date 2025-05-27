@@ -27,7 +27,7 @@ a {
 }
 
 a:hover {
-    color: red;
+    color: rgb(197, 70, 70);
 }
 
 h2 {
@@ -61,10 +61,10 @@ i {
     font-size: 14px;
 }
 
-h2, h3 {
-    font-family: "Oswald", sans-serif;
-}
-
 img {
     padding: 50% auto;
+}
+
+input, label, select {
+    font-family: "Oswald", sans-serif;
 }
