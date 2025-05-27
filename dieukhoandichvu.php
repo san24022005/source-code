@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Đọc điều khoản dịch vụ của BT Shop để hiểu quyền lợi và nghĩa vụ khi mua sắm quần áo thời trang.">
     <title>Điều khoản dịch vụ - BT Shop</title>
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/table.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,10 +90,10 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="accents/images/logo.png" alt="BT Shop Logo">
-    </div>
-
+    <?php
+        require 'site.php';
+        load_top();
+        ?>
     <div class="container">
         <h1>Điều khoản dịch vụ</h1>
         <p class="update-date">Cập nhật lần cuối: 27/05/2025</p>
@@ -145,5 +150,7 @@
     <div class="footer">
         <p>Liên hệ: support@btshop.vn | 0909 123 456 | <a href="#">Quay lại trang chủ</a></p>
     </div>
+    <?php load_footer();?>
+
 </body>
 </html>

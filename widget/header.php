@@ -74,7 +74,7 @@
                         Đơn hàng của tôi
                     </a></li>
 
-                    <li><a href="Dieukhoandichvu.php">
+                    <li><a href="dieukhoandichvu.php">
                         <i class="sub-setting-icon ti-book"></i>
                         Điều khoản dịch vụ
                     </a></li>
