@@ -54,7 +54,7 @@ if ($result_danhmuc->num_rows > 0) {
 
 
                     echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
-                    echo "<td class='btn-details'><a href='details.php?masp={$row['masp']}'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
+                    echo "<td class='btn-details'><a href='deltails.php?masp={$row['masp']}'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
                     echo "</tr><tr>";
                     echo "<td colspan='2' class='btn-muangay'>";
                     echo "<button type='button' class='btn js-mua-ngay' 
