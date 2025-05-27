@@ -469,7 +469,7 @@
 }
 
 #footer #bottom-footer {
-    height: 5vh;
+    height: 36px;
     color: var(--main-color);
     text-align: center;
     display: block;

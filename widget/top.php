@@ -24,7 +24,7 @@
             <li>
             <div class="login-btn">
                 <i class="top-icon ti-shift-right"></i>
-                <a href="<?php echo isset($_SESSION['name']) ? 'login.php' : 'login.php'; ?>">
+                <a href="<?php echo isset($_SESSION['name']) ? 'myaccount.php' : 'login.php'; ?>">
                     <?php
                         if (isset($_SESSION["name"])) {
                             echo $_SESSION["name"];

@@ -9,27 +9,8 @@
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/css/table.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-        .header img {
-            max-width: 150px;
-            height: auto;
-        }
-        .container {
+        .service-container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
@@ -37,54 +18,30 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-        h1 {
+        .service-container h1 {
             text-align: center;
             color: #2c3e50;
         }
-        h2 {
+        .service-container h2 {
             color: #2c3e50;
             margin-top: 20px;
         }
-        p, li {
-            color: #555;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .update-date {
+        .service-container .update-date {
             text-align: center;
             font-style: italic;
             color: #777;
             margin-bottom: 20px;
         }
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 10px;
-            background-color: #2c3e50;
-            color: #fff;
-            border-radius: 0 0 8px 8px;
-        }
-        .footer a {
-            color: #f1c40f;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
         @media (max-width: 600px) {
-            .container {
+            .service-container {
                 margin: 10px;
                 padding: 15px;
             }
-            h1 {
+            .service-container h1 {
                 font-size: 24px;
             }
-            h2 {
+            .service-container h2 {
                 font-size: 18px;
-            }
-            .header img {
-                max-width: 120px;
             }
         }
     </style>
@@ -93,8 +50,9 @@
     <?php
         require 'site.php';
         load_top();
+        load_backbtn()
         ?>
-    <div class="container">
+    <div class="service-container">
         <h1>Điều khoản dịch vụ</h1>
         <p class="update-date">Cập nhật lần cuối: 27/05/2025</p>
 
@@ -145,10 +103,6 @@
 
         <h2>15. Quy định chung</h2>
         <p>BT Shop có quyền cập nhật hoặc sửa đổi các điều khoản này bất kỳ lúc nào mà không cần thông báo trước.</p>
-    </div>
-
-    <div class="footer">
-        <p>Liên hệ: support@btshop.vn | 0909 123 456 | <a href="#">Quay lại trang chủ</a></p>
     </div>
     <?php load_footer();?>
 

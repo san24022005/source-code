@@ -49,15 +49,14 @@ while ($row = $result->fetch_assoc()) {
     <link rel="stylesheet" href="accsets/css/main.css">
     <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
     <style>
-        body {
-            font-family: Arial;
-            background: #f8f8f8;
-            margin: 20px;
+        .orders-container {
+            margin: 50px auto;
+            border-radius: 10px;
+            padding: 20px;
         }
         .order-card {
             background: #fff;
             border: 1px solid #e5e5e5;
-            margin-bottom: 20px;
             padding: 15px;
             border-radius: 10px;
         }
@@ -97,23 +96,27 @@ while ($row = $result->fetch_assoc()) {
             padding-top: 10px;
             margin-top: 10px;
         }
+
         .btn {
-            background: #ee4d2d;
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
+            width: 120px;
         }
+
         .btn:hover {
             background: #d8351d;
         }
+
         .status {
             color: green;
         }
     </style>
 </head>
 <body>
+    <?php 
+    require 'site.php'; 
+    load_top();
+    load_backbtn(); 
+    ?>
+    <div class="orders-container">
     <h2>Đơn hàng của tôi</h2>
 
     <?php if (empty($orders)): ?>
@@ -149,10 +152,12 @@ while ($row = $result->fetch_assoc()) {
             </div>
         <?php endforeach; ?>
     <?php endif; ?>
+    </div>
 
 </body>
 </html>
 <?php
 $stmt->close();
 $conn->close();
+load_footer();
 ?>

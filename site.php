@@ -29,4 +29,9 @@
     {
         require('widget/modal.php');
     }
+
+    function load_backbtn()
+    {
+        require('widget/backbtn.php');
+    }
 ?>

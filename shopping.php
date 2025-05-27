@@ -78,21 +78,16 @@ if (!$conn->query($sql_insertHD)) {
 <?php 
 require 'site.php';
 load_top();
+load_backbtn();
 ?>
 <div class="label-shopping">
     <div class="label-shopping-container">
-        <a href="index.php">
-            <div class="home-page">
-                <i class="ti-angle-left"></i> 
-                Quay về trang chủ
-            </div>
-        </a>
         <div class="shopping-header">
             <h2>Thông tin hóa đơn</h2>  
         </div>
         <div class="shopping-body">
         <form method="POST" action="thanhtoan.php">
-        <table class="label-shopping-table" border="1" cellpadding="10" cellspacing="0">
+        <table class="label-shopping-table">
             <tr>
                 <td rowspan="6" class="label-image">
                     <?php
