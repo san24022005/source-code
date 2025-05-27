@@ -74,17 +74,17 @@
                         Đơn hàng của tôi
                     </a></li>
 
-                    <li><a href="">
+                    <li><a href="Dieukhoandichvu.php">
                         <i class="sub-setting-icon ti-book"></i>
                         Điều khoản dịch vụ
                     </a></li>
 
-                    <li><a href="">
+                    <li><a href="hotrokhachhang.php">
                         <i class="sub-setting-icon ti-help"></i>
                         Hỗ trợ khách hàng
                     </a></li>
 
-                    <li><a href="">
+                    <li><a href="introduce.php">
                         <i class="sub-setting-icon ti-info"></i>
                         Giới thiệu về BT SHOP
                     </a></li>
