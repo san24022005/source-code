@@ -65,6 +65,7 @@
     z-index: 1;
     display: block;
     /* overflow: hidden; */
+    font-family: "Oswald", sans-serif;
 }
 
 #header .logo {

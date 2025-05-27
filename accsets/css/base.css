@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica+SC&family=Miltonian+Tattoo&family=Oswald:wght@200..700&family=Playwrite+HU:wght@100..400&display=swap');
 
 :root {
     --main-bg1-color: #0057B7;
@@ -38,13 +37,15 @@ h2 {
 
 button {
     width: 100%;
-    padding: 12px;
+    height: 40px;
     background-color: rgb(67, 142, 227);
     color: var(--main-color);
-    border:none;
+    border: none;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
 }
 
 button:hover {
@@ -61,6 +62,9 @@ i {
 }
 
 h2, h3 {
-    font-family: 'Dancing Script', serif;
+    font-family: "Playwrite HU", sans-serif;
 }
 
+img {
+    padding: 50% auto;
+}
