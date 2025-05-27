@@ -40,7 +40,7 @@
         Với mục tiêu mang đến phong cách năng động, lịch lãm và chất lượng cao cho khách hàng, BT Shop không ngừng đổi mới và cập nhật những xu hướng mới nhất trong lĩnh vực thời trang.
       </p>
       <p>
-        Chúng tôi chuyên cung cấp các sản phẩm thời trang nam nữ như áo polo, áo sơ mi, quần jeans, phụ kiện… cùng dịch vụ chăm sóc khách hàng tận tâm.
+        Chúng tôi chuyên cung cấp các sản phẩm thời trang nam như áo polo, áo sơ mi, quần jeans, phụ kiện… cùng dịch vụ chăm sóc khách hàng tận tâm.
       </p>
       <p>
         Cảm ơn bạn đã tin tưởng và ủng hộ BT Shop!
