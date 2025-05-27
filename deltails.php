@@ -144,7 +144,6 @@ $sizes = $conn->query($sql_sizes);
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background 0.3s ease;
         }
 
         .quantity-selector button:hover {

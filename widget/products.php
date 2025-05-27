@@ -48,7 +48,7 @@ if ($result_danhmuc->num_rows > 0) {
                 while ($row = $result_sp->fetch_assoc()) {
                     echo "<div class='product'>";
                     echo "<table><tr>";
-                    echo "<td colspan='2' class='img'><a href='details.php?masp={$row['masp']}'><img src='{$row['url']}' width='150px' height='150px'/></a></td></tr>";
+                    echo "<td colspan='2' class='img'><a href='deltails.php?masp={$row['masp']}'><img src='{$row['url']}' width='150px' height='150px'/></a></td></tr>";
                     echo "<tr><td colspan='2' class='name-prd'><h3>{$row['tensp']}</h3></td></tr>";
                     echo "<tr><td colspan='2' class='price-prd'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
 

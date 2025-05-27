@@ -92,7 +92,7 @@ load_top();
         </div>
         <div class="shopping-body">
         <form method="POST" action="thanhtoan.php">
-        <table class="label-shopping-table">
+        <table class="label-shopping-table" border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <td rowspan="6" class="label-image">
                     <?php
