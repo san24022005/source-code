@@ -1,22 +1,40 @@
 <?php
 session_start();
 
-// 🔒 Nếu chưa đăng nhập thì chuyển hướng đến trang đăng nhập
 if (!isset($_SESSION['username'])) {
-    // Giả lập: bạn có thể sửa dòng này sau để test
-    $_SESSION['username'] = 'KH001'; // ví dụ: tên đăng nhập
-    // header("Location: login.php");
-    // exit();
+    $_SESSION['username'] = 'KH001';
 }
 
-// Biến lưu username đăng nhập
 $username = $_SESSION['username'];
 
-// 🔌 Kết nối CSDL
 $conn = new mysqli("localhost", "root", "123456", "qlbh");
 $conn->set_charset("utf8mb4");
 
-// 🔍 Lấy thông tin khách hàng
+// ✅ Xử lý khi bấm "Lưu"
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $hoten = $_POST['hoten'];
+    $email = $_POST['email'];
+    $sodt = $_POST['sodt'];
+    $ngaysinh = $_POST['ngaysinh'];
+
+    $sonha = isset($_POST['sonha']) ? trim($_POST['sonha']) : '';
+    $capxa = isset($_POST['xa']) ? trim($_POST['xa']) : '';
+    $caphuyen = isset($_POST['huyen']) ? trim($_POST['huyen']) : '';
+    $captinh = isset($_POST['tinh']) ? trim($_POST['tinh']) : '';
+
+    // Cập nhật CSDL
+    $stmt1 = $conn->prepare("UPDATE khachhang SET hoten=?, ngaysinh=? WHERE makh=?");
+    $stmt1->bind_param("sss", $hoten, $ngaysinh, $username);
+    $stmt1->execute();
+
+    $stmt2 = $conn->prepare("UPDATE thongtin_lienhe SET email=?, sodt=?, sonha=?, capxa=?, caphuyen=?, captinh=? WHERE makh=?");
+    $stmt2->bind_param("sssssss", $email, $sodt, $sonha, $capxa, $caphuyen, $captinh, $username);
+    $stmt2->execute();
+
+    echo "<script>alert('Cập nhật thành công!');</script>";
+}
+
+// Lấy thông tin hiện tại
 $sql = "SELECT kh.hoten, kh.ngaysinh, tl.sodt, tl.email, tl.sonha, tl.caphuyen, tl.capxa, tl.captinh
         FROM khachhang kh
         LEFT JOIN thongtin_lienhe tl ON kh.makh = tl.makh
@@ -31,69 +49,68 @@ $user = $result->fetch_assoc();
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Thông tin đăng nhập</title>
+  <meta charset="UTF-8" />
+  <title>Thông tin khách hàng</title>
   <link rel ="stylesheet" href="myaccount.css">
 </head>
 <body>
-<div class="container">
-  <h2>Thông tin đăng nhập</h2>
-  <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
-  <hr>
-  <div class="form-row">
-    <label>Tên đăng nhập</label>
-    <input type="text" value="<?= htmlspecialchars($username) ?>" disabled>
-  </div>
+<form method="POST" autocomplete="off">
+  <div class="container">
+    <h2>Thông tin đăng nhập</h2>
+    <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+    <hr>
 
-  <div class="form-row">
-    <label>Họ tên</label>
-    <input type="text" value="<?= htmlspecialchars($user['hoten']) ?>" disabled>
-  </div>
+    <div class="form-row">
+      <label>Tên đăng nhập</label>
+      <input type="text" value="<?= htmlspecialchars($username) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Email</label>
-    <input type="email" value="<?= htmlspecialchars($user['email']) ?>" disabled>
-  </div>
+    <div class="form-row">
+      <label>Họ tên</label>
+      <input type="text" name="hoten" value="<?= htmlspecialchars($user['hoten']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Số điện thoại</label>
-    <input type="text" value="<?= htmlspecialchars($user['sodt']) ?>" disabled>
-  </div>
+    <div class="form-row">
+      <label>Email</label>
+      <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Giới tính</label>
-    <input type="radio" name="gender" checked disabled> Nam
-    <input type="radio" name="gender" disabled> Nữ
-    <input type="radio" name="gender" disabled> Khác
-  </div>
+    <div class="form-row">
+      <label>Số điện thoại</label>
+      <input type="text" name="sodt" value="<?= htmlspecialchars($user['sodt']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Ngày sinh</label>
-    <input type="date" value="<?= $user['ngaysinh'] ?>" disabled>
-  </div>
+    <div class="form-row">
+      <label>Ngày sinh</label>
+      <input type="date" name="ngaysinh" value="<?= htmlspecialchars($user['ngaysinh']) ?>" readonly />
+    </div>
 
-  <div class="form-row">
-    <label>Địa chỉ</label>
-    <input type="text" value="<?= htmlspecialchars($user['sonha'] . ', ' . $user['capxa'] . ', ' . $user['caphuyen'] . ', ' . $user['captinh']) ?>" disabled>
-  </div>
+    <div class="address">
+      <label><strong>Địa chỉ</strong></label>
+      <input type="text" placeholder="Số nhà, tên đường" name="sonha" value="<?= htmlspecialchars($user['sonha']) ?>" readonly />
+      <input type="text" placeholder="Phường / Xã" name="xa" value="<?= htmlspecialchars($user['capxa']) ?>" readonly />
+      <input type="text" placeholder="Quận / Huyện" name="huyen" value="<?= htmlspecialchars($user['caphuyen']) ?>" readonly />
+      <input type="text" placeholder="Tỉnh / Thành phố" name="tinh" value="<?= htmlspecialchars($user['captinh']) ?>" readonly />
+    </div>
 
-  <div class="form-actions">
-    <button class="btn">Lưu</button>
-   <button class="btn-edit" onclick="enableEdit()">Chỉnh sửa</button>
-
+    <div class="form-actions">
+      <button class="btn" type="submit">Lưu</button>
+      <button class="btn-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
+    </div>
   </div>
-  <script>
-function enableEdit() {
-    const inputs = document.querySelectorAll("input, select");
+</form>
+
+<script>
+  function enableEdit() {
+    const inputs = document.querySelectorAll("input:not([type=radio])");
     inputs.forEach(el => {
-        el.removeAttribute("readonly");
-        el.removeAttribute("disabled");
+      el.removeAttribute("readonly");
+      el.removeAttribute("disabled");
+      el.style.backgroundColor = "#fff";
+      el.style.cursor = "text";
     });
-
     alert("Bạn có thể chỉnh sửa thông tin bây giờ!");
-}
+  }
 </script>
-
-</div>
 </body>
 </html>

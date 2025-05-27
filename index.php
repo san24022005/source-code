@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('Bạn chưa đăng nhập!');
@@ -10,15 +9,17 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>BT Shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./accsets/css/main.css">
         <link rel="stylesheet" href="./accsets/css/base.css">
-        <link rel="stylesheet" href="./accsets/css/grid.css">
+        <link rel="stylesheet" href="./accsets/css/table.css">
         <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="main">
@@ -26,10 +27,20 @@ if (!isset($_SESSION['username'])) {
             require 'site.php';
             load_top();
             load_header();
+            load_slider();
             load_products();
             load_footer();
         ?>
-        </div>     
+        </div>
+        <!-- Modal hiển thị sản phẩm -->
+        
+        <div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
+            <?php
+            load_modal();
+            ?>
+        </div>
+
+        <script src="accsets/js/shopping.js"></script>
     </body>
 </html>
 

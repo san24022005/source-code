@@ -1,3 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --main-bg1-color: #0057B7;
+    --main-bg2-color: rgb(18, 153, 211);
+    --main-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +15,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 li {
@@ -49,3 +59,8 @@ td {
 i {
     font-size: 14px;
 }
+
+h2, h3 {
+    font-family: 'Dancing Script', serif;
+}
+
