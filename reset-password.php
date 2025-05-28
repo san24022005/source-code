@@ -5,47 +5,56 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-    include 'connect.php'; // File kết nối CSDL
+include 'connect.php'; // File kết nối CSDL
 
 $username = $_SESSION['username'];
-$oldPassword = $_POST['old-password'];
-$newPassword = $_POST['new-password'];
-$confirmPassword = $_POST['confirm-password'];
 
-// Kiểm tra mật khẩu xác nhận
-if ($newPassword !== $confirmPassword) {
-    echo "Mật khẩu xác nhận không trùng khớp.";
-    exit();
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $oldPassword = $_POST['old-password'];
+    $newPassword = $_POST['new-password'];
+    $confirmPassword = $_POST['confirm-password'];
 
-// Kiểm tra mật khẩu cũ
-$sql = "SELECT * FROM taikhoan WHERE username = ? AND password = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $username, $oldPassword);
-$stmt->execute();
-$result = $stmt->get_result();
+    // Kiểm tra mật khẩu xác nhận
+    if ($newPassword !== $confirmPassword) {
+        echo "Mật khẩu xác nhận không trùng khớp.";
+        exit();
+    }
 
-if ($result->num_rows === 1) {
-    // Cập nhật mật khẩu mới
-    $update = "UPDATE taikhoan SET password = ? WHERE username = ?";
-    $stmt = $conn->prepare($update);
-    $stmt->bind_param("ss", $newPassword, $username);
+    // Kiểm tra mật khẩu cũ
+    $sql = "SELECT * FROM taikhoan WHERE username = ? AND password = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $oldPassword);
     $stmt->execute();
-    echo "Mật khẩu đã được cập nhật thành công!";
-} else {
-    echo "Mật khẩu cũ không đúng!";
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        // Cập nhật mật khẩu mới
+        $update = "UPDATE taikhoan SET password = ? WHERE username = ?";
+        $stmt = $conn->prepare($update);
+        $stmt->bind_param("ss", $newPassword, $username);
+        $stmt->execute();
+        echo "Mật khẩu đã được cập nhật thành công!";
+    } else {
+        echo "Mật khẩu cũ không đúng!";
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BT SHOP - Đặt lại mật khẩu</title>
-  <link rel ="stylesheet" href="reset-password.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BT SHOP - Đặt lại mật khẩu</title>
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="accsets/css/base.css">
+    <link rel="stylesheet" href="reset-password.css">
 </head>
 <body>
-
+    <?php 
+    require 'site.php';
+    load_top();
+    load_backbtn();
+    ?>
   <div class="left">
     <img src="../accsets/images/logo.png" width="80" alt="BT Shop Logo">
     <h1>BT SHOP</h1>
@@ -54,7 +63,6 @@ if ($result->num_rows === 1) {
 
   <div class="right">
     <div class="form-container">
-      <div class="header"><a href="index.html" style="color: purple; text-decoration: none;">← Trang chủ</a></div>
       <h2>ĐẶT LẠI MẬT KHẨU</h2>
       <form action="#" method="post">
         <label for="old-password">Mật khẩu cũ</label>
@@ -73,6 +81,6 @@ if ($result->num_rows === 1) {
       </div>
     </div>
   </div>
-
+<?php load_footer(); ?>
 </body>
 </html>

@@ -104,7 +104,7 @@ $user = $result->fetch_assoc();
           <div class="form-actions">
               <button class="btn-myacc" type="submit">Lưu</button>
               <button class="btn-myacc-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
-              <a href="resert-password.php" class="btn-myacc"><button>Đổi mật khẩu</button></a>
+              <a href="reset-password.php" class="btn-myacc-pass">Đổi mật khẩu</a>
           </div>
       </div>
 </form>
