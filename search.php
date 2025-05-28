@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = "localhost";
 $user = "root";
 $pass = "123456";
@@ -13,8 +15,29 @@ if ($conn->connect_error) {
 
 $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : '';
 
-echo "<div id='products'>";
-echo "<h1>Kết quả tìm kiếm cho: <em>$keyword</em></h1>";
+if ($keyword == null) {
+    header('Location: index.php');
+    exit();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT Shop</title>
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
+</head>
+<body>
+    <?php
+    require 'site.php';
+    load_top();
+    load_header();
+    load_slider();
+    echo "<div id='products'>";
 
 if ($keyword !== '') {
     // Tìm kiếm theo tên sản phẩm có chứa từ khóa
@@ -54,4 +77,9 @@ if ($keyword !== '') {
 echo "</div>";
 
 $conn->close();
+
+load_footer();
 ?>
+
+</body>
+</html>
