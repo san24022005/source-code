@@ -13,7 +13,7 @@ $masp = isset($_GET['masp']) ? $_GET['masp'] : '';
 
 $sql = "SELECT * FROM sanpham WHERE masp = '$masp'";
 $result = $conn->query($sql);
-$product = $result->fetch_assoc();
+$prd = $result->fetch_assoc();
 
 $sql_sizes = "SELECT * FROM size_sanpham WHERE masp = '$masp'";
 $sizes = $conn->query($sql_sizes);
@@ -24,67 +24,56 @@ $sizes = $conn->query($sql_sizes);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết sản phẩm - <?= $product['tensp'] ?></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons@1.0.1/css/themify-icons.css">
+    <title>CTSP - <?= $prd['masp'] ?></title>
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f5f5f5;
-            padding: 40px;
-            color: #333;
-        }
-
-        .product-container {
+        .delprd-container {
             display: flex;
             gap: 40px;
             background: #fff;
-            padding: 40px;
+            padding: 44px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .product-image {
+        .delprd-image {
             width: 50%;
             position: relative;
         }
 
-        .product-image img {
+        .delprd-image img {
             width: 100%;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
 
-        .product-image img:hover {
+        .delprd-image img:hover {
             transform: scale(1.05);
         }
 
-        .product-details {
+        .delprd-chitiet {
             width: 50%;
             padding: 20px 0;
         }
 
-        .product-details h2 {
+        .delprd-chitiet h2 {
             font-size: 28px;
             font-weight: 600;
             margin-bottom: 10px;
             color: #222;
         }
 
-        .product-meta {
+        .delprd-meta {
             font-size: 14px;
             color: #666;
             margin-bottom: 15px;
         }
 
-        .product-price {
+        .delprd-price {
             font-size: 26px;
             color: #d63031; /* Màu đỏ đậm hơn */
             font-weight: bold;
@@ -138,6 +127,7 @@ $sizes = $conn->query($sql_sizes);
         }
 
         .quantity-selector button {
+            width: 50px;
             background: #ddd;
             border: none;
             padding: 8px 15px;
@@ -166,14 +156,10 @@ $sizes = $conn->query($sql_sizes);
         }
 
         .actions button, .actions i {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
             transition: all 0.3s ease;
             font-weight: 500;
-            text-align: center;
         }
 
         .actions button {
@@ -217,20 +203,20 @@ $sizes = $conn->query($sql_sizes);
 
         /* Responsive */
         @media (max-width: 768px) {
-            .product-container {
+            .delprd-container {
                 flex-direction: column;
                 padding: 20px;
             }
 
-            .product-image, .product-details {
+            .delprd-image, .delprd-chitiet {
                 width: 100%;
             }
 
-            .product-details h2 {
+            .delprd-chitiet h2 {
                 font-size: 24px;
             }
 
-            .product-price {
+            .delprd-price {
                 font-size: 20px;
             }
 
@@ -242,18 +228,23 @@ $sizes = $conn->query($sql_sizes);
     </style>
 </head>
 <body>
+    <?php
+    require 'site.php';
+    load_top();
+    load_backbtn();
+    ?>
 
-<?php if ($product): ?>
-    <div class="product-container">
-        <div class="product-image">
-            <img src="<?= $product['url'] ?>" alt="<?= $product['tensp'] ?>">
+<?php if ($prd): ?>
+    <div class="delprd-container">
+        <div class="delprd-image">
+            <img src="<?= $prd['url'] ?>" alt="<?= $prd['tensp'] ?>">
         </div>
-        <div class="product-details">
-            <h2><?= $product['tensp'] ?> - <?= $product['masp'] ?></h2>
-            <div class="product-meta">
-                Thương hiệu: <?= $product['brand'] ?? 'W&W' ?> | Loại: <?= $product['danhmuc'] ?> | Mã SP: <?= $product['masp'] ?>
+        <div class="delprd-chitiet">
+            <h2><?= $prd['tensp'] ?> - <?= $prd['masp'] ?></h2>
+            <div class="delprd-meta">
+                Thương hiệu: <?= $prd['brand'] ?? 'LStyle' ?> | Loại: <?= $prd['danhmuc'] ?> | Mã SP: <?= $prd['masp'] ?> | Xuất xứ: <?= $prd['nuocsx'] ?? 'Việt Nam' ?>
             </div>
-            <div class="product-price"><?= number_format($product['gia'], 0, ',', '.') ?>₫</div>
+            <div class="delprd-price"><?= number_format($prd['gia'], 0, ',', '.') ?>₫</div>
 
             <!-- Khuyến mãi -->
             <div class="promotion">
@@ -261,18 +252,11 @@ $sizes = $conn->query($sql_sizes);
                 <p>Áp dụng miễn phí giao hàng toàn quốc cho đơn hàng từ 500K. <a href="#">Xem chi tiết</a></p>
             </div>
 
-            <!-- Lựa chọn màu sắc -->
-            <div class="color-options">
-                <p><strong>Màu sắc:</strong></p>
-                <span class="active">Đen</span>
-                <span>Xanh đen</span>
-            </div>
-
             <!-- Lựa chọn kích thước -->
             <div class="size-options">
-                <p><strong>Kích thước:</strong></p>
+                <p><strong>Kích thước (size):</strong></p>
                 <?php while($row = $sizes->fetch_assoc()): ?>
-                    <span><?= $row['size'] ?> (SL: <?= $row['soluong'] ?>)</span>
+                    <span><?= $row['size'] ?></span>
                 <?php endwhile; ?>
             </div>
 
@@ -284,18 +268,18 @@ $sizes = $conn->query($sql_sizes);
                 <button onclick="updateQuantity(1)">+</button>
             </div>
 
+            <div class="mota">
+                <h2>Mô tả sản phẩm</h2>
+                <p><?= nl2br($prd['mota']) ?></p>
+                <p><strong></p>
+            </div>
+
             <!-- Nút hành động -->
             <div class="actions">
-                <i class="ti-shopping-cart" onclick="addToCart()" title="Thêm vào giỏ hàng">THÊM VÀO GIỎ</i>
+                <button title="Thêm vào giỏ hàng">THÊM VÀO GIỎ</button>
                 <button onclick="buyNow()">MUA NGAY</button>
             </div>
 
-            <!-- Biểu tượng mạng xã hội -->
-            <div class="social-icons">
-                <a href="#" class="ti-facebook"></a>
-                <a href="#" class="ti-email"></a>
-                <a href="#" class="ti-comment-alt"></a> <!-- Biểu tượng thay thế cho Zalo -->
-            </div>
         </div>
     </div>
 <?php else: ?>
@@ -322,6 +306,6 @@ $sizes = $conn->query($sql_sizes);
         alert(`Đặt mua ngay ${quantity} sản phẩm màu ${selectedColor}!`);
     }
 </script>
-
+<?php load_footer(); ?>
 </body>
 </html>

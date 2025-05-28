@@ -80,7 +80,7 @@ $user = $result->fetch_assoc();
           </div>
 
           <div class="form-row">
-              <label>Email</labe>
+              <label>Email</label>
               <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" readonly />
           </div>
 
