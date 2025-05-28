@@ -30,7 +30,8 @@
     </tr>
     <tr>
         <td class="btn-xacnhan-mua">
-            <button id="btn-xacnhan" class="btn">Tiến hành thanh toán</button>
+            <button id="btn-giohang" class="btn">Giỏ hàng</button>
+             <button id="btn-xacnhan" class="btn">Tiến hành thanh toán</button>
         </td>
     </tr>
 </table>

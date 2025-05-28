@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalNote = document.getElementById("modal-max-note");
 
     let currentSizes = {}; // lưu {size: soluong}
-
+const url = `shopping.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+window.location.href = url;
     muaNgayButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             const masp = btn.getAttribute("data-masp");
@@ -79,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const url = `shopping.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
     window.location.href = url; // ✅ Chuyển hướng trực tiếp
+    
 });
 
 });

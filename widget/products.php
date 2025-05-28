@@ -53,7 +53,7 @@ if ($result_danhmuc->num_rows > 0) {
                     echo "<tr><td colspan='2' class='price-prd'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
 
 
-                    echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
+                    echo "<tr><td class='btn-giohang'><a href='shopping-cart.php'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></a></td>";
                     echo "<td class='btn-details'><a href='deltails.php?masp={$row['masp']}'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
                     echo "</tr><tr>";
                     echo "<td colspan='2' class='btn-muangay'>";
@@ -70,6 +70,7 @@ if ($result_danhmuc->num_rows > 0) {
 
                 echo "</div>"; // đóng kieu
             }
+            
         }
 
         echo "</div>"; // đóng danhmuc
@@ -81,6 +82,7 @@ if ($result_danhmuc->num_rows > 0) {
 $conn->close();
 ?>
 </div>
+
 
 <?php
 function vn_to_str($str) {
@@ -105,4 +107,6 @@ function vn_to_str($str) {
     }
     return strtolower(preg_replace('/[^a-zA-Z0-9]/', '', $str));
 }
+
 ?>
+

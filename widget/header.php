@@ -49,9 +49,10 @@
             </a>
         </li>
 
-        <li><a href="">
+        <li><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
-        </a></li>
+        </a>
+        </li>
 
         <li class="setting">
             <a href="">
