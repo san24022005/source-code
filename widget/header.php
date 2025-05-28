@@ -42,12 +42,13 @@
     </ul>
 
     <ul class="nav-right">
-        <li>
-            <a href="">
-                <i class="nav-icon search-icon ti-search"></i>
-                
-            </a>
-        </li>
+        <li class="search-box">
+    <form action="search.php" method="GET">
+        <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
+        <button type="submit"><i class="ti-search"></i></button>
+    </form>
+</li>
+
 
         <li><a href="">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
