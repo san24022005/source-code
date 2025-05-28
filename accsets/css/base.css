@@ -69,3 +69,8 @@ img {
 input, label, select {
     font-family: "Oswald", sans-serif;
 }
+
+input:focus {
+    border: 2px solid purple;
+    outline: none; /* Loại bỏ đường viền mặc định của trình duyệt */
+}

@@ -1,4 +1,3 @@
-
 <?php
 $conn = new mysqli("localhost", "root", "123456", "qlbh");
 $conn->set_charset("utf8mb4");
