@@ -103,8 +103,8 @@ $user = $result->fetch_assoc();
           </div>
 
           <div class="form-actions">
-              <button class="btn" type="submit">Lưu</button>
-              <button class="btn-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
+              <button class="btn-myacc" type="submit">Lưu</button>
+              <button class="btn-myacc-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
           </div>
       </div>
 </form>
