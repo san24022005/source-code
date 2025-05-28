@@ -38,7 +38,7 @@
 
         <li><a href="#dongphuc">Đồng phục</a></li>
 
-        <li><a href="#tayphuc">Tây phục</a></li>
+        <li><a href="#matkinh">Mắt kính</a></li>
     </ul>
 
     <ul class="nav-right">

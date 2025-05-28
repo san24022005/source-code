@@ -19,7 +19,6 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="./accsets/css/base.css">
         <link rel="stylesheet" href="./accsets/css/table.css">
         <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="main">

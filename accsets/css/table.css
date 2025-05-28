@@ -34,7 +34,6 @@
 
 .label-shopping-table .label-image img {
     width: 100%;
-    max-height: 650px;
     border-radius: 10px;
 }
 
@@ -275,7 +274,7 @@
 
 @media (min-width: 1024px) {
     .modal .modal-content .note {
-        height: 200px;
+        height: 160px;
     }
 }
 

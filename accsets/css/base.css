@@ -27,7 +27,8 @@ a {
 }
 
 a:hover {
-    color: rgb(197, 70, 70);
+    text-decoration: underline;
+    color: #ccc;
 }
 
 h2 {
