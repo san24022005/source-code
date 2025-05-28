@@ -1,3 +1,41 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.html");
+    exit();
+}
+
+    include 'connect.php'; // File kết nối CSDL
+
+$username = $_SESSION['username'];
+$oldPassword = $_POST['old-password'];
+$newPassword = $_POST['new-password'];
+$confirmPassword = $_POST['confirm-password'];
+
+// Kiểm tra mật khẩu xác nhận
+if ($newPassword !== $confirmPassword) {
+    echo "Mật khẩu xác nhận không trùng khớp.";
+    exit();
+}
+
+// Kiểm tra mật khẩu cũ
+$sql = "SELECT * FROM taikhoan WHERE username = ? AND password = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $username, $oldPassword);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 1) {
+    // Cập nhật mật khẩu mới
+    $update = "UPDATE taikhoan SET password = ? WHERE username = ?";
+    $stmt = $conn->prepare($update);
+    $stmt->bind_param("ss", $newPassword, $username);
+    $stmt->execute();
+    echo "Mật khẩu đã được cập nhật thành công!";
+} else {
+    echo "Mật khẩu cũ không đúng!";
+}
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>

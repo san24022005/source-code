@@ -55,7 +55,6 @@ $user = $result->fetch_assoc();
     <link rel="stylesheet" href="accsets/css/base.css">
     <link rel="stylesheet" href="accsets/css/main.css">
     <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="accsets/css/table.css">
 </head>
 <body>
   <?php
@@ -105,6 +104,7 @@ $user = $result->fetch_assoc();
           <div class="form-actions">
               <button class="btn-myacc" type="submit">Lưu</button>
               <button class="btn-myacc-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
+              <a href="resert-password.php" class="btn-myacc"><button>Đổi mật khẩu</button></a>
           </div>
       </div>
 </form>
