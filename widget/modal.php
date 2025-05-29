@@ -33,4 +33,9 @@
             <button id="btn-xacnhan" class="btn">Tiến hành thanh toán</button>
         </td>
     </tr>
+    <tr>
+        <td class="btn-giohang">
+            <button id="btn-giohang">Thêm vào giỏ hàng</button>
+        </td>
+    </tr>
 </table>

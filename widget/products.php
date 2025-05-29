@@ -53,7 +53,16 @@ if ($result_danhmuc->num_rows > 0) {
                     echo "<tr><td colspan='2' class='price-prd'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
 
 
-                    echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
+                    echo "<tr>
+                        <td class='btn-giohang'>
+                            <button type='button' class='btn js-gio-hang'
+                            data-masp='{$row['masp']}' 
+                            data-img='{$row['url']}'
+                            data-tensp='{$row['tensp']}'
+                            data-gia='{$row['gia']}'>
+                                <i class='shopping-cart-icon ti-shopping-cart'></i>
+                            </button>
+                        </td>";
                     echo "<td class='btn-details'><a href='deltails.php?masp={$row['masp']}'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
                     echo "</tr><tr>";
                     echo "<td colspan='2' class='btn-muangay'>";

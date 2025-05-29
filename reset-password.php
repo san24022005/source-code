@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./accsets/css/main.css">
     <link rel="stylesheet" href="accsets/css/base.css">
     <link rel="stylesheet" href="reset-password.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
     <?php 

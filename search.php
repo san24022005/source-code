@@ -29,14 +29,15 @@ if ($keyword == null) {
     <title>BT Shop</title>
     <link rel="stylesheet" href="./accsets/css/main.css">
     <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/table.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
+<div class="main">
     <?php
     require 'site.php';
     load_top();
     load_header();
-    load_slider();
     echo "<div id='products'>";
 
 if ($keyword !== '') {
@@ -80,6 +81,12 @@ $conn->close();
 
 load_footer();
 ?>
-
+</div>
+ <div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
+            <?php
+            load_modal();
+            ?>
+        </div>
+<script src="accsets/js/shopping.js"></script>
 </body>
 </html>

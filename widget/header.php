@@ -7,38 +7,38 @@
 
     <ul class="nav">
         <li>
-            <a href="#ao">
+            <a href="index.php#ao">
                 Áo
                 <i class="down-icon ti-angle-down"></i>
             </a>
 
             <ul class="sub-nav">
-                <li><a href="#aopolodaitay">Áo polo dài tay</a></li>
-                <li><a href="#aothundaitay">Áo thun dài tay</a></li>
-                <li><a href="#aokhoac">Áo khoác</a></li>
-                <li><a href="#aosomi">Áo sơ mi</a></li>
-                <li><a href="#aotshirt">Áo Tshirt</a></li>
+                <li><a href="index.php#aopolodaitay">Áo polo dài tay</a></li>
+                <li><a href="index.php#aothundaitay">Áo thun dài tay</a></li>
+                <li><a href="index.php#aokhoac">Áo khoác</a></li>
+                <li><a href="index.php#aosomi">Áo sơ mi</a></li>
+                <li><a href="index.php#aotshirt">Áo Tshirt</a></li>
             </ul>
         </li>
 
         <li>
-            <a href="#quan">
+            <a href="index.php#quan">
                 Quần
                 <i class="down-icon ti-angle-down"></i>
             </a>
 
             <ul class="sub-nav">
-                <li><a href="#quanau">Quần âu</a></li>
-                <li><a href="#quanshort">Quần short</a></li>
-                <li><a href="#quanjeans">Quần jean</a></li>
+                <li><a href="index.php#quanau">Quần âu</a></li>
+                <li><a href="index.php#quanshort">Quần short</a></li>
+                <li><a href="index.php#quanjeans">Quần jean</a></li>
             </ul>
         </li>
 
-        <li><a href="#dobo">Đồ bộ</a></li>
+        <li><a href="index.php#dobo">Đồ bộ</a></li>
 
-        <li><a href="#dongphuc">Đồng phục</a></li>
+        <li><a href="index.php#dongphuc">Đồng phục</a></li>
 
-        <li><a href="#matkinh">Mắt kính</a></li>
+        <li><a href="index.php#matkinh">Mắt kính</a></li>
     </ul>
 
     <ul class="nav-right">
@@ -50,7 +50,7 @@
 </li>
 
 
-        <li><a href="">
+        <li><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
         </a></li>
 
