@@ -122,36 +122,28 @@ form input {
     justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     .left-panel {
         width: 30%;
-        height: 50vh;
-        position: relative;
-        top: 44px;
-        right: 40px; 
-        left: 0; 
     }
 
     .right-panel {
-        width: 70%;
-        height: auto;
-        position: relative;
-        top: 44px;
-        right: 0; 
-        left: 0; 
+         width: 60%;
+         left: 35%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     .left-panel {
         display: none;
     }
 
     .right-panel {
         width: 100%;
-        position: relative;
+        height: 100%;
+        position: absolute;
         top: 0;
         right: 0; 
-        left: 0; 
+        left: 0;
     }
 }
