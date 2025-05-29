@@ -170,10 +170,6 @@
     z-index: 2;
 }
 
-.sub-setting.show {
-    display: block;
-}
-
 .sub-setting li {
     height: 60px;
     display: block;
@@ -229,32 +225,24 @@
     color: #000;
 }
 
-
-@media (max-width: 768px) {
-    .nav > li {
-        display: block;
-    }
-
-    #header .logo {
-        display: none;
-    }
-}
-
 @media (max-width: 1023px) {
     #header .nav {
         overflow: hidden;
+        float: none;
     }
 
     .nav > li {
         display: block;
+    }
+
+    .nav > li > a {
+        padding: 0 20px;
     }
 
     .nav > li:first-child {
         padding: 0;
-    }
-
-    .nav li a {
-
+        width: 48px;
+        display: inline-block;
     }
 
     #header .logo {
@@ -262,10 +250,16 @@
     }
 
     #header .nav {
-        display: block;
         margin: 0;
     }
 
+    #header .nav .sub-nav {
+        position: initial;
+    }
+
+    .sub-nav li a {
+        padding-left: 30px;
+    }
 
     #header .nav-icon {
         font-size: 16px;
@@ -278,10 +272,17 @@
 
     .search-box input[type="text"] {
         width: 30vw;
+        max-width: 148px;
     }
 
     .search-box {
         margin: 0;
+    }
+
+    #header .nav-right {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
 /* END : HEADER */
@@ -507,6 +508,10 @@
     background-color: rgb(18, 153, 211);
     width: 100%;
     color: var(--main-color);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 #footer #top-footer {
@@ -753,5 +758,10 @@
 
 .myacc-container .btn-myacc-edit:hover {
     background-color: #565e64;
+}
+
+.myacc-container .btn-myacc-pass {
+    text-align: center;
+    padding: 7px
 }
 /* END : MYACC */

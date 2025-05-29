@@ -37,7 +37,7 @@ if ($keyword == null) {
     <?php
     require 'site.php';
     load_top();
-    load_header();
+    load_backbtn();
     echo "<div id='products'>";
 
 if ($keyword !== '') {
@@ -56,7 +56,16 @@ if ($keyword !== '') {
             echo "<td colspan='2' class='img'><a href='deltails.php?masp={$row['masp']}'><img src='{$row['url']}' width='150px' height='150px'/></a></td></tr>";
             echo "<tr><td colspan='2' class='name-prd'><h3>{$row['tensp']}</h3></td></tr>";
             echo "<tr><td colspan='2' class='price-prd'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
-            echo "<tr><td class='btn-giohang'><button type='button' class='btn'><i class='shopping-cart-icon ti-shopping-cart'></i></button></td>";
+             echo "<tr>
+                        <td class='btn-giohang'>
+                            <button type='button' class='btn js-gio-hang'
+                            data-masp='{$row['masp']}' 
+                            data-img='{$row['url']}'
+                            data-tensp='{$row['tensp']}'
+                            data-gia='{$row['gia']}'>
+                                <i class='shopping-cart-icon ti-shopping-cart'></i>
+                            </button>
+                        </td>";
             echo "<td class='btn-details'><a href='deltails.php?masp={$row['masp']}'><button type='button' class='btn'>Xem chi tiết</button></a></td>";
             echo "</tr><tr><td colspan='2' class='btn-muangay'>";
             echo "<button type='button' class='btn js-mua-ngay' 
@@ -87,6 +96,6 @@ load_footer();
             load_modal();
             ?>
         </div>
-<script src="accsets/js/shopping.js"></script>
+<script src="accsets/js/modal.js"></script>
 </body>
 </html>
