@@ -273,6 +273,7 @@
     .search-box input[type="text"] {
         width: 30vw;
         max-width: 148px;
+        min-width: 130px;
     }
 
     .search-box {
@@ -526,12 +527,9 @@
 }
 
 #footer #top-footer .footer-box {
-    position: relative;
-    top: 0;
     width: 192px;
     height: 90%;
     margin: 50px 8px 0;
-    display: inline-block;
     padding: 5px 0;
 }
 
@@ -573,6 +571,12 @@
 #bottom-footer .copy-r-icon {
     padding: 0 5px;
     color: var(--main-color);
+}
+
+@media (max-width: 600px) {
+    #footer #top-footer .footer-box {
+        width: 45%;
+    }
 }
 /* END : FOOTER */
 
@@ -657,7 +661,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
   
 .myacc-container  h2 {
     margin-bottom: 5px;
