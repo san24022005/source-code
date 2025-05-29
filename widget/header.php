@@ -1,62 +1,68 @@
 <div id="header">
     
-        <a href="index.php">
-            <img src="accsets/images/logo.png" alt="Logo" class="logo">
-        </a>
+    <a href="index.php">
+        <img src="accsets/images/logo.png" alt="Logo" class="logo">
+    </a>
     
-
-    <ul class="nav">
+        
+        <ul class="nav">
         <li>
-            <a href="index.php#ao">
+            <div class="menu-tablet" id="menu-tablet">
+            <i class="nav-icon ti-menu"></i>
+        </div>
+        </li>
+        <li>
+            <a href="#ao">
                 Áo
                 <i class="down-icon ti-angle-down"></i>
             </a>
 
             <ul class="sub-nav">
-                <li><a href="index.php#aopolodaitay">Áo polo dài tay</a></li>
-                <li><a href="index.php#aothundaitay">Áo thun dài tay</a></li>
-                <li><a href="index.php#aokhoac">Áo khoác</a></li>
-                <li><a href="index.php#aosomi">Áo sơ mi</a></li>
-                <li><a href="index.php#aotshirt">Áo Tshirt</a></li>
+                <li><a href="#aopolodaitay">Áo polo dài tay</a></li>
+                <li><a href="#aothundaitay">Áo thun dài tay</a></li>
+                <li><a href="#aokhoac">Áo khoác</a></li>
+                <li><a href="#aosomi">Áo sơ mi</a></li>
+                <li><a href="#aotshirt">Áo Tshirt</a></li>
             </ul>
         </li>
 
         <li>
-            <a href="index.php#quan">
+            <a href="#quan">
                 Quần
                 <i class="down-icon ti-angle-down"></i>
             </a>
 
             <ul class="sub-nav">
-                <li><a href="index.php#quanau">Quần âu</a></li>
-                <li><a href="index.php#quanshort">Quần short</a></li>
-                <li><a href="index.php#quanjeans">Quần jean</a></li>
+                <li><a href="#quanau">Quần âu</a></li>
+                <li><a href="#quanshort">Quần short</a></li>
+                <li><a href="#quanjeans">Quần jean</a></li>
             </ul>
         </li>
 
-        <li><a href="index.php#dobo">Đồ bộ</a></li>
+        <li><a href="#dobo">Đồ bộ</a></li>
 
-        <li><a href="index.php#dongphuc">Đồng phục</a></li>
+        <li><a href="#dongphuc">Đồng phục</a></li>
 
-        <li><a href="index.php#matkinh">Mắt kính</a></li>
+        <li><a href="#matkinh">Mắt kính</a></li>
     </ul>
 
     <ul class="nav-right">
         <li class="search-box">
-    <form action="search.php" method="GET">
-        <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
-        <button type="submit"><i class="ti-search"></i></button>
-    </form>
-</li>
+            <form action="search.php" method="GET">
+                <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
+                <button type="submit"><i class="ti-search"></i></button>
+            </form>
+        </li>
 
 
         <li><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
         </a></li>
 
-        <li class="setting">
-            <a href="">
+        <li class="setting" id="setting-btn">
+            <div class="setting-toggle">
                 <i class="nav-icon setting-icon ti-settings"></i>
+            </div>
 
                 <ul class="sub-setting">
                     <li><a href="myaccount.php">
