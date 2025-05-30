@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 
@@ -33,9 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare($update);
         $stmt->bind_param("ss", $newPassword, $username);
         $stmt->execute();
-        echo "Mật khẩu đã được cập nhật thành công!";
+        echo "<script>
+                alert('Đã đổi mật khẩu thành công');
+                window.location.href = 'logout.php';
+              </script>";
+              exit;
     } else {
-        echo "Mật khẩu cũ không đúng!";
+        echo "<script>
+                alert('Không đúng mật khẩu');
+                window.location.href = 'reset-password.php';
+              </script>";
     }
 }
 ?>

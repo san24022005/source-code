@@ -21,7 +21,6 @@ if ($result_danhmuc->num_rows > 0) {
         $danhmuc = $row_dm['danhmuc'];
         $id_danhmuc = vn_to_str($danhmuc);
 
-
         echo "<div id='$id_danhmuc' class='danhmuc'>";
         echo "<h1>$danhmuc</h1>";
 
@@ -52,7 +51,6 @@ if ($result_danhmuc->num_rows > 0) {
                     echo "<tr><td colspan='2' class='name-prd'><h3>{$row['tensp']}</h3></td></tr>";
                     echo "<tr><td colspan='2' class='price-prd'><p><strong>Giá: " . number_format($row['gia']) . " VNĐ</strong></p></td></tr>";
 
-
                     echo "<tr>
                         <td class='btn-giohang'>
                             <button type='button' class='btn js-gio-hang'
@@ -67,10 +65,11 @@ if ($result_danhmuc->num_rows > 0) {
                     echo "</tr><tr>";
                     echo "<td colspan='2' class='btn-muangay'>";
                     echo "<button type='button' class='btn js-mua-ngay' 
-                        data-masp='{$row['masp']}' 
-                        data-img='{$row['url']}'
-                        data-tensp='{$row['tensp']}'
-                        data-gia='{$row['gia']}'>Mua ngay</button>
+                            data-masp='{$row['masp']}' 
+                            data-img='{$row['url']}'
+                            data-tensp='{$row['tensp']}'
+                            data-gia='{$row['gia']}'>Mua ngay
+                        </button>
                         </td>";
 
                     echo "</table>";

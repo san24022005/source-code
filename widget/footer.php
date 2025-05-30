@@ -22,12 +22,12 @@
 
                     <li>
                         <i class="icon-footer ti-mobile"></i>
-                        <a href="">0946171903</a>
+                        <a href="tel:0946171903">0946171903</a>
                     </li>
 
                     <li>
                         <i class="icon-footer ti-email"></i>
-                        <a href="">cskh@btshop.com</a>
+                        <a href="mailto:cskh@btshop.com">cskh@btshop.com</a>
                     </li>
                 </ul>
             </div>

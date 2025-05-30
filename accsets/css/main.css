@@ -584,7 +584,7 @@
 .intro-container {
     position: relative;
     width: 80vw;
-    margin: 0 auto;
+    margin: 44px auto;
     z-index: 1;
 }
 
@@ -647,6 +647,12 @@
     margin-top: 50px;
     color: #555;
     font-family: "Oswald", sans-serif;
+}
+
+@media (max-width: 748px) {
+    .intro-container h1 {
+        margin: 10px;
+    }
 }
 
 /* END : INTRO */
@@ -768,3 +774,13 @@
     padding: 7px
 }
 /* END : MYACC */
+
+/* START : SEARCH */
+#search-products {
+    margin: 0 44px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 44px;
+}

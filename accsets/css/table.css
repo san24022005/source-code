@@ -279,38 +279,6 @@
     }
 }
 
-@media (max-width: 739px) and (min-width: 320px) {
-    .modal p, .modal label {
-        margin: 0 0 5px 5px;
-        font-size: 14px;
-        padding: 5px;
-    }
-
-    .modal h3 {
-        font-size: 16px;
-        margin: 0 0 5px 5px;
-        padding-top: 5px;
-    }
-
-    .modal .modal-content {
-        width: 75vw;
-        height: 70vh;;
-    }
-
-    .modal .modal-content .note {
-        height: 10px;
-    }
-
-    .modal img {
-        max-height: 100vw;;
-    }
-    .modal .modal-content .modal-size,
-    .modal .modal-content .modal-soluong,
-    .modal .modal-content .modal-gia {
-        padding: 5px 0;
-    }
-}
-
 @media (min-width: 740px) and (max-width: 1023px) {
     .modal p, .modal label {
         font-size: 14px;
@@ -339,6 +307,51 @@
     .modal .modal-content {
         max-height: 90vh;
 
+    }
+}
+
+@media (max-width: 739px) and (min-width: 320px) {
+    .modal p, .modal label {
+        margin: 0 0 5px 5px;
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .modal h3 {
+        font-size: 16px;
+        margin: 0 0 5px 5px;
+        padding-top: 5px;
+    }
+
+    .modal .modal-content {
+        width: 75vw;
+        height: 70vh;;
+    }
+
+    .modal .modal-content .note {
+        height: 10px;
+    }
+
+    .modal img {
+        max-height: 45vh;
+    }
+
+    .modal .modal-content .modal-size,
+    .modal .modal-content .modal-soluong,
+    .modal .modal-content .modal-gia {
+        padding: 0;
+    }
+
+    .modal .modal-content .modal-size select,
+    .modal .modal-content .modal-soluong input {
+        height: 24px;
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 550px) {
+    .modal .modal-content {
+        max-height: 80vh;;
     }
 }
 /* END : MODAL */

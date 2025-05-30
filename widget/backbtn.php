@@ -6,7 +6,7 @@
 </a>
 <style>
     .home-page {
-    margin-left: 20px;
+    margin-left: 10px;
     width: 160px;
     position: fixed;
     padding: 10px 5px;
