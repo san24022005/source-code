@@ -12,8 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['masp'], $_POST['size'
     $masp = $_POST['masp'];
     $size = $_POST['size'];
     $soluong = (int)$_POST['soluong'];
-
-<<<<<<< Updated upstream
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];
     }
@@ -35,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['masp'], $_POST['size'
 // Lấy sản phẩm
 $sql = "SELECT * FROM sanpham";
 $result = $conn->query($sql);
-=======
 // Xử lý cập nhật, xoá, thanh toán
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Cập nhật số lượng
@@ -84,7 +81,6 @@ $stmt = $conn->prepare("
 $stmt->bind_param("s", $makh);
 $stmt->execute();
 $result = $stmt->get_result();
->>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -145,7 +141,6 @@ $result = $stmt->get_result();
     </style>
 </head>
 <body>
-<<<<<<< Updated upstream
 <h2>Sản phẩm</h2>
 <div class="product-list">
 <?php
@@ -216,6 +211,5 @@ if ($result && $result->num_rows > 0) {
     <button type="submit" name="capnhat">Cập nhật giỏ hàng</button>
     <button type="submit" name="thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Thanh toán</button>
     </form>
->>>>>>> Stashed changes
 </body>
 </html>
