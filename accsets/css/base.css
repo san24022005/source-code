@@ -27,7 +27,8 @@ a {
 }
 
 a:hover {
-    color: rgb(197, 70, 70);
+    text-decoration: underline;
+    color: #ccc;
 }
 
 h2 {
@@ -67,4 +68,9 @@ img {
 
 input, label, select {
     font-family: "Oswald", sans-serif;
+}
+
+input:focus, select:focus {
+    border: 2px solid var(--main-bg2-color);
+    outline: none; /* Loại bỏ đường viền mặc định của trình duyệt */
 }

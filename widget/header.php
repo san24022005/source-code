@@ -1,11 +1,16 @@
 <div id="header">
     
-        <a href="index.php">
-            <img src="accsets/images/logo.png" alt="Logo" class="logo">
-        </a>
+    <a href="index.php">
+        <img src="accsets/images/logo.png" alt="Logo" class="logo">
+    </a>
     
-
-    <ul class="nav">
+        
+        <ul class="nav">
+        <li>
+            <div class="menu-tablet" id="menu-tablet">
+            <i class="nav-icon ti-menu"></i>
+        </div>
+        </li>
         <li>
             <a href="#ao">
                 Áo
@@ -38,25 +43,30 @@
 
         <li><a href="#dongphuc">Đồng phục</a></li>
 
-        <li><a href="#tayphuc">Tây phục</a></li>
+        <li><a href="#matkinh">Mắt kính</a></li>
     </ul>
 
     <ul class="nav-right">
-        <li>
-            <a href="">
-                <i class="nav-icon search-icon ti-search"></i>
-                
-            </a>
+        <li class="search-box">
+            <form action="search.php" method="GET">
+                <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
+                <button type="submit"><i class="ti-search"></i></button>
+            </form>
         </li>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> edc5c14b0cb4cff9cded4d0e32b0f6cb19a732f0
         <li><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
         </a>
         </li>
 
-        <li class="setting">
-            <a href="">
+        <li class="setting" id="setting-btn">
+            <div class="setting-toggle">
                 <i class="nav-icon setting-icon ti-settings"></i>
+            </div>
 
                 <ul class="sub-setting">
                     <li><a href="myaccount.php">

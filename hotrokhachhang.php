@@ -35,7 +35,7 @@
       <h4>Thông tin liên hệ</h4>
       <p><strong>Email:</strong> hotro@btshop.vn</p>
       <p><strong>Hotline:</strong> 0788546664 </p>
-      <p><strong>Địa chỉ:</strong> ổ chịch siu cấp vũ trụ, phường Ghềnh Ráng, TP Qui Nhơn, Tỉnh Bình Định</p>
+      <p><strong>Địa chỉ:</strong> ổ quỷ của đào tiên, phường Ghềnh Ráng, TP Qui Nhơn, Tỉnh Bình Định</p>
     </div>
 
     <!-- Form liên hệ -->

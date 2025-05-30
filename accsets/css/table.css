@@ -34,7 +34,6 @@
 
 .label-shopping-table .label-image img {
     width: 100%;
-    max-height: 650px;
     border-radius: 10px;
 }
 
@@ -214,6 +213,7 @@
     font-size: 20px;
     padding: 10px 0;
     font-weight: 700;
+    color: red;
 }
 
 .modal .modal-content #btn-xacnhan {
@@ -235,7 +235,7 @@
 
 .modal .modal-content .modal-size select {
     width: 116px;
-    height: 30px;
+    height: 36px;
     font-size: 14px;
     padding: 5px;
 }
@@ -249,7 +249,7 @@
 
 .modal .modal-content .modal-soluong input {
     width: 116px;
-    height: 30px;
+    height: 36px;
     font-size: 14px;
     padding: 5px;
 }
@@ -275,7 +275,7 @@
 
 @media (min-width: 1024px) {
     .modal .modal-content .note {
-        height: 200px;
+        height: 160px;
     }
 }
 

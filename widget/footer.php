@@ -17,17 +17,17 @@
 
                     <li>
                         <i class="icon-footer ti-location-pin"></i>
-                        <a href="">Địa chỉ: Quy Nhơn, Bình định</a>
+                        <a href="https://www.google.com/maps/@13.7592887,109.2188991,16z?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D">Địa chỉ: Quy Nhơn, Bình định</a>
                     </li>
 
                     <li>
                         <i class="icon-footer ti-mobile"></i>
-                        <a href="">123456789</a>
+                        <a href="">0946171903</a>
                     </li>
 
                     <li>
                         <i class="icon-footer ti-email"></i>
-                        <a href="">cskh@khavico.com</a>
+                        <a href="">cskh@btshop.com</a>
                     </li>
                 </ul>
             </div>
@@ -37,7 +37,7 @@
                 
                 <ul>
                     <li>
-                        <a href="">Danh sách điểm bấn Bình định</a>
+                        <a href="">Danh sách điểm bán Bình định</a>
                     </li>
 
                     <li>

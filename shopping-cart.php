@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< HEAD
 $conn = new mysqli("localhost", "root", "123456", "qlbh");
 $conn->set_charset("utf8mb4");
 
@@ -70,6 +71,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 }
+=======
+require 'connect.php';
+
+if (!isset($_SESSION['username'])) {
+    die("Bạn chưa đăng nhập.");
+}
+
+$makh = $_SESSION['username'];
+>>>>>>> edc5c14b0cb4cff9cded4d0e32b0f6cb19a732f0
 
 // Truy vấn giỏ hàng
 $stmt = $conn->prepare("
@@ -82,6 +92,7 @@ $stmt->bind_param("s", $makh);
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -166,12 +177,26 @@ if ($result && $result->num_rows > 0) {
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>Chọn</th>
+=======
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng của bạn</title>
+</head>
+<body>
+    <h2>Giỏ hàng của bạn</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+>>>>>>> edc5c14b0cb4cff9cded4d0e32b0f6cb19a732f0
             <th>Hình ảnh</th>
             <th>Tên SP</th>
             <th>Size</th>
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Tổng</th>
+<<<<<<< HEAD
             <th>Xoá</th>
         </tr>
 
@@ -186,10 +211,21 @@ if ($result && $result->num_rows > 0) {
         ?>
         <tr>
             <td><input type="checkbox" name="chon[]" value="<?= $item['masp'] . '|' . $item['size'] ?>"></td>
+=======
+        </tr>
+        <?php
+        $tong = 0;
+        while ($item = $result->fetch_assoc()):
+            $subtotal = $item['gia'] * $item['soluong'];
+            $tong += $subtotal;
+        ?>
+        <tr>
+>>>>>>> edc5c14b0cb4cff9cded4d0e32b0f6cb19a732f0
             <td><img src="<?= htmlspecialchars($item['url']) ?>" width="80"></td>
             <td><?= htmlspecialchars($item['tensp']) ?></td>
             <td><?= htmlspecialchars($item['size']) ?></td>
             <td><?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</td>
+<<<<<<< HEAD
             <td><input type="number" name="soluong[<?= $item['masp'] ?>][<?= $item['size'] ?>]" value="<?= $item['soluong'] ?>" min="1" style="width: 60px;"></td>
             <td><?= number_format($subtotal, 0, ',', '.') ?> VNĐ</td>
             <td>
@@ -211,5 +247,16 @@ if ($result && $result->num_rows > 0) {
     <button type="submit" name="capnhat">Cập nhật giỏ hàng</button>
     <button type="submit" name="thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Thanh toán</button>
     </form>
+=======
+            <td><?= $item['soluong'] ?></td>
+            <td><?= number_format($subtotal, 0, ',', '.') ?> VNĐ</td>
+        </tr>
+        <?php endwhile; ?>
+        <tr>
+            <td colspan="5" align="right"><strong>Tổng cộng:</strong></td>
+            <td><strong><?= number_format($tong, 0, ',', '.') ?> VNĐ</strong></td>
+        </tr>
+    </table>
+>>>>>>> edc5c14b0cb4cff9cded4d0e32b0f6cb19a732f0
 </body>
 </html>
