@@ -7,33 +7,18 @@ if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
 }
 
-// Xử lý thêm vào giỏ hàng nếu có POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['masp'], $_POST['size'], $_POST['soluong'])) {
-    $masp = $_POST['masp'];
-    $size = $_POST['size'];
-    $soluong = (int)$_POST['soluong'];
+$makh = $_SESSION['username'];
 
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = [];
-    }
-
-    $key = $masp . "_" . $size;
-    if (isset($_SESSION['cart'][$key])) {
-        $_SESSION['cart'][$key]['soluong'] += $soluong;
-    } else {
-        $_SESSION['cart'][$key] = [
-            'masp' => $masp,
-            'size' => $size,
-            'soluong' => $soluong
-        ];
-    }
-    echo "success";
-    exit();
-}
-
-// Lấy sản phẩm
-$sql = "SELECT * FROM sanpham";
-$result = $conn->query($sql);
+// Truy vấn giỏ hàng
+$stmt = $conn->prepare("
+    SELECT g.masp, g.size, g.soluong, s.tensp, s.gia, s.url
+    FROM giohang g
+    JOIN sanpham s ON g.masp = s.masp
+    WHERE g.makh = ?
+");
+$stmt->bind_param("s", $makh);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -94,24 +79,35 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
-<h2>Sản phẩm</h2>
-<div class="product-list">
-<?php
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<div class='product-card'>";
-        echo "<img src='{$row['url']}' alt='{$row['tensp']}' width='180'>";
-        echo "<h3>{$row['tensp']}</h3>";
-        echo "<p>Giá: " . number_format($row['gia'], 0, ',', '.') . " VND</p>";
-        echo "<button class='btn btn-giohang' data-masp='{$row['masp']}' data-size='M' data-soluong='1'><i class='fas fa-cart-plus'></i> Thêm vào giỏ</button>";
-        echo "<a href='deltails.php?masp={$row['masp']}'><button class='btn'>Xem chi tiết</button></a>";
-        echo "<button class='btn'>Mua ngay</button>";
-        echo "</div>";
-    }
-} else {
-    echo "<p>Không có sản phẩm nào.</p>";
-}
-?>
-</div>
+    <h2>Giỏ hàng của bạn</h2>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên SP</th>
+            <th>Size</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Tổng</th>
+        </tr>
+        <?php
+        $tong = 0;
+        while ($item = $result->fetch_assoc()):
+            $subtotal = $item['gia'] * $item['soluong'];
+            $tong += $subtotal;
+        ?>
+        <tr>
+            <td><img src="<?= htmlspecialchars($item['url']) ?>" width="80"></td>
+            <td><?= htmlspecialchars($item['tensp']) ?></td>
+            <td><?= htmlspecialchars($item['size']) ?></td>
+            <td><?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</td>
+            <td><?= $item['soluong'] ?></td>
+            <td><?= number_format($subtotal, 0, ',', '.') ?> VNĐ</td>
+        </tr>
+        <?php endwhile; ?>
+        <tr>
+            <td colspan="5" align="right"><strong>Tổng cộng:</strong></td>
+            <td><strong><?= number_format($tong, 0, ',', '.') ?> VNĐ</strong></td>
+        </tr>
+    </table>
 </body>
 </html>
