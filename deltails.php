@@ -26,6 +26,7 @@ $sizes = $conn->query($sql_sizes);
     <title>CTSP - <?= $prd['masp'] ?></title>
     <link rel="stylesheet" href="./accsets/css/main.css">
     <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/table.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <style>
         .delprd-container {
@@ -117,6 +118,10 @@ $sizes = $conn->query($sql_sizes);
         .color-options span.active, .size-options span.active {
             border-color: #d63031;
             background: #ffe6e6;
+        }
+
+        .size-options p {
+            margin-bottom: 10px;
         }
 
         .quantity-selector {
@@ -260,23 +265,28 @@ $sizes = $conn->query($sql_sizes);
             </div>
 
             <!-- Chọn số lượng -->
-            <div class="quantity-selector">
-                <p><strong>Số lượng:</strong></p>
-                <button onclick="updateQuantity(-1)">-</button>
-                <input type="number" id="quantity" value="1" min="1" readonly>
-                <button onclick="updateQuantity(1)">+</button>
-            </div>
-
             <div class="mota">
                 <h2>Mô tả sản phẩm</h2>
                 <p><?= nl2br($prd['mota']) ?></p>
-                <p><strong></p>
             </div>
 
             <!-- Nút hành động -->
             <div class="actions">
-                <button title="Thêm vào giỏ hàng">THÊM VÀO GIỎ</button>
-                <button onclick="buyNow()">MUA NGAY</button>
+                <button type="button" class="btn js-gio-hang"
+                    data-masp="<?= $prd['masp']; ?>"
+                    data-img="<?= $prd['url']; ?>"
+                    data-tensp="<?= htmlspecialchars($prd['tensp']); ?>"
+                    data-gia="<?= $prd['gia']; ?>">
+                    Thêm vào giỏ hàng
+                </button>
+
+                <button type="button" class="btn js-mua-ngay"
+                    data-masp="<?= $prd['masp']; ?>"
+                    data-img="<?= $prd['url']; ?>"
+                    data-tensp="<?= htmlspecialchars($prd['tensp']); ?>"
+                    data-gia="<?= $prd['gia']; ?>">
+                    Mua ngay
+                </button>
             </div>
 
         </div>
@@ -284,27 +294,12 @@ $sizes = $conn->query($sql_sizes);
 <?php else: ?>
     <p style="text-align: center; font-size: 18px; color: #d63031;">Không tìm thấy sản phẩm.</p>
 <?php endif; ?>
-
-<script>
-    function updateQuantity(change) {
-        const quantityInput = document.getElementById('quantity');
-        let quantity = parseInt(quantityInput.value);
-        quantity = Math.max(1, quantity + change);
-        quantityInput.value = quantity;
-    }
-
-    function addToCart() {
-        const quantity = document.getElementById('quantity').value;
-        const selectedColor = document.querySelector('.color-options .active').textContent;
-        alert(`Đã thêm ${quantity} sản phẩm màu ${selectedColor} vào giỏ hàng!`);
-    }
-
-    function buyNow() {
-        const quantity = document.getElementById('quantity').value;
-        const selectedColor = document.querySelector('.color-options .active').textContent;
-        alert(`Đặt mua ngay ${quantity} sản phẩm màu ${selectedColor}!`);
-    }
-</script>
 <?php load_footer(); ?>
+<div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
+            <?php
+            load_modal();
+            ?>
+        </div>
+<script src="accsets/js/modal.js"></script>
 </body>
 </html>
