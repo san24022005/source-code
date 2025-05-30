@@ -54,10 +54,6 @@
             </form>
         </li>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> edc5c14b0cb4cff9cded4d0e32b0f6cb19a732f0
         <li><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
         </a>
