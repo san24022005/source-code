@@ -16,6 +16,8 @@
 
 .right-panel {
     width: 40%;
+    max-width: 460px;
+    min-width: 380px;
     height: 620px;
     background: white;
     display: flex;
@@ -122,18 +124,18 @@ form input {
     justify-content: center;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1025px) {
     .left-panel {
-        width: 30%;
+        width: 40%;
     }
 
     .right-panel {
-         width: 60%;
-         left: 35%;
+         width: 50%;
+         left: 45%;
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 748px) {
     .left-panel {
         display: none;
     }
@@ -141,9 +143,9 @@ form input {
     .right-panel {
         width: 100%;
         height: 100%;
-        position: absolute;
         top: 0;
         right: 0; 
         left: 0;
+        margin: 0 auto;
     }
 }
