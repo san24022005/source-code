@@ -47,7 +47,7 @@
     font-size: 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 575px) {
     #top-nav .left-top {
         display: none;
     }
@@ -475,14 +475,24 @@
 
 
 /* Responsive cho tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 980px) and (max-width: 1023px) {
     .product {
-        width: 31.5%;
+        width: 23%;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 979px) {
+    .product {
+        width: 30%;
+    }
+
+    .product .btn {
+        padding: 0;
     }
 }
 
 /* Responsive cho mobile */
-@media (max-width: 768px) {
+@media (max-width: 650px) {
     #products {
         padding: 0;
     }
