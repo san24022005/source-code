@@ -63,12 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     load_top();
     load_backbtn();
     ?>
-  <div class="left">
-    <img src="../accsets/images/logo.png" width="80" alt="BT Shop Logo">
-    <h1>BT SHOP</h1>
-    <p>Vua của các quý ông</p>
-  </div>
-
   <div class="right">
     <div class="form-container">
       <h2>ĐẶT LẠI MẬT KHẨU</h2>

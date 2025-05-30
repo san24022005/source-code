@@ -114,10 +114,10 @@
             <p>Copyright © 2025 BT Shop. All rights reserved.</p>
         </div>
         <div class="social-media">
-            <a href="#"><i class="copy-r-icon ti-facebook"></i></a>
-            <a href="#"><i class="copy-r-icon ti-instagram"></i></a>
+            <a href="https://www.facebook.com/tai.khoan.bi.khoa.223219"><i class="copy-r-icon ti-facebook"></i></a>
+            <a href="https://www.instagram.com/haihominh11/"><i class="copy-r-icon ti-instagram"></i></a>
             <a href="#"><i class="copy-r-icon ti-twitter"></i></a>
-            <a href="#"><i class="copy-r-icon ti-youtube"></i></a>
+            <a href="https://www.youtube.com/shorts/G1I3H5iQdHY"><i class="copy-r-icon ti-youtube"></i></a>
         </div>
     </div>
 </div>

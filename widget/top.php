@@ -15,7 +15,7 @@
             <li>
                 <div class="contact-btn">
                     <i class="top-icon ti-location-pin"></i>
-                    <a href="">Liên hệ</a>
+                    <a href="hotrokhachhang.php">Liên hệ</a>
                 </div>
             </li>
         </div>
