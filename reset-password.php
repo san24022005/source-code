@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-include 'connect.php'; // File kết nối CSDL
+require 'connect.php'; // File kết nối CSDL
 
 $username = $_SESSION['username'];
 
@@ -53,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BT SHOP - Đặt lại mật khẩu</title>
     <link rel="stylesheet" href="./accsets/css/main.css">
-    <link rel="stylesheet" href="accsets/css/base.css">
-    <link rel="stylesheet" href="reset-password.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/login.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -63,26 +63,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     load_top();
     load_backbtn();
     ?>
-  <div class="right">
-    <div class="form-container">
-      <h2>ĐẶT LẠI MẬT KHẨU</h2>
-      <form action="#" method="post">
-        <label for="old-password">Mật khẩu cũ</label>
-        <input type="password" id="old-password" name="old-password" placeholder="Nhập mật khẩu cũ" required>
+    <div id="reset-pass">
+        <div class="form-container">
+            <h2>ĐẶT LẠI MẬT KHẨU</h2>
+            <form action="#" method="post">
+                <label for="old-password">Mật khẩu cũ</label>
+                <input type="password" id="old-password" name="old-password" placeholder="Nhập mật khẩu cũ" required>
 
-        <label for="new-password">Mật khẩu mới</label>
-        <input type="password" id="new-password" name="new-password" placeholder="Nhập mật khẩu mới" required>
+                <label for="new-password">Mật khẩu mới</label>
+                <input type="password" id="new-password" name="new-password" placeholder="Nhập mật khẩu mới" required>
 
-        <label for="confirm-password">Xác nhận mật khẩu mới</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận lại mật khẩu mới" required>
+                <label for="confirm-password">Xác nhận mật khẩu mới</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận lại mật khẩu mới" required>
 
-        <button type="submit">Xác nhận</button>
-      </form>
-      <div class="link">
-        <a href="login.html">← Quay lại đăng nhập</a>
-      </div>
+                <button type="submit">Xác nhận</button>
+            </form>
+            <div class="link">
+                <a href="login.html">← Quay lại đăng nhập</a>
+            </div>
+        </div>
     </div>
-  </div>
-<?php load_footer(); ?>
+    <?php load_footer(); ?>
 </body>
 </html>
