@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['masp'], $_GET['size'], 
     $masp = $_GET['masp'];
     $size = $_GET['size'];
     $soluong = intval($_GET['soluong']);
+    $trangthai = 'Mua ngay (Hủy)';
 
     $stmt = $conn->prepare("
         SELECT tensp, gia, url FROM sanpham WHERE masp = ?
@@ -45,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['chon'])) {
     $chon = $_POST['chon'];
     $tong = 0;
     $items = [];
+    $trangthai = 'Mua bằng giỏ hàng (Hủy)';
 
     foreach ($chon as $value) {
         list($masp, $size) = explode('|', $value);
@@ -91,7 +93,6 @@ $soHD = generateSoHD($conn);
 $makh = $kh['makh'];
 $manv = 'NV01'; // cố định như yêu cầu
 $trigia = 0;
-$trangthai = 'Hủy';
 $ngayHD = date('Y-m-d');
 
 // Kiểm tra xem hóa đơn đã tồn tại cho session này chưa để tránh trùng
@@ -112,128 +113,49 @@ if (!$conn->query($sql_insertHD)) {
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/css/table.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
-    <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 20px;
-    }
-
-    h2 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 30px;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 90%;
-        margin: 0 auto;
-        background-color: #fff;
-        box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-    }
-
-    th {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    td {
-        padding: 12px;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    tr:last-child td {
-        border-bottom: none;
-    }
-
-    tr:hover {
-        background-color: #f1f1f1;
-    }
-
-    img {
-        width: 60px;
-        height: auto;
-        border-radius: 4px;
-    }
-
-    strong {
-        color: #e53935;
-        font-size: 18px;
-    }
-
-    .btn-dathang {
-        display: block;
-        margin: 30px auto;
-        padding: 12px 24px;
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-dathang:hover {
-        background-color: #45a049;
-    }
-</style>
-
 </head>
 <body>
-    <div id="hoadon">
+    <div id="hoadon-container">
     <h2>Hóa đơn thanh toán</h2>
-    <table>
-        <tr>
-            <th>Hình ảnh</th>
-            <th>Tên sản phẩm</th>
-            <th>Size</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
-        </tr>
-        <?php foreach ($items as $item): ?>
-        <tr>
-            <td><img src="<?= htmlspecialchars($item['url']) ?>"></td>
-            <td><?= htmlspecialchars($item['tensp']) ?></td>
-            <td><?= htmlspecialchars($item['size']) ?></td>
-            <td><?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</td>
-            <td><?= $item['soluong'] ?></td>
-            <td><?= number_format($item['subtotal'], 0, ',', '.') ?> VNĐ</td>
-        </tr>
-        <?php endforeach; ?>
-        <tr>
-            <td colspan="5"><strong>Tổng cộng:</strong></td>
-            <td><strong><?= number_format($tong, 0, ',', '.') ?> VNĐ</strong></td>
-        </tr>
-    </table>
-    <div style="width: 90%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-    <h3>Thông tin khách hàng</h3>
-    <p><strong>Họ tên:</strong> <?= htmlspecialchars($kh['hoten']) ?></p>
-    <p><strong>Ngày sinh:</strong> <?= htmlspecialchars($kh['ngaysinh']) ?></p>
-    <p><strong>Số điện thoại:</strong> <?= htmlspecialchars($kh['sodt']) ?></p>
-    <p><strong>Địa chỉ:</strong> <?= htmlspecialchars($kh['thongtin_lienhe']) ?></p>
-</div>
-<form action="thanhtoan.php" method="post" style="text-align: center; margin-top: 30px;">
-    <?php foreach ($items as $item): ?>
-        <input type="hidden" name="masp[]" value="<?= htmlspecialchars($item['masp']) ?>">
-        <input type="hidden" name="size[]" value="<?= htmlspecialchars($item['size']) ?>">
-        <input type="hidden" name="soluong[]" value="<?= htmlspecialchars($item['soluong']) ?>">
-        <input type="hidden" name="gia[]" value="<?= htmlspecialchars($item['gia']) ?>">
-    <?php endforeach; ?>
-    <input type="hidden" name="soHD" value="<?= $soHD ?>">
-    <input type="hidden" name="tongtien" value="<?= $tong ?>">
-    <button type="submit" class="btn-dathang">Thanh toán</button>
-</form>
 
+    <div class="lable-sanpham">
+        <?php foreach ($items as $item): ?>
+        <div class="item-sp">
+            <img src="<?= htmlspecialchars($item['url']) ?>" alt="Ảnh sản phẩm" style="width: 80px; height: 80px;">
+            <div style="flex: 1;">
+                <div class="tensp"><strong><?= htmlspecialchars($item['tensp']) ?></strong></div>
+                <div class="size">Size: <?= htmlspecialchars($item['size']) ?> x SL: <?= $item['soluong'] ?></div>
+                <div class="dongia">Đơn giá: <?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</div>
+                <div class="thanhtien">Thành tiền: <strong style="color: #e53935"><?= number_format($item['subtotal'], 0, ',', '.') ?> VNĐ</strong></div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+
+        <div style="text-align: right; font-size: 18px; margin-top: 20px;">
+            <strong>Tổng cộng: <?= number_format($tong, 0, ',', '.') ?> VNĐ</strong>
+        </div>
+    </div>
+
+    <div style="max-width: 800px; margin: 30px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+        <h3>Thông tin khách hàng</h3>
+        <p><strong>Họ tên:</strong> <?= htmlspecialchars($kh['hoten']) ?></p>
+        <p><strong>Ngày sinh:</strong> <?= htmlspecialchars($kh['ngaysinh']) ?></p>
+        <p><strong>Số điện thoại:</strong> <?= htmlspecialchars($kh['sodt']) ?></p>
+        <p><strong>Địa chỉ:</strong> <?= htmlspecialchars($kh['thongtin_lienhe']) ?></p>
+    </div>
+
+    <form action="thanhtoan.php" method="post" style="text-align: center; margin-top: 30px;">
+        <?php foreach ($items as $item): ?>
+            <input type="hidden" name="masp[]" value="<?= htmlspecialchars($item['masp']) ?>">
+            <input type="hidden" name="size[]" value="<?= htmlspecialchars($item['size']) ?>">
+            <input type="hidden" name="soluong[]" value="<?= htmlspecialchars($item['soluong']) ?>">
+            <input type="hidden" name="gia[]" value="<?= htmlspecialchars($item['gia']) ?>">
+        <?php endforeach; ?>
+        <input type="hidden" name="soHD" value="<?= $soHD ?>">
+        <input type="hidden" name="tongtien" value="<?= $tong ?>">
+        <button type="submit" class="btn-dathang">Thanh toán</button>
+    </form>
 </div>
+
 </body>
 </html>

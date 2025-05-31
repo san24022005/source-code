@@ -13,24 +13,48 @@ $masps = $_POST['masp'];
 $sizes = $_POST['size'];
 $soluongs = $_POST['soluong'];
 $gias = $_POST['gia'];
+$makh = $_SESSION['username'] ?? null;
 
-// Cập nhật lại trạng thái hóa đơn và trị giá
-$sql_update_hd = "UPDATE hoadon SET trangthai='Đã thanh toán', trigia=? WHERE soHD=?";
-$stmt = $conn->prepare($sql_update_hd);
-$stmt->bind_param("ds", $tongtien, $soHD);
-$stmt->execute();
+if (!$makh) die("Không xác định khách hàng.");
 
-// Thêm vào bảng chi tiết hóa đơn
+// Kiểm tra trạng thái hóa đơn ban đầu
+$sql_check = "SELECT trangthai FROM hoadon WHERE soHD = ?";
+$stmt_check = $conn->prepare($sql_check);
+$stmt_check->bind_param("s", $soHD);
+$stmt_check->execute();
+$result = $stmt_check->get_result();
+$hd = $result->fetch_assoc();
+
+$isFromGioHang = ($hd && $hd['trangthai'] === 'Mua bằng giỏ hàng (Hủy)');
+
+// Thêm chi tiết hóa đơn và xử lý giỏ hàng nếu cần
 $stmt_ct = $conn->prepare("INSERT INTO chitiethoadon (soHD, masp, size, soluong, giaban) VALUES (?, ?, ?, ?, ?)");
+$stmt_del = $conn->prepare("DELETE FROM giohang WHERE makh=? AND masp=? AND size=? AND soluong=?");
 
 for ($i = 0; $i < count($masps); $i++) {
     $m = $conn->real_escape_string($masps[$i]);
     $s = $conn->real_escape_string($sizes[$i]);
     $sl = floatval($soluongs[$i]);
     $g = floatval($gias[$i]);
+
     $stmt_ct->bind_param("sssdd", $soHD, $m, $s, $sl, $g);
     $stmt_ct->execute();
+
+    // Nếu đơn hàng là từ giỏ hàng, thì xóa sản phẩm tương ứng khỏi giỏ
+    if ($isFromGioHang) {
+        $stmt_del->bind_param("sssd", $makh, $m, $s, $sl);
+        $stmt_del->execute();
+    }
 }
 
-echo "<script>"
+$sql_update_hd = "UPDATE hoadon SET trangthai='Đã thanh toán', trigia=? WHERE soHD=?";
+$stmt = $conn->prepare($sql_update_hd);
+$stmt->bind_param("ds", $tongtien, $soHD);
+$stmt->execute();
+
+
+echo "<script>
+        alert('Đã đặt hàng thành công');
+        window.location.href = 'index.php';
+      </script>";
 ?>
