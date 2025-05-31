@@ -38,7 +38,7 @@ if ($keyword == null) {
     require 'site.php';
     load_top();
     load_backbtn();
-    echo "<div id='products'>";
+    echo "<div id='search-products'>";
 
 if ($keyword !== '') {
     // Tìm kiếm theo tên sản phẩm có chứa từ khóa

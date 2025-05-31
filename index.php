@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
         </div>
 
         <script src="accsets/js/modal.js"></script>
-        <script src="../accsets/js/header.js"></script>
+        <script src="accsets/js/header.js"></script>
     </body>
 </html>
 
