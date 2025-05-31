@@ -51,7 +51,6 @@ $user = $result->fetch_assoc();
 <head>
     <meta charset="UTF-8" />
     <title>Thông tin khách hàng</title>
-    <link rel ="stylesheet" href="myaccount.css">
     <link rel="stylesheet" href="accsets/css/base.css">
     <link rel="stylesheet" href="accsets/css/main.css">
     <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">

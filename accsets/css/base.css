@@ -73,4 +73,5 @@ input, label, select {
 input:focus, select:focus {
     border: 2px solid var(--main-bg2-color);
     outline: none; /* Loại bỏ đường viền mặc định của trình duyệt */
+    box-sizing: border-box;
 }

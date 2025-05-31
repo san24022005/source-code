@@ -1,52 +1,36 @@
 <?php
 session_start();
-require('connect.php');
+$conn = new mysqli("localhost", "root", "123456", "qlbh");
+$conn->set_charset("utf8mb4");
 
-if (!$conn) {
-    die("Kết nối thất bại: " . mysqli_connect_error());
+if (!isset($_POST['soHD'], $_POST['masp'], $_POST['size'], $_POST['soluong'], $_POST['gia'], $_POST['tongtien'])) {
+    die("Thiếu dữ liệu để thanh toán.");
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    die("Truy cập không hợp lệ.");
+$soHD = $_POST['soHD'];
+$tongtien = floatval($_POST['tongtien']);
+$masps = $_POST['masp'];
+$sizes = $_POST['size'];
+$soluongs = $_POST['soluong'];
+$gias = $_POST['gia'];
+
+// Cập nhật lại trạng thái hóa đơn và trị giá
+$sql_update_hd = "UPDATE hoadon SET trangthai='Đã thanh toán', trigia=? WHERE soHD=?";
+$stmt = $conn->prepare($sql_update_hd);
+$stmt->bind_param("ds", $tongtien, $soHD);
+$stmt->execute();
+
+// Thêm vào bảng chi tiết hóa đơn
+$stmt_ct = $conn->prepare("INSERT INTO chitiethoadon (soHD, masp, size, soluong, giaban) VALUES (?, ?, ?, ?, ?)");
+
+for ($i = 0; $i < count($masps); $i++) {
+    $m = $conn->real_escape_string($masps[$i]);
+    $s = $conn->real_escape_string($sizes[$i]);
+    $sl = floatval($soluongs[$i]);
+    $g = floatval($gias[$i]);
+    $stmt_ct->bind_param("sssdd", $soHD, $m, $s, $sl, $g);
+    $stmt_ct->execute();
 }
 
-// Kiểm tra người dùng đã đăng nhập chưa
-if (!isset($_SESSION['username'])) {
-    die("Bạn chưa đăng nhập.");
-}
-
-// Kiểm tra dữ liệu gửi về
-if (!isset($_POST['masp'], $_POST['size'], $_POST['quantity'])) {
-    die("Thiếu dữ liệu sản phẩm.");
-}
-
-$masp = $conn->real_escape_string($_POST['masp']);
-$size = $conn->real_escape_string($_POST['size']);
-$soluong = (float)$_POST['quantity'];
-$soHD = $conn->real_escape_string($_POST['soHD'] ?? '');
-
-// Lấy giá bán từ sản phẩm
-$sql_gia = "SELECT gia FROM sanpham WHERE masp = '$masp'";
-$result_gia = $conn->query($sql_gia);
-if (!$result_gia || $result_gia->num_rows === 0) {
-    die("Không tìm thấy sản phẩm.");
-}
-$giaban = (float)$result_gia->fetch_assoc()['gia'];
-
-// Thêm vào chitiethoadon
-$sql_insert = "INSERT INTO chitiethoadon (soHD, masp, size, soluong, giaban) 
-               VALUES ('$soHD', '$masp', '$size', $soluong, $giaban)";
-
-if ($conn->query($sql_insert)) {
-    // Cập nhật trạng thái hóa đơn từ 'Hủy' → 'Đang xử lý'
-    $conn->query("UPDATE hoadon SET trangthai = 'Đã đặt hàng' WHERE soHD = '$soHD'");
-    echo "<script>
-    alert('Đã đặt hàng thành công!');
-        window.location.href = 'index.php';
-        </script>";
-exit();
-
-} else {
-    echo "<p class='error'>Lỗi khi thêm chi tiết hóa đơn: " . $conn->error . "</p>";
-}
+echo "<h2 style='text-align:center;color:green;'>Thanh toán thành công! Mã hóa đơn: $soHD</h2>";
 ?>
