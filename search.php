@@ -1,13 +1,7 @@
 <?php
 session_start();
 
-$host = "localhost";
-$user = "root";
-$pass = "123456";
-$dbname = "QLBH";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-$conn->set_charset("utf8");
+require 'connect.php';
 
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
