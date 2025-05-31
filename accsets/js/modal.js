@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const url = `shopping.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+    const url = `hoadon.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
     window.location.href = url; // ✅ Chuyển hướng trực tiếp
 });
 

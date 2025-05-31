@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liên hệ - Hỗ trợ khách hàng</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 40px;
-    }
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Hỗ trợ khách hàng</title>
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
+    <style>
     .contact-section {
       display: flex;
       background: white;
@@ -23,7 +15,7 @@
       border-radius: 8px;
       overflow: hidden;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 44px auto;
     }
 
     .contact-left {
@@ -102,14 +94,8 @@
     }
 
     .contact-form button {
-      background-color: #009eff;
-      color: white;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 6px;
       margin-top: 20px;
       font-size: 16px;
-      cursor: pointer;
       transition: 0.3s ease;
     }
 
@@ -119,6 +105,11 @@
   </style>
 </head>
 <body>
+  <?php 
+  require 'site.php';
+  load_top();
+  load_backbtn();
+  ?>
 
 <div class="contact-section">
   <!-- LEFT COLUMN -->

@@ -39,7 +39,15 @@
             <li>
                 <div class="register-btn">
                     <i class="top-icon ti-user"></i>
-                    <a href="register.php">Đăng ký</a>
+                    <a href="<?php echo isset($_SESSION['name']) ? 'logout.php' : 'register.php'; ?>">
+                    <?php
+                        if (isset($_SESSION["name"])) {
+                            echo "Đăng xuất";
+                        } else {
+                            echo "Đăng kí";
+                        }
+                    ?>
+                </a>
                 </div>
             </li>
         </div>        

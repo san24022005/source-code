@@ -24,7 +24,7 @@ $sql = "
     JOIN chitiethoadon cthd ON hd.soHD = cthd.soHD
     JOIN sanpham sp ON cthd.masp = sp.masp
     WHERE hd.makh = ?
-    ORDER BY hd.ngayHD DESC
+    ORDER BY hd.soHD DESC
 ";
 
 $stmt = $conn->prepare($sql);

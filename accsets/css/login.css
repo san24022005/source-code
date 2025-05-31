@@ -124,7 +124,13 @@ form input {
     justify-content: center;
 }
 
-@media (max-width: 1025px) {
+@media (min-width: 1024px) {
+    .right-panel{
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 1023px) {
     .left-panel {
         width: 40%;
     }
