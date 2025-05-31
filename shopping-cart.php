@@ -138,7 +138,7 @@ $result = $stmt->get_result();
         </div>
         <div><?= number_format($subtotal, 0, ',', '.') ?> VNĐ</div>
         <div class="btn-remove">
-            <a href="remove-cart.php?masp=<?= $item['masp'] ?>">Xóa</a>
+            <a href="remove-cart.php?masp=<?= $item['masp'] ?>&size=<?= $item['size'] ?>&soluong=<?= $item['soluong'] ?>">Xóa</a>
         </div>
     </div>
     <?php endwhile; ?>
