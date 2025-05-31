@@ -28,7 +28,7 @@
     margin: 10px 0;
 }
 
-.item-sp img {
+.label-sanpham .item-sp img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -36,17 +36,17 @@
     border: 1px solid #ccc;
 }
 
-.item-sp .info {
+.label-sanpham .item-sp .info {
     flex: 1;
 }
 
-.tensp {
+.label-sanpham .tensp {
     font-size: 18px;
     margin-bottom: 6px;
     color: #333;
 }
 
-.size, .dongia, .thanhtien {
+.label-sanpham .size, .label-sanpham .dongia, .label-sanpham .thanhtien {
     font-size: 15px;
     margin-bottom: 4px;
     color: #555;
@@ -159,14 +159,15 @@ form .btn-dathang:hover {
     color: red;
 }
 
-.modal .modal-content #btn-xacnhan {
-    height: 40px;
+.modal .modal-content .btn-khung-modal {
+    height: 44px;
     width: 250px;
-    margin: auto;
+    text-align: center;
 }
 
-.modal .modal-content .btn-xacnhan-mua {
-    text-align: center;
+.modal .modal-content .btn-modal {
+    width: 100%;
+    margin: 0 auto;
 }
 
 .modal .modal-content .modal-size {
@@ -321,7 +322,7 @@ form .btn-dathang:hover {
     }
 
     .modal .modal-content .note {
-        height: 50px;
+        height: 30px;
     }
 
     .modal .modal-img {
@@ -337,3 +338,75 @@ form .btn-dathang:hover {
 
 }
 /* END : MODAL */
+
+/* START : CART */
+
+#cart {
+    max-width: 100%;
+    width: 900px;
+    margin: 44px auto;
+    padding: 10px;
+}
+
+#cart h2 {
+    font-size: 30px;
+}
+
+.cart-container .cart-item {
+    display: grid;
+    grid-template-columns: 30px 100px 1fr 50px;
+    gap: 10px;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    height: 200px;
+}
+
+.cart-container .cart-header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    padding: 10px;
+    height: 50px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cart-item .info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.cart-item .info .tensp {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-item .info input[type="text"] {
+    width: 60px;
+    text-align: center;
+}
+
+.btn-remove a {
+    color: #fff;
+    background-color: red;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.cart-container .cart-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* END : CART */

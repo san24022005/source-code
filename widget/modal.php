@@ -29,13 +29,11 @@
         <td class="note"><p id="modal-max-note"></p></td>
     </tr>
     <tr>
-        <td class="btn-xacnhan-mua">
-            <button id="btn-xacnhan" class="btn">Tiến hành thanh toán</button>
+        <td class="btn-khung-modal">
+            <button id="btn-xacnhan" class="btn-modal">Tiến hành thanh toán</button>
         </td>
-    </tr>
-    <tr>
-        <td class="btn-giohang">
-            <button id="btn-giohang">Thêm vào giỏ hàng</button>
+        <td class="btn-khung-modal">
+            <button id="btn-giohang" class="btn-modal">Thêm vào giỏ hàng</button>
         </td>
     </tr>
 </table>

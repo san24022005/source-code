@@ -14,6 +14,9 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 <head>
     <meta charset="UTF-8">
     <title>BT Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
     <style>
         body { font-family: Arial; padding: 20px; margin: 0; }
         .header { 

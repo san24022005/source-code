@@ -54,6 +54,7 @@ $user = $result->fetch_assoc();
     <link rel="stylesheet" href="accsets/css/base.css">
     <link rel="stylesheet" href="accsets/css/main.css">
     <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <?php
