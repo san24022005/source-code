@@ -79,6 +79,10 @@ $result = $stmt->get_result();
         text-align: center;
         width: 30px;
     }
+
+    #cart .btn-thanhtoan {
+        width: 250px;
+    }
     </style>
 
     <title>Giỏ hàng của bạn</title>
@@ -93,6 +97,11 @@ $result = $stmt->get_result();
 
 </head>
 <body>
+    <?php
+    require 'site.php';
+    load_top();
+    load_backbtn();
+    ?>
     <div id="cart">
     <h2>Giỏ hàng của bạn</h2>
 
@@ -140,5 +149,6 @@ $result = $stmt->get_result();
         <button type="submit" name="thanhtoan" class="btn-thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Thanh toán</button>
     </form>
     </div>
+<?php load_footer();?>
 </body>
 </html>

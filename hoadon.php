@@ -115,14 +115,19 @@ if (!$conn->query($sql_insertHD)) {
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
+    <?php
+    require 'site.php';
+    load_top();
+    load_backbtn();
+    ?>
     <div id="hoadon-container">
     <h2>Hóa đơn thanh toán</h2>
-
-    <div class="lable-sanpham">
+    <div class="hoadon-body">
+    <div class="label-sanpham">
         <?php foreach ($items as $item): ?>
         <div class="item-sp">
-            <img src="<?= htmlspecialchars($item['url']) ?>" alt="Ảnh sản phẩm" style="width: 80px; height: 80px;">
-            <div style="flex: 1;">
+            <img src="<?= htmlspecialchars($item['url']) ?>" alt="Ảnh sản phẩm">
+            <div class="info">
                 <div class="tensp"><strong><?= htmlspecialchars($item['tensp']) ?></strong></div>
                 <div class="size">Size: <?= htmlspecialchars($item['size']) ?> x SL: <?= $item['soluong'] ?></div>
                 <div class="dongia">Đơn giá: <?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</div>
@@ -136,15 +141,16 @@ if (!$conn->query($sql_insertHD)) {
         </div>
     </div>
 
-    <div style="max-width: 800px; margin: 30px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-        <h3>Thông tin khách hàng</h3>
+    <div class="label-thongtin">
+        <h2>Thông tin giao hàng</h2>
         <p><strong>Họ tên:</strong> <?= htmlspecialchars($kh['hoten']) ?></p>
         <p><strong>Ngày sinh:</strong> <?= htmlspecialchars($kh['ngaysinh']) ?></p>
         <p><strong>Số điện thoại:</strong> <?= htmlspecialchars($kh['sodt']) ?></p>
         <p><strong>Địa chỉ:</strong> <?= htmlspecialchars($kh['thongtin_lienhe']) ?></p>
+        <a href="myaccount.php" class="thaydoi">Thay đổi thông tin</a>
     </div>
 
-    <form action="thanhtoan.php" method="post" style="text-align: center; margin-top: 30px;">
+    <form action="thanhtoan.php" method="post">
         <?php foreach ($items as $item): ?>
             <input type="hidden" name="masp[]" value="<?= htmlspecialchars($item['masp']) ?>">
             <input type="hidden" name="size[]" value="<?= htmlspecialchars($item['size']) ?>">
@@ -155,6 +161,7 @@ if (!$conn->query($sql_insertHD)) {
         <input type="hidden" name="tongtien" value="<?= $tong ?>">
         <button type="submit" class="btn-dathang">Thanh toán</button>
     </form>
+    </div>
 </div>
 
 </body>

@@ -7,7 +7,91 @@
 /* START : LABEL HOA DON */
 
 #hoadon-container {
+    max-width: 1000px;
+    margin: 44px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.hoadon-body {
+    margin-top: 20px;
+}
+
+.label-sanpham .item-sp {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+    margin: 10px 0;
+}
+
+.item-sp img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.item-sp .info {
+    flex: 1;
+}
+
+.tensp {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.size, .dongia, .thanhtien {
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.thanhtien strong {
+    font-size: 16px;
+    color: #e53935;
+}
+
+form .btn-dathang {
+    background-color: #2e7d32;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form .btn-dathang:hover {
+    background-color: #1b5e20;
+}
+
+.label-thongtin {
     width: 80%;
+    min-width: 350px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+}
+
+.label-thongtin p {
+    margin: 6px 0;
+}
+
+.label-thongtin .thaydoi{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #215cb0;
+    color: #fff;
 }
 
 /* END : LABEL HOA DON */
