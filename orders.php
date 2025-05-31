@@ -66,7 +66,7 @@ while ($row = $result->fetch_assoc()) {
                 <div class="order-card">
                     <div class="order-header">
                         <span>Đơn hàng #<?= $soHD ?> | Ngày: <?= $order['ngayHD'] ?></span>
-                        <span class="status">Hoàn thành</span>
+                        <span class="status">Đã đặt hàng</span>
                     </div>
 
                     <?php $tong = 0; ?>

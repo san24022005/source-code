@@ -363,16 +363,22 @@ form .btn-dathang:hover {
     height: 200px;
 }
 
-.cart-container .cart-header {
+.cart-container .cart-header{
     background-color: #f0f0f0;
     font-weight: bold;
     padding: 10px;
     height: 50px;
+    text-align: center;
+}
+
+.cart-header div:last-child {
+    text-align: left;
 }
 
 .cart-item img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: auto;
+    padding: 5px;
     object-fit: cover;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -407,6 +413,10 @@ form .btn-dathang:hover {
 .cart-container .cart-item input[type="checkbox"] {
     width: 20px;
     height: 20px;
+}
+
+#cart .btn-thanhtoan {
+    width: 300px;
 }
 
 /* END : CART */
