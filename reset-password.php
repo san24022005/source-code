@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-include 'connect.php'; // File kết nối CSDL
+require 'connect.php'; // File kết nối CSDL
 
 $username = $_SESSION['username'];
 

@@ -410,3 +410,69 @@ form .btn-dathang:hover {
 }
 
 /* END : CART */
+
+/* START : ORDERS */
+
+.orders-container {
+    margin: 50px auto;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.orders-container .order-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 10px;
+}
+.orders-container .order-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.orders-container .order-card .item {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+}
+.orders-container .order-card .item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.orders-container .order-card .info {
+    flex: 1;
+}
+
+.orders-container .order-card .price {
+    text-align: right;
+    color: #d0011b;
+    font-weight: bold;
+}
+
+.orders-container .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.orders-container .btn {
+    width: 120px;
+}
+
+.orders-container .btn:hover {
+    background: #d8351d;
+}
+
+.orders-container .status {
+    color: green;
+}
