@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./accsets/css/login.css">
     <link rel="stylesheet" href="./accsets/css/base.css">
-    <link rel="stylesheet" href="./accsets/css/grid.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./accsets/css/main.css">
 </head>

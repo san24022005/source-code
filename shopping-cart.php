@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 $conn = new mysqli("localhost", "root", "123456", "qlbh");
 $conn->set_charset("utf8mb4");
@@ -30,6 +30,7 @@ $result = $stmt->get_result();
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+
     <title>Giỏ hàng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./accsets/css/main.css">
@@ -79,10 +80,22 @@ $result = $stmt->get_result();
         width: 30px;
     }
     </style>
+
+    <title>Giỏ hàng của bạn</title>
+    <script>
+        function toggleSelectAll(source) {
+            checkboxes = document.getElementsByName('chon[]');
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+    </script>
+
 </head>
 <body>
     <div id="cart">
     <h2>Giỏ hàng của bạn</h2>
+
     <form method="post" action="hoadon.php">
         <div class="cart-container">
     <div class="cart-item cart-header">
@@ -127,5 +140,45 @@ $result = $stmt->get_result();
         <button type="submit" name="thanhtoan" class="btn-thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Thanh toán</button>
     </form>
     </div>
+
+    <form method="POST" action="muahang.php">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+                <th><input type="checkbox" onclick="toggleSelectAll(this)"> Chọn tất cả</th>
+                <th>Hình ảnh</th>
+                <th>Tên SP</th>
+                <th>Size</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+            </tr>
+            <?php
+            $tong = 0;
+            while ($item = $result->fetch_assoc()):
+                $subtotal = $item['gia'] * $item['soluong'];
+                $tong += $subtotal;
+                $item_id = htmlspecialchars($item['masp']) . '_' . htmlspecialchars($item['size']);
+            ?>
+            <tr>
+                <td>
+                    <input type="checkbox" name="chon[]" value="<?= $item_id ?>">
+                </td>
+                <td><img src="<?= htmlspecialchars($item['url']) ?>" width="80"></td>
+                <td><?= htmlspecialchars($item['tensp']) ?></td>
+                <td><?= htmlspecialchars($item['size']) ?></td>
+                <td><?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</td>
+                <td><?= $item['soluong'] ?></td>
+                <td><?= number_format($subtotal, 0, ',', '.') ?> VNĐ</td>
+            </tr>
+            <?php endwhile; ?>
+            <tr>
+                <td colspan="6" align="right"><strong>Tổng cộng:</strong></td>
+                <td><strong><?= number_format($tong, 0, ',', '.') ?> VNĐ</strong></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" value="Mua hàng">
+    </form>
+
 </body>
 </html>

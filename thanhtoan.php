@@ -32,5 +32,5 @@ for ($i = 0; $i < count($masps); $i++) {
     $stmt_ct->execute();
 }
 
-echo "<h2 style='text-align:center;color:green;'>Thanh toán thành công! Mã hóa đơn: $soHD</h2>";
+echo "<script>"
 ?>

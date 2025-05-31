@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Cập nhật thông tin
             modalTensp.textContent = tensp;
-            modalGia.textContent = "Giá: " + gia + " VNĐ";
+            modalGia.textContent = "Giá: " + Number(gia).toLocaleString('vi-VN') + " VNĐ";
             modalImg.src = img;
 
             modal.dataset.masp = masp; // GÁN MÃ SẢN PHẨM CHO MODAL
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Cập nhật thông tin
         modalTensp.textContent = tensp;
-        modalGia.textContent = "Giá: " + gia + " VNĐ";
+        modalGia.textContent = "Giá: " + Number(gia).toLocaleString('vi-VN') + " VNĐ";
         modalImg.src = img;
 
         modal.dataset.masp = masp;

@@ -89,13 +89,9 @@ load_backbtn();
         <form method="POST" action="thanhtoan.php">
         <table class="label-shopping-table">
             <tr>
-                <td rowspan="6" class="label-image">
-                    <?php
-                    
-                    echo "<img src='{$row['url']}' width='100%'/>";?>
+                <td rowspan="6" class="label-image" id="responsive-shopping">
+                    <?php echo "<img src='{$row['url']}' width='100%'/>";?>
                 </td>
-
-                <td rowspan="6" class="label-ngancach"></td>
             </tr>
                
             <tr>
@@ -175,5 +171,6 @@ load_backbtn();
     </div>   
 </div>
 <?php load_footer(); ?>
+<script src="accsets/js/shopping.js"></script>
 </body>
 </html>

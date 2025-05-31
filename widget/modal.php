@@ -3,7 +3,7 @@
         <td colspan="2"><i class="ti-close close"></i></td>
     </tr>
     <tr>
-        <td style="width: 50%;" id="responsive-modal" class="modal-img">
+        <td id="responsive-modal" class="modal-img">
             <img id="modal-img" src="" alt="Sản phẩm" style="width: 100%;">
         </td>
     </tr>

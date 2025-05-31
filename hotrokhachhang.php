@@ -2,114 +2,184 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Hỗ Trợ Khách Hàng - BT Shop</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - Hỗ trợ khách hàng</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 40px;
     }
-    .support-header {
-      background-color: #f8f9fa;
-      padding: 40px 0;
-      text-align: center;
+
+    .contact-section {
+      display: flex;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .faq-section h5 {
+
+    .contact-left {
+      background-color: #009eff;
+      color: white;
+      padding: 40px;
+      width: 40%;
+    }
+
+    .contact-left h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .contact-block {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .contact-block img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .contact-block a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .contact-right {
+      width: 60%;
+      padding: 40px;
+    }
+
+    .contact-right h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .input-group {
+      flex: 1;
+    }
+
+    .phone-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    .contact-form textarea {
+      height: 100px;
+    }
+
+    .contact-form button {
+      background-color: #009eff;
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-size: 16px;
       cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #007acc;
     }
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="support-header">
-  <h1>Hỗ Trợ Khách Hàng</h1>
-  <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn!</p>
-</div>
-
-<!-- Liên hệ -->
-<div class="container my-5">
-  <div class="row">
-    <!-- Thông tin liên hệ -->
-    <div class="col-md-6">
-      <h4>Thông tin liên hệ</h4>
-      <p><strong>Email:</strong> hotro@btshop.vn</p>
-      <p><strong>Hotline:</strong> 0788546664 </p>
-      <p><strong>Địa chỉ:</strong> ổ quỷ của đào tiên, phường Ghềnh Ráng, TP Qui Nhơn, Tỉnh Bình Định</p>
-    </div>
-
-    <!-- Form liên hệ -->
-    <div class="col-md-6">
-      <h4>Gửi yêu cầu hỗ trợ</h4>
-      <form>
-        <div class="mb-3">
-          <label for="hoten" class="form-label">Họ tên</label>
-          <input type="text" class="form-control" id="hoten" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="noidung" class="form-label">Nội dung hỗ trợ</label>
-          <textarea class="form-control" id="noidung" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- FAQ -->
-<div class="container my-5 faq-section">
-  <h3 class="mb-4">Câu hỏi thường gặp</h3>
-  <div class="accordion" id="faqAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="faq1">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer1">
-          Làm thế nào để đổi/trả hàng?
-        </button>
-      </h2>
-      <div id="answer1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Quý khách có thể đổi/trả hàng trong vòng 7 ngày kể từ khi nhận hàng, với điều kiện sản phẩm còn nguyên tem mác và chưa qua sử dụng.
-        </div>
+<div class="contact-section">
+  <!-- LEFT COLUMN -->
+  <div class="contact-left">
+    <h2>Liên hệ - Hỗ trợ </h2>
+    <div class="contact-block">
+      <img src="accsets/images/phone-icon.png" alt="Phone">
+      <div>
+        <strong>Phòng Kinh doanh</strong><br>
+        <a href="mailto:hotrobtshop@gmail.com.vn">hotrobtshop@gmmail.com.vn </a><br>
+        +84 28 3995 1060 (Mr. Vương)<br>
+        +84 78 5666 04530453 (Mr. Hiếu)
       </div>
     </div>
-    
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="faq2">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2">
-          Tôi có thể theo dõi đơn hàng ở đâu?
-        </button>
-      </h2>
-      <div id="answer2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Bạn có thể theo dõi tình trạng đơn hàng tại mục "Đơn hàng của tôi" sau khi đăng nhập tài khoản.
-        </div>
+    <div class="contact-block">
+      <img src="accsets/images/info-icon.png" alt="Info">
+      <div>
+        <strong>Yêu Cầu Chung</strong><br>
+        +84 28 3997 8000<br>
+        Line. 1800 2222 (tuyển dụng)<br>
+        Line. 1900 3355 (liên hệ chung)
       </div>
     </div>
-    
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="faq3">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3">
-          BT Shop có giao hàng toàn quốc không?
-        </button>
-      </h2>
-      <div id="answer3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Có. Chúng tôi giao hàng toàn quốc với thời gian từ 2–5 ngày làm việc.
-        </div>
+    <div class="contact-block">
+      <img src="accsets/images/location-icon.png" alt="Location">
+      <div>
+        <strong>Tòa nhà opera house BT shop </strong><br>
+        08 An Dương Vương,Phường Nguyễn Văn Cừ, TP Quy Nhơn, tỉnh Bình Định ,<br>
+        Quy Nhơn, Bình Định <a href="#">(Bản đồ)</a>
       </div>
     </div>
   </div>
+  <div class="contact-right">
+    <h2>Hỗ trợ khách hàng</h2>
+    <form class="contact-form">
+      <label for="name">Họ và tên *</label>
+      <input type="text" id="name" placeholder="Nhập họ và tên">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="example@mail.com">
+        </div>
+        <div class="input-group">
+          <label for="phone">Số điện thoại</label>
+          <div class="phone-input">
+            <select>
+              <option>(+84)</option>
+              <option>(+1)</option>
+              <option>(+61)</option>
+            </select>
+            <input type="text" placeholder="28 3997 8000">
+          </div>
+        </div>
+      </div>
+      <label for="company">Shop *</label>
+      <input type="text" id="company" placeholder="BT shop">
+      <label for="message">Nội dung *</label>
+      <textarea id="message" placeholder="Nhập nội dung"></textarea>
+      <button type="submit">Gửi →</button>
+    </form>
+  </div>
 </div>
-
-<!-- Footer -->
-<footer class="text-center py-4 bg-light mt-5">
-  <p>&copy; 2025 BT Shop | Hỗ trợ bởi nhân viên cấp quốc tế của BT Shop</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
