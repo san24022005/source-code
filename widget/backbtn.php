@@ -1,13 +1,13 @@
 <a href="index.php">
     <div class="home-page">
         <i class="ti-angle-left"></i> 
-        Quay về trang chủ
+        Trang chủ
     </div>
 </a>
 <style>
     .home-page {
-    margin-left: 10px;
-    width: 160px;
+    margin-left: 5px;
+    width: 100px;
     position: fixed;
     padding: 10px 5px;
     top: 44px;

@@ -1,39 +1,33 @@
-<table class="modal-content" cellspacing="0" cellpadding="8">
-    <tr>
-        <td colspan="2"><i class="ti-close close"></i></td>
-    </tr>
-    <tr>
-        <td id="responsive-modal" class="modal-img">
-            <img id="modal-img" src="" alt="Sản phẩm" style="width: 100%;">
-        </td>
-    </tr>
-    <tr>
-        <td class="modal-tensp"><h3 id="modal-tensp"></h3></td>
-    </tr>
-    <tr>
-        <td class="modal-gia"><p id="modal-gia"></p></td>
-    </tr>
-    <tr>
-        <td class="modal-size">
+<div class="modal-content-block">
+    <div class="modal-left">
+        <img id="modal-img" src="" alt="Sản phẩm">
+    </div>
+
+    <div class="modal-right">
+        <div class="modal-header">
+            <i class="ti-close close"></i>
+        </div>
+
+        <h3 id="modal-tensp"></h3>
+        <p id="modal-gia"></p>
+
+        <div class="modal-size">
             <label for="modal-size">Chọn size:</label>
             <select id="modal-size"></select>
-        </td>
-    </tr>
-    <tr>
-        <td class="modal-soluong">
+        </div>
+
+        <div class="modal-soluong">
             <label for="modal-qty">Số lượng:</label>
             <input type="number" id="modal-qty" min="1" value="1"/>
-        </td>
-    </tr>
-    <tr>
-        <td class="note"><p id="modal-max-note"></p></td>
-    </tr>
-    <tr>
-        <td class="btn-khung-modal">
+        </div>
+
+        <p id="modal-max-note" class="note"></p>
+
+        <div class="btn-khung-modal">
             <button id="btn-xacnhan" class="btn-modal">Tiến hành thanh toán</button>
-        </td>
-        <td class="btn-khung-modal">
+        </div>
+        <div class="btn-khung-modal">
             <button id="btn-giohang" class="btn-modal">Thêm vào giỏ hàng</button>
-        </td>
-    </tr>
-</table>
+        </div>
+    </div>
+</div>
