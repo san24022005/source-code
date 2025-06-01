@@ -6,7 +6,7 @@
 </a>
 <style>
     .home-page {
-    margin-left: 10px;
+    margin-left: 5px;
     width: 100px;
     position: fixed;
     padding: 10px 5px;
@@ -19,11 +19,5 @@
 .home-page:hover {
     background-color: #aaa;
     color: #000;
-}
-
-@media (max-witdh: 480px) {
-    .home-page {
-        margin: 0;
-    }
 }
 </style>

@@ -159,9 +159,11 @@ form .btn-dathang:hover {
     color: red;
 }
 
+.modal .modal-content .modal-img {
+    width: 50%;
+}
+
 .modal .modal-content .btn-khung-modal {
-    height: 44px;
-    width: 250px;
     text-align: center;
 }
 
