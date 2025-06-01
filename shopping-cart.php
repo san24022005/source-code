@@ -74,13 +74,13 @@ $result = $stmt->get_result();
 
                 <div class="info">
                     <div class="tensp"><?= htmlspecialchars($item['tensp']) ?></div>
-                    <div>Size: <?= htmlspecialchars($item['size']) ?></div>
-                    <div>Đơn giá: <?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</div>
                     <div>
-                        SL:
-                        <input type="text" name="soluong[<?= $item['masp'] ?>][<?= $item['size'] ?>]" value="<?= $item['soluong'] ?>" min="1">
+                        Size: <?= htmlspecialchars($item['size']) ?> x 
+                        SL: <?= $item['soluong'] ?>
                     </div>
-                    <div>Tổng: <?= number_format($subtotal, 0, ',', '.') ?> VNĐ</div>
+
+                    <div>Đơn giá: <?= number_format($item['gia'], 0, ',', '.') ?> VNĐ</div>
+                    <div class="tongtien">Tổng: <?= number_format($subtotal, 0, ',', '.') ?> VNĐ</div>
                 </div>
 
                 <div class="btn-remove">

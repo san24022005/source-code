@@ -102,7 +102,8 @@ form .btn-dathang:hover {
     position: fixed;
     display: none;
     z-index: 1000;
-    left: 0; top: 0;
+    left: 0; 
+    top: 0;
     width: 100%; 
     height: 100%;
     background-color: rgba(0,0,0,0.5);
@@ -111,52 +112,70 @@ form .btn-dathang:hover {
     justify-content: center;
 }
 
-.modal .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    margin: auto;
-    border-radius: 10px;
-    width: 60vw;
-    height: 500px;
-    max-height: 80vh;
+.modal-content-block {
     position: relative;
-    text-align: center;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    height: 80vh;
+    width: 50%;
+    max-width: 80vw;
+    min-width: 600px;
+    max-height: 500px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: white;
+    flex-wrap: wrap;
     animation: slideDown 0.4s ease;
 }
 
-.modal .close {
-    position: absolute;
-    top: 10px; 
-    right: 15px;
-    font-size: 20px;
-    padding: 10px;
-    cursor: pointer;
+.modal-left {
+    max-height: 95%;
+    flex: 1;
+    min-width: 250px;
 }
 
-.modal h3 {
-    font-size: 28px;
-    padding: 20px 0 0;
-    margin: 30px 0 30px 30px;
-    text-align: center;
+.modal-left img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
     display: block;
+    margin: 0 auto;
+}
+
+.modal-right {
+    max-height: 95%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+.modal-right .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+.modal-right h3 {
+    font-size: 24px;
+    text-align: center;
     color: var(--main-bg1-color);
+    margin-top: 20px;
+    padding: 10px;
 }
 
-.modal #modal-img {
-    margin: 10px 0;
-}
-
-.modal img {
-    width: 100%;
-    max-height: 80vh;
-}
-
-.modal .modal-content .modal-gia {
-    height: 40px;
+.modal-right p {
     font-size: 20px;
-    padding: 10px 0;
-    font-weight: 700;
     color: red;
+    font-weight: 500;
+    padding: 10px 0;
 }
 
 .modal .modal-content .modal-img {
@@ -164,48 +183,44 @@ form .btn-dathang:hover {
 }
 
 .modal .modal-content .btn-khung-modal {
+    height: 44px;
+    width: 250px;
     text-align: center;
 }
 
-.modal .modal-content .btn-modal {
-    width: 100%;
-    margin: 0 auto;
+.modal-right .modal-size,
+.modal-right .modal-soluong,
+.modal-right .btn-khung-modal {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-.modal .modal-content .modal-size {
-    height: 40px;
-    font-size: 16px;
-    padding: 12px 0;
-    font-weight: 600;
+.modal-right select,
+.modal-right input {
+    width: 100px;
+    height: 30px;
 }
 
-.modal .modal-content .modal-size select {
-    width: 116px;
-    height: 36px;
-    font-size: 14px;
-    padding: 5px;
+.modal-right .note {
+    flex: 1;
 }
 
-.modal .modal-content .modal-soluong {
-    height: 40px;
-    font-size: 16px;
-    padding: 12px 0;
-    font-weight: 600;
+.modal-right .btn-khung-modal {
+    text-align: center;
 }
 
-.modal .modal-content .modal-soluong input {
-    width: 116px;
-    height: 36px;
-    font-size: 14px;
-    padding: 5px;
+.modal-right .btn-modal {
+    width: 250px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
 }
 
-.modal .modal-tesp {
-    height: 40px
-}
-
-.modal p, .modal label {
-    margin-left: 40px;
+.modal-right .btn-modal:hover {
+    background-color: #084298;
 }
 
 @keyframes slideDown {
@@ -219,126 +234,68 @@ form .btn-dathang:hover {
   }
 }
 
-@media (min-width: 1024px) {
-    .modal .modal-content .note {
-        height: 160px;
+/* Responsive: khi chiều rộng nhỏ hơn 660px thì xếp dọc */
+@media (max-width: 660px) {
+    .modal-content-block {
+        flex-direction: column;
+        height: auto;
+        width: 70vw;
+        min-width: 60%;
+        max-height: none;
+        max-width: 300px;
     }
 
-    .modal .modal-content {
-        max-height: 90vh;
-        max-width: 50vw;
-    }
-}
-
-@media (min-width: 660px) and (max-width: 1023px) {
-    .modal p, .modal label {
-        font-size: 14px;
-        margin-left: 10px;
-        padding: 5px;
+    .modal-left,
+    .modal-right {
+        max-height: none;
+        width: 100%;
     }
 
-    .modal h3 {
-        font-size: 18px;
-        margin: 10px 0 10px 10px;
-    }
-
-    .modal .modal-content .note {
-        height: 100px;
-    }
-
-    .modal .modal-img {
-        height: 100%;
-        max-height: 90vh;
-    }
-
-    .modal img {
-        height: 80%;
-        max-height: 80vh;  
-    }
-
-    .modal .modal-content {
-        max-height: 90vh;
-        min-width: 550px;
-    }
-}
-
-@media (max-width: 659px) and (min-width: 320px) {
-    .modal p, .modal label {
-        margin: 0 0 5px 5px;
-        font-size: 14px;
-        padding: 5px;
-    }
-
-    .modal h3 {
-        font-size: 16px;
-        margin: 0 0 5px 5px;
-        padding-top: 5px;
-    }
-
-    .modal .modal-content {
-        width: 75vw;
-        height: 70vh;;
-    }
-
-    .modal .modal-content .note {
-        height: 10px;
-    }
-
-    .modal img {
+    .modal-left img {
         max-height: 50vh;
     }
 
-    .modal .modal-content .modal-size,
-    .modal .modal-content .modal-soluong,
-    .modal .modal-content .modal-gia {
-        padding: 0;
-    }
-
-    .modal .modal-content .modal-size select,
-    .modal .modal-content .modal-soluong input {
-        height: 28px;
-        font-size: 12px;
+    .modal-right .btn-modal {
+        width: 100%;
     }
 }
 
 @media (max-height: 550px) {
-    .modal .modal-content {
-        height: 400px;
-        max-height: 90vh;
+    .modal-content-block {
+        height: 90vh;
+        max-height: 420px;
+    }
+}
+
+@media (max-height: 550px) or (max-width: 660px) {
+    .modal-right h3 {
+        font-size: 16px;
+        margin-top: 5px;
+        padding: 0;
     }
 
-    .modal .modal-content .modal-size select,
-    .modal .modal-content .modal-soluong input {
-        height: 33px;
-    }
-
-    .modal p, .modal label {
+    .modal-right p,
+    .modal-right label {
         font-size: 14px;
-        margin-left: 10px;
-        padding: 5px;
+        padding: 5px 0;
+    }
+    
+    .modal-right select,
+    .modal-right input {
+        font-size: 12px;
+        padding: 5px 0;
     }
 
-    .modal h3 {
-        font-size: 18px;
-        margin: 10px 0 10px 10px;
-    }
-
-    .modal .modal-content .note {
+    .modal-right select {
         height: 30px;
     }
 
-    .modal .modal-img {
-        width: 310px;
-        height: 100%;
-        max-height: 90vh;
+    .modal-right input {
+        height: 26px;
     }
-
-    .modal img {
-        height: 80vh;
-        max-height: 100%;  
-    }
-
 }
+
+
 /* END : MODAL */
 
 /* START : CART */
@@ -362,7 +319,13 @@ form .btn-dathang:hover {
     padding: 15px;
     border-bottom: 1px solid #ccc;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-    height: 200px;
+    height: 180px;
+}
+
+.cart-container .cart-item .tongtien {
+    color: red;
+    font-weight: 500;
+    margin-top: 10px;
 }
 
 .cart-container .cart-header{
@@ -370,17 +333,11 @@ form .btn-dathang:hover {
     font-weight: bold;
     padding: 10px;
     height: 50px;
-    text-align: center;
-}
-
-.cart-header div:last-child {
-    text-align: left;
 }
 
 .cart-item img {
-    width: 90px;
-    height: auto;
-    padding: 5px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -396,7 +353,8 @@ form .btn-dathang:hover {
 .cart-item .info .tensp {
     font-weight: bold;
     font-size: 16px;
-    color: #333;
+    color: var(--main-bg1-color);
+    font-weight: 500;
 }
 
 .cart-item .info input[type="text"] {
