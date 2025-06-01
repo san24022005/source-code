@@ -20,7 +20,7 @@
         require 'site.php';
         load_top();
         load_backbtn()
-        ?>
+    ?>
     <div class="intro-container">
         <h1>Điều Khoản Dịch Vụ</h1> 
         <p style="text-align : center;"><em>Cập nhật lần cuối: 27/05/2025</em></p> 

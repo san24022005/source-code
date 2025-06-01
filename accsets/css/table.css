@@ -178,10 +178,14 @@ form .btn-dathang:hover {
     padding: 10px 0;
 }
 
-.modal-right label {
-    font-size: 18px;
-    min-width: 75px;
-    padding: 5px 0;
+.modal .modal-content .modal-img {
+    width: 50%;
+}
+
+.modal .modal-content .btn-khung-modal {
+    height: 44px;
+    width: 250px;
+    text-align: center;
 }
 
 .modal-right .modal-size,
@@ -324,21 +328,16 @@ form .btn-dathang:hover {
     margin-top: 10px;
 }
 
-.cart-container .cart-header {
+.cart-container .cart-header{
     background-color: #f0f0f0;
     font-weight: bold;
     padding: 10px;
     height: 50px;
-    text-align: center;
-}
-
-.cart-header > div:last-child {
-    text-align: left;
 }
 
 .cart-item img {
     width: 80px;
-    height: 120px;
+    height: 80px;
     object-fit: cover;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -374,6 +373,10 @@ form .btn-dathang:hover {
 .cart-container .cart-item input[type="checkbox"] {
     width: 20px;
     height: 20px;
+}
+
+#cart .btn-thanhtoan {
+    width: 300px;
 }
 
 /* END : CART */

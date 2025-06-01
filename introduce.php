@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica+SC&family=Miltonian+Tattoo&family=Oswald:wght@200..700&family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
     <style>
         #top {
           z-index: 2;
@@ -28,9 +25,10 @@
 
     <div class="intro-container intro-section">
         <h1 class="fw-bold">Chào mừng đến với BT Shop</h1>
+
         <h2>Giới thiệu về BT Shop</h2>
         <p>
-          <strong>BT Shop</strong> là cửa hàng thời trang hiện đại, được thành lập vào <strong>tháng 4 năm 2025</strong> bởi <span class="founder">Hồ Minh Hải, Nguyến Trung Hiếu, Siu San, Võ Văn Vương</span>.
+          <strong>BT Shop</strong> là cửa hàng thời trang hiện đại, được thành lập vào <strong>tháng 4 năm 2025</strong> bởi <span class="founder">Hồ Minh Hải, Nguyễn Trung Hiếu, Siu San, Võ Văn Vương</span>.
           Với mục tiêu mang đến phong cách năng động, lịch lãm và chất lượng cao cho khách hàng, BT Shop không ngừng đổi mới và cập nhật những xu hướng mới nhất trong lĩnh vực thời trang.
         </p>
         <h2>Tầm nhìn và sứ mệnh</h2>
