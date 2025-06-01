@@ -76,8 +76,9 @@ while ($row = $result->fetch_assoc()) {
                             <div class="info">
                                 <div><?= $item['tensp'] ?></div>
                                 <div>Phân loại: Size <?= $item['size'] ?> x <?= $item['soluong'] ?></div>
+                                <div>Đơn giá: <?= number_format($item['giaban'], 0, ',', '.') ?>₫</div>                            
                             </div>
-                            <div class="price"><?= number_format($item['giaban'], 0, ',', '.') ?>₫</div>
+                            <div class="price"><?= number_format($item['giaban'] * $item['soluong'], 0, ',', '.') ?>₫</div>
                         </div>
                         <?php $tong += $item['giaban'] * $item['soluong']; ?>
                     <?php endforeach; ?>

@@ -94,9 +94,9 @@ $result = $stmt->get_result();
 
             <?php } ?>
             
-            </div>
+        </div>
             <br>
-            <button type="submit" name="thanhtoan" class="btn-thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Thanh toán</button>
+            <button type="submit" name="thanhtoan" class="btn-thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Đặt hàng</button>
         </form>
     </div>
     <?php load_footer();?>

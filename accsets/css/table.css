@@ -24,13 +24,14 @@
     gap: 16px;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-    padding: 15px 0;
+    padding: 10px;
     margin: 10px 0;
+    height: 150px;
 }
 
 .label-sanpham .item-sp img {
     width: 100px;
-    height: 100px;
+    height: 130px;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -328,19 +329,25 @@ form .btn-dathang:hover {
     margin-top: 10px;
 }
 
-.cart-container .cart-header{
+.cart-container .cart-header {
     background-color: #f0f0f0;
     font-weight: bold;
     padding: 10px;
     height: 50px;
+    text-align: center;
+}
+
+.cart-header > div:last-child {
+    text-align: left;
 }
 
 .cart-item img {
     width: 80px;
-    height: 80px;
+    height: 100px;
     object-fit: cover;
     border: 1px solid #ccc;
     border-radius: 4px;
+    padding: 5px;
 }
 
 .cart-item .info {
@@ -368,6 +375,12 @@ form .btn-dathang:hover {
     text-decoration: none;
     font-weight: bold;
     padding: 5px;
+}
+
+.cart-container .cart-total {
+    margin-top: 20px;
+    font-size: 20px;
+    color: rgb(188, 15, 15);
 }
 
 .cart-container .cart-item input[type="checkbox"] {
@@ -410,7 +423,7 @@ form .btn-dathang:hover {
 }
 .orders-container .order-card .item img {
     width: 80px;
-    height: 80px;
+    height: 100px;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid #ccc;
