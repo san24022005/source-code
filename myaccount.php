@@ -64,7 +64,7 @@ $user = $result->fetch_assoc();
     ?>
     <form method="POST" autocomplete="off">
         <div class="myacc-container">
-            <h2>Thông tin đăng nhập</h2>
+            <h2>Thông tin khách hàng</h2>
             <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
             <hr>
 

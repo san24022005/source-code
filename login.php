@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
 
             <div class="options">
-                <a href = "#"> Quên mật khẩu </a>
+                <a href = "reset-password.php"> Đổi mật khẩu </a>
                 <a href = "#"> Đăng nhập bằng số điện thoại SMS</a>
             </div>
 

@@ -8,7 +8,6 @@
 #top {
     border: 1px solid #00000020;
     overflow: hidden;
-    padding: 5px 0;
     height: 44px;
     position: fixed;
     top: 0;
@@ -30,21 +29,14 @@
 #top-nav .right-top {
     float: right;
 }
- 
-#top-nav .mobile-btn,
- #top-nav .email-btn,
-  #top-nav .contact-btn{
-    line-height: 32px;
-    padding: 0 4px;
-}
 
-#top-nav .login-btn,
- #top-nav .register-btn {
-    line-height: 32px;
-    padding: 0 4px;
+#top-nav .top-icon {
+    display: inline-block;
 }
-#top .top-icon {
-    font-size: 12px;
+ 
+#top-nav li a {
+    line-height: 44px;
+    display: inline-block;
 }
 
 @media (max-width: 575px) {
@@ -64,7 +56,6 @@
     right: 0;
     z-index: 1;
     display: block;
-    font-family: "Oswald", sans-serif;
 }
 
 #header .logo {
@@ -164,7 +155,6 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--main-bg2-color);
     min-width: 200px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     z-index: 2;
@@ -173,8 +163,8 @@
 .sub-setting li {
     height: 60px;
     display: block;
-    white-space: nowrap;
     border: 1px solid var(--main-color);
+    background-color: var(--main-bg2-color);
     border-radius: 4px;
 }
 
@@ -214,15 +204,19 @@
 
 .search-box button {
     background-color: #fff;
-    border: none;
     padding: 6px 10px;
     cursor: pointer;
-    color: #666;
-    font-size: 16px;
+    color: red;
+    font-size: 20px;
 }
 
 .search-box button:hover {
-    color: #000;
+    background-color: red;
+    color: #fff;
+}
+
+.search-box .search-icon {
+    font-size: 17px;
 }
 
 @media (max-width: 1023px) {
@@ -347,7 +341,7 @@
 #products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* sửa từ left thành flex-start */
+    justify-content: flex-start;
     padding: 20px;
     background-color: #f8f8f8;
     width: 100%;
@@ -451,12 +445,11 @@
 /* Nút chức năng trong sản phẩm */
 .product .btn {
     margin: 2px;
-    height: 40px;
 }
 
 /* Table nút */
 .product table {
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
   
@@ -501,10 +494,6 @@
         width: 46%;
     }
 
-    .product table {
-        width: 100%;
-    }
-
     .product .btn {
         padding: 0;
     }
@@ -526,8 +515,8 @@
 }
 
 #footer #top-footer {
-     display: flex;
-    flex-wrap: wrap; /* Cho phép xuống dòng khi thiếu chỗ */
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -627,7 +616,6 @@
 }
 
 .intro-container ul {
-    font-family: "Oswald", sans-serif;
     line-height: 40px
 }
 
@@ -643,7 +631,6 @@
 
 .intro-container p {
     line-height: 40px;
-    font-family: "Oswald", sans-serif;
 }
 
 .intro-container h1 {
@@ -656,7 +643,6 @@
     text-align: center;
     margin-top: 50px;
     color: #555;
-    font-family: "Oswald", sans-serif;
 }
 
 @media (max-width: 748px) {
@@ -685,7 +671,7 @@
 }
 
 .myacc-container p {
-    font-size: 0.9em;
+    font-size: 14px;
 }
 
 .myacc-container  hr {
@@ -707,7 +693,7 @@
 .myacc-container .form-row input[type="email"],
 .myacc-container .form-row input[type="date"] {
     padding: 8px 10px;
-    font-size: 1em;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s;
@@ -719,7 +705,7 @@
 }
     
 .myacc-container .form-row input:focus:not([readonly]) {
-    border-color: #007BFF;
+    border-color: var(--main-bg1-color);
     outline: none;
 }
 
@@ -746,7 +732,7 @@
 }
     
 .myacc-container .address input:focus:not([readonly]) {
-    border-color: #007BFF;
+    border-color: var(--main-bg1-color);
     background-color: #fff;
     cursor: text;
     outline: none;
@@ -768,7 +754,7 @@
 }
     
 .myacc-container .btn-myacc-edit {
-    background-color: #6c757d;
+    background-color: #0056b3;
 }
     
 .myacc-container .btn-myacc:hover {

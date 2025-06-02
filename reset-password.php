@@ -1,8 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
+    echo "<script>
+        alert('Bạn chưa đăng nhập!');
+        window.location.href = 'login.php';
+    </script>";
+    exit;
 }
 
 require 'connect.php'; // File kết nối CSDL
