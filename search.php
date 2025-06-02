@@ -26,12 +26,23 @@ if ($keyword == null) {
     <link rel="stylesheet" href="./accsets/css/table.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
 </head>
+<style>
+    #header .nav {
+        display: none;
+    }
+
+    #header .logo {
+        display: block;
+    }
+</style>
 <body>
     <div class="main">
         <?php
         require 'site.php';
         load_top();
-        load_backbtn();
+        load_header();
+        echo "<div id='search-containner'>";
+        echo "<h2>Kết quả tìm kiếm cho từ khóa: <em>$keyword</em></h2>";
         echo "<div id='search-products'>";
 
         if ($keyword !== '') {
@@ -78,6 +89,7 @@ if ($keyword == null) {
             echo "<p>Vui lòng nhập từ khóa tìm kiếm.</p>";
         }
 
+        echo "</div>";
         echo "</div>";
 
         $conn->close();

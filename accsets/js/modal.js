@@ -113,33 +113,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("btn-xacnhan").addEventListener("click", function () {
-    const masp = modal.dataset.masp;
-    const size = modalSize.value;
-    const soluong = modalQty.value;
+        const masp = modal.dataset.masp;
+        const size = modalSize.value;
+        const soluong = modalQty.value;
 
-    if (!masp) {
-        alert("Lỗi: Mã sản phẩm không hợp lệ.");
+        if (!masp) {
+            alert("Lỗi: Mã sản phẩm không hợp lệ.");
         return;
-    }
+        }
 
-    const url = `hoadon.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
-    window.location.href = url; // ✅ Chuyển hướng trực tiếp
+        const url = `hoadon.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+        window.location.href = url; 
+    });
+
+    document.getElementById("btn-giohang").addEventListener("click", function () {
+        const masp = modal.dataset.masp;
+        const size = modalSize.value;
+        const soluong = modalQty.value;
+
+        if (!masp) {
+            alert("Lỗi: Mã sản phẩm không hợp lệ.");
+            return;
+        }
+
+        const url = `add_giohang.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
+        window.location.href = url; 
+    });
 });
-
-document.getElementById("btn-giohang").addEventListener("click", function () {
-    const masp = modal.dataset.masp;
-    const size = modalSize.value;
-    const soluong = modalQty.value;
-
-    if (!masp) {
-        alert("Lỗi: Mã sản phẩm không hợp lệ.");
-        return;
-    }
-
-    const url = `add_giohang.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
-    window.location.href = url; // ✅ Chuyển hướng đến thêm vào giỏ hàng
-});
-
-
-});
-

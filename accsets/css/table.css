@@ -47,7 +47,9 @@
     color: #333;
 }
 
-.label-sanpham .size, .label-sanpham .dongia, .label-sanpham .thanhtien {
+.label-sanpham .size, 
+.label-sanpham .dongia, 
+.label-sanpham .thanhtien {
     font-size: 15px;
     margin-bottom: 4px;
     color: #555;
@@ -215,13 +217,8 @@ form .btn-dathang:hover {
     width: 250px;
     border: none;
     border-radius: 4px;
-    background-color: #0d6efd;
     color: white;
     cursor: pointer;
-}
-
-.modal-right .btn-modal:hover {
-    background-color: #084298;
 }
 
 @keyframes slideDown {
@@ -283,15 +280,8 @@ form .btn-dathang:hover {
     
     .modal-right select,
     .modal-right input {
-        font-size: 12px;
+        font-size: 10px;
         padding: 5px 0;
-    }
-
-    .modal-right select {
-        height: 30px;
-    }
-
-    .modal-right input {
         height: 26px;
     }
 }
@@ -338,7 +328,11 @@ form .btn-dathang:hover {
 }
 
 .cart-header > div:last-child {
-    text-align: left;
+    text-align: center !important;
+}
+
+.cart-item > div:last-child {
+    text-align: right;
 }
 
 .cart-item img {
@@ -390,6 +384,12 @@ form .btn-dathang:hover {
 
 #cart .btn-thanhtoan {
     width: 300px;
+}
+
+@media (max-width: 480px) {
+    .cart-container .cart-item {
+        grid-template-columns: 25px 90px 1fr 40px;
+    }
 }
 
 /* END : CART */
