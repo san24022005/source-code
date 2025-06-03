@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';      // Địa chỉ máy chủ CSDL
-$dbname = 'QLBH';     // Tên cơ sở dữ liệu
-$username = 'root';       // Tên đăng nhập
-$password = '123456';           // Mật khẩu (để trống nếu dùng XAMPP mặc định)
+$host = 'localhost';      
+$dbname = 'QLBH';     
+$username = 'root';       
+$password = '123456';
 
 // Tạo kết nối
 $conn = new mysqli($host, $username, $password, $dbname);

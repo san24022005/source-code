@@ -1,11 +1,5 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "123456";
-$dbname = "QLBH";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
-$conn->set_charset("utf8");
+require('connect.php');
 
 $masp = $_GET['masp'];
 

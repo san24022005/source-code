@@ -3,19 +3,23 @@
         <div class="left-top">
             <li>
                 <div class="mobile-btn">
-                    <i class="top-icon ti-mobile"></i>
+                    <a href="tel:0946171903"><i class="top-icon ti-mobile"></i></a>
                 </div>
             </li>
             <li>
                 <div class="email-btn">
-                    <i class="top-icon ti-email"></i>
-                    <a href="#">cskh@btshop.com</a>
+                    <a href="mailto:cskh@btshop.com">
+                        <i class="top-icon ti-email"></i>
+                        cskh@btshop.com
+                    </a>
                 </div>
             </li>
             <li>
                 <div class="contact-btn">
-                    <i class="top-icon ti-location-pin"></i>
-                    <a href="hotrokhachhang.php">Liên hệ</a>
+                    <a href="hotrokhachhang.php">
+                        <i class="top-icon ti-location-pin"></i>
+                        Liên hệ
+                    </a>
                 </div>
             </li>
         </div>
@@ -23,8 +27,8 @@
         <div class="right-top">
             <li>
             <div class="login-btn">
-                <i class="top-icon ti-shift-right"></i>
                 <a href="<?php echo isset($_SESSION['name']) ? 'myaccount.php' : 'login.php'; ?>">
+                    <i class="top-icon ti-shift-right"></i>
                     <?php
                         if (isset($_SESSION["name"])) {
                             echo $_SESSION["name"];
@@ -33,13 +37,21 @@
                         }
                     ?>
                 </a>
-        </div>
-
+            </div>
             </li>
+
             <li>
                 <div class="register-btn">
-                    <i class="top-icon ti-user"></i>
-                    <a href="register.php">Đăng ký</a>
+                    <a href="<?php echo isset($_SESSION['name']) ? 'logout.php' : 'register.php'; ?>">
+                        <i class="top-icon ti-user"></i>
+                        <?php
+                        if (isset($_SESSION["name"])) {
+                            echo "Đăng xuất";
+                        } else {
+                            echo "Đăng kí";
+                        }
+                        ?>
+                    </a>
                 </div>
             </li>
         </div>        

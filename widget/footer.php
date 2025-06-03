@@ -63,10 +63,10 @@
 
                 <ul>
                     <li>
-                        <a href="">Tìm kiếm</a>
+                        <a href="#">Tìm kiếm</a>
                     </li>
                     <li>
-                        <a href="">Giới thiệu</a>
+                        <a href="introduce.php">Giới thiệu</a>
                     </li>
                     <li>
                         <a href="">Chính sách đổi trả</a>
@@ -78,10 +78,10 @@
                         <a href="">Chính sách vận chuyển</a>
                     </li>
                     <li>
-                        <a href="">Điều khoản dịch vụ</a>
+                        <a href="dieukhoandichvu.php">Điều khoản dịch vụ</a>
                     </li>
                     <li>
-                        <a href="">ĐC: 16 An Dương Vương, Nguyễn Văn Cừ, Quy Nhơn, Bình Định</a>
+                        <a href="">ĐC: 170 An Dương Vương, Nguyễn Văn Cừ, Quy Nhơn, Bình Định</a>
                     </li>
                 </ul>
             </div>

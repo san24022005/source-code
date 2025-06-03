@@ -50,7 +50,7 @@
         <li class="search-box">
             <form action="search.php" method="GET">
                 <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
-                <button type="submit"><i class="ti-search"></i></button>
+                <button type="submit"><i class="search-icon ti-search"></i></button>
             </form>
         </li>
 

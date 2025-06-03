@@ -19,17 +19,14 @@
     {
         require('widget/footer.php');
     }
-
     function connect()
     {
         require('connect.php');
     }
-
     function load_modal()
     {
         require('widget/modal.php');
     }
-
     function load_backbtn()
     {
         require('widget/backbtn.php');
