@@ -146,6 +146,7 @@ load_backbtn();
                     <p>0 VNĐ</p>
                     <p><strong><?php echo number_format($tongtien); ?> VNĐ</strong></p>
                 </td>
+                
             </tr>
 
             <tr>
@@ -164,10 +165,12 @@ load_backbtn();
                     <h3>MÔ TẢ SẢN PHẨM</h3>
                     <p><?php echo htmlspecialchars($row['mota']); ?></p>
                 </td>
+                
             </tr>
         </table>
+        
         </form>
-        </div>
+                </div>
     </div>   
 </div>
 <?php load_footer(); ?>
