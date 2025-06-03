@@ -120,8 +120,8 @@
       <div>
         <strong>Phòng Kinh doanh</strong><br>
         <a href="mailto:hotrobtshop@gmail.com.vn">hotrobtshop@gmmail.com.vn </a><br>
-        +84 28 3995 1060 (Mr. Vương)<br>
-        +84 78 5666 04530453 (Mr. Hiếu)
+        +84 81 422 5862 (Mr. Vương)<br>
+        +84 78 566 7053 (Mr. Hiếu)
       </div>
     </div>
     <div class="contact-block">
@@ -138,7 +138,7 @@
       <div>
         <strong>Tòa nhà opera house BT shop </strong><br>
         08 An Dương Vương,Phường Nguyễn Văn Cừ, TP Quy Nhơn, tỉnh Bình Định ,<br>
-        Quy Nhơn, Bình Định <a href="#">(Bản đồ)</a>
+        Quy Nhơn, Bình Định <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Quy+Nh%C6%A1n/@13.7584719,109.2144763,17z/data=!4m15!1m8!3m7!1s0x316f6cec00478855:0x3027a73de7997b85!2zTmjDoCBBMywgMTcwIEFuIETGsMahbmcgVsawxqFuZywgTmd1eeG7hW4gVsSDbiBD4burLCBRdXkgTmjGoW4sIELDrG5oIMSQ4buLbmgsIFZp4buHdCBOYW0!3b1!8m2!3d13.7584719!4d109.2170566!16s%2Fg%2F1w3w0jyv!3m5!1s0x316f6cebf252c49f:0xa83caa291737172f!8m2!3d13.7589597!4d109.2178573!16s%2Fg%2F120ylnmc?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D">(Bản đồ)</a>
       </div>
     </div>
   </div>
