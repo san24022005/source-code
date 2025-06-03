@@ -41,7 +41,7 @@
 
         <li><a href="#dobo">Đồ bộ</a></li>
 
-        <li><a href="#dongphuc">Đồng phục</a></li>
+        <li><a href="#giay">Giày</a></li>
 
         <li><a href="#matkinh">Mắt kính</a></li>
     </ul>
