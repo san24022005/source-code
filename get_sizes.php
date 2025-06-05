@@ -14,3 +14,4 @@ while ($row = $result->fetch_assoc()) {
     $sizes[] = $row;
 }
 echo json_encode($sizes);
+?>

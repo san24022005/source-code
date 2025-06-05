@@ -281,6 +281,7 @@
     #header .menu-tablet {
         display: block;
         margin: 0;
+        text-align: center;
     }
 
     .search-box input[type="text"] {
@@ -288,7 +289,7 @@
     }
 
     .search-box {
-        margin: 0;
+        margin-right: 8px;
     }
 
     #header .nav-right {
