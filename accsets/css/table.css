@@ -371,6 +371,11 @@ form .btn-dathang:hover {
     padding: 5px;
 }
 
+.btn-remove a:hover {
+    background-color: #e5e5e5;
+    color: red;
+}
+
 .cart-container .cart-total {
     margin-top: 20px;
     font-size: 20px;
