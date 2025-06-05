@@ -150,7 +150,7 @@ if (!$conn->query($sql_insertHD)) {
         <a href="myaccount.php" class="thaydoi">Thay đổi thông tin</a>
     </div>
 
-    <form action="thanhtoan.php" method="post">
+    <form action="add_order.php" method="post">
         <?php foreach ($items as $item): ?>
             <input type="hidden" name="masp[]" value="<?= htmlspecialchars($item['masp']) ?>">
             <input type="hidden" name="size[]" value="<?= htmlspecialchars($item['size']) ?>">
