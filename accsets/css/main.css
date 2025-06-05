@@ -242,12 +242,14 @@
     }
 
     .nav > li > a {
+        line-height: 42px;
         padding: 0 20px;
     }
 
     .nav > li:first-child {
         padding: 0;
         width: 48px;
+        line-height: 60px;
         display: inline-block;
     }
 
@@ -263,8 +265,13 @@
         position: initial;
     }
 
+    .sub-nav li {
+        height: 42px;
+    }
+
     .sub-nav li a {
         padding-left: 30px;
+        line-height: 42px;
     }
 
     #header .nav-icon {
@@ -498,6 +505,14 @@
 @media (max-width: 650px) {
     #products {
         padding: 0;
+    }
+
+    #products .danhmuc {
+        padding: 5px;
+    }
+
+    #products .danhmuc .kieu {
+        gap: 5px;
     }
 
     .product {
