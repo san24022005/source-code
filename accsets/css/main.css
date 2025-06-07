@@ -231,7 +231,7 @@
     font-size: 17px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
     #header .nav {
         overflow: hidden;
         float: none;
@@ -242,7 +242,7 @@
     }
 
     .nav > li > a {
-        line-height: 42px;
+        line-height: 48px;
         padding: 0 20px;
     }
 
@@ -271,7 +271,7 @@
 
     .sub-nav li a {
         padding-left: 30px;
-        line-height: 42px;
+        line-height: 48px;
     }
 
     #header .nav-icon {
@@ -390,7 +390,7 @@
 #products .danhmuc .kieu {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
@@ -484,26 +484,42 @@
     height: 10%;
 }
 
-
 /* Responsive cho tablet */
-@media (min-width: 980px) and (max-width: 1040px) {
+/* Hiển thị 6 sản phâm trên 1 dòng*/
+@media (min-width: 1370px) and (max-width: 1565px) {
     .product {
-        width: 23.3%;
+        width: 15.7%;
     }
 }
-
+/* 5 sản phẩm / 1 dòng */
+@media (min-width: 1075px) and (max-width: 1369px) {
+    .product {
+        width: 18.8%;
+    }
+}
+/* 4 sản phẩm trên 1 dòng */
+@media (min-width: 980px) and (max-width: 1074px) {
+    .product {
+        width: 23.7%;
+    }
+}
+/* 3 sản phẩm trên 1 dòng */
 @media (min-width: 650px) and (max-width: 979px) {
     .product {
-        width: 31%;
+        width: 32.1%;
     }
 
     .product .btn {
         padding: 0;
     }
-}
 
+    #products .danhmuc .kieu {
+        gap: 10px;
+    }
+}
+/* 2 sản phẩm / 1 dòng */
 /* Responsive cho mobile */
-@media (max-width: 650px) {
+@media (max-width: 649px) {
     #products {
         padding: 0;
     }
@@ -517,14 +533,13 @@
     }
 
     .product {
-        width: 46.9%;
+        width: 49.2%;
     }
 
     .product .btn {
         padding: 0;
     }
 }
-
 
 /* END : PRODUCT */
 
@@ -558,12 +573,15 @@
     padding: 10px;
 }
 
+#footer #top-footer .footer-box:first-child {
+    margin-top: 0;
+}
+
 #footer .footer-box h3 {
     text-transform: uppercase;
     font-size: 16px;
     margin-bottom: 10px;
 }
-
 
 .footer-box li {
     font-size: 12px;
@@ -580,21 +598,29 @@
 }
 
 #footer #bottom-footer {
-    height: 36px;
+    padding: 40px 0 10px;
     color: var(--main-color);
     text-align: center;
     display: block;
 }
 
 #bottom-footer .copyright,
- #bottom-footer .social-media {
+#bottom-footer .social-media {
+    margin: auto 0;
     font-size: 12px;
     padding: 10px 0;
     display: inline-block;
 }
 
+ #bottom-footer .social-media a {
+    display: inline-block;
+    padding: 10px;
+    margin: auto 0;
+ }
+
 #bottom-footer .copy-r-icon {
-    padding: 0 5px;
+    margin: 0 4px;
+    font-size: 16px;
     color: var(--main-color);
 }
 
