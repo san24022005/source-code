@@ -71,10 +71,13 @@ if (!$soHD || $tongtien <= 0) {
         </div>
     </div>
     <script>
-        function thanhToan() {
-            alert('Cảm ơn bạn đã thanh toán. Chúng tôi sẽ kiểm tra lại đơn hàng và giao hàng sớm nhất.');
-            window.location.href = 'index.php';
-        }
-    </script>
+    function thanhToan() {
+        const xacNhan = confirm('Cảm ơn bạn đã thanh toán. Chúng tôi sẽ kiểm tra lại đơn hàng và giao hàng sớm nhất.');
+        if (xacNhan) {
+            window.location.href = 'clear_cart.php';
+        } 
+    }
+</script>
+
 </body>
 </html>

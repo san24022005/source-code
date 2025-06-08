@@ -88,11 +88,11 @@ form .btn-dathang:hover {
     margin: 6px 0;
 }
 
-.label-thongtin .thaydoi {
+.btn-edit-address {
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 10px;
+    width: 100px;
     background-color: #215cb0;
     color: #fff;
 }
@@ -203,10 +203,16 @@ form .btn-dathang:hover {
     align-items: center;
 }
 
-.modal-right select,
-.modal-right input {
-    width: 100px;
+.modal-right select {
     height: 30px;
+    width: 60px;
+    text-align: center;
+}
+
+.modal-right input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
 }
 
 .modal-right .note {
@@ -224,6 +230,20 @@ form .btn-dathang:hover {
     color: white;
     cursor: pointer;
 }
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.qty-control button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 
 @keyframes slideDown {
   from {

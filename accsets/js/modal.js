@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     data.forEach(item => {
                         const opt = document.createElement("option");
                         opt.value = item.size;
-                        opt.textContent = `${item.size} (Tối đa: ${item.soluong})`;
+                        opt.textContent = `${item.size}`;
                         modalSize.appendChild(opt);
                         currentSizes[item.size] = parseFloat(item.soluong);
                     });
@@ -138,5 +138,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const url = `add_giohang.php?masp=${encodeURIComponent(masp)}&size=${encodeURIComponent(size)}&soluong=${encodeURIComponent(soluong)}`;
         window.location.href = url; 
+    });
+
+    const btnIncrease = document.getElementById('btn-increase');
+    const btnDecrease = document.getElementById('btn-decrease');
+    const inputQty = document.getElementById('modal-qty');
+
+    btnIncrease.addEventListener('click', function () {
+        let current = parseInt(inputQty.value) || 1;
+        inputQty.value = current + 1;
+    });
+
+    btnDecrease.addEventListener('click', function () {
+        let current = parseInt(inputQty.value) || 1;
+        if (current > 1) {
+            inputQty.value = current - 1;
+        }
     });
 });

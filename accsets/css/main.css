@@ -131,7 +131,7 @@
     line-height: 60px;
 }
 
-.sub-nav li a, .sub-setting li a {
+.sub-nav li a {
     color: var(--main-color);
     line-height: 60px;
     display: block;
@@ -155,17 +155,24 @@
     position: absolute;
     top: 100%;
     right: 0;
+    width: max-content;
     min-width: 200px;
+    white-space: nowrap;
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     z-index: 2;
 }
 
 .sub-setting li {
-    height: 60px;
-    display: block;
     border: 1px solid var(--main-color);
     background-color: var(--main-bg2-color);
     border-radius: 4px;
+}
+
+.sub-setting li a {
+    line-height: 60px;
+    color: var(--main-color);
+    display: block;
+    padding: 0 6px;
 }
 
 #header .nav-icon {
@@ -296,6 +303,12 @@
         position: absolute;
         top: 0;
         right: 0;
+    }
+}
+
+@media (max-height: 550px) {
+    .sub-setting li a {
+        line-height: 48px;
     }
 }
 /* END : HEADER */
