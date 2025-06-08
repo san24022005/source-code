@@ -33,7 +33,7 @@ $row = $result->fetch_assoc();
  
 <div class="modal-address-content" id="modalAddress">
   <form method="POST" action="update_address.php">
-    <h2>Cập nhật thông tin giao hàng</h2>
+    <h2>Cập nhật thông tin</h2>
     <div class="close">
         <i class="close-icon ti-close"></i>
     </div>

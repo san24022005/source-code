@@ -79,8 +79,8 @@ $user = $result->fetch_assoc();
 
             <div class="form-actions">
                 <button class="btn-myacc-edit js-edit-address" type="button">Chỉnh sửa</button>
+                <a href="reset-password.php" class="btn-myacc-pass">Đổi mật khẩu</a>
             </div>
-            <a href="reset-password.php" class="btn-myacc-pass">Đổi mật khẩu</a>
         </div>
     <?php load_footer(); ?>
     <div class="modal-address" style="display: none;">
