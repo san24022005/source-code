@@ -65,7 +65,7 @@ if (!$soHD || $tongtien <= 0) {
         </div>
         <div class="thanhtoan_right-container">
             <h2>Quét mã QR để thanh toán</h2>
-            <img src="https://img.vietqr.io/image/BIDV-8850616439-qr_only.png?amount=<?= intval($tongtien) ?>&addInfo=Thanh toán hóa đơn <?= urlencode($soHD) ?>" alt="QR Thanh toán BIDV">
+            <img src="https://img.vietqr.io/image/BIDV-8830616514-qr_only.png?amount=<?= intval($tongtien) ?>&addInfo=Thanh toán hóa đơn <?= urlencode($soHD) ?>" alt="QR Thanh toán BIDV">
             <p><em>Dùng app ngân hàng để quét mã và thanh toán.</em></p>
             <button onclick="thanhToan()">Tôi đã hoàn tất thanh toán trên app</button>
         </div>
