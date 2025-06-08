@@ -1,6 +1,6 @@
 <?php
+ob_start();
 session_start();
-
 if (!isset($_SESSION['username'])) {
     $_SESSION['username'] = 'KH001';
 }
@@ -9,30 +9,6 @@ $username = $_SESSION['username'];
 
 $conn = new mysqli("localhost", "root", "123456", "qlbh");
 $conn->set_charset("utf8mb4");
-
-// ✅ Xử lý khi bấm "Lưu"
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $hoten = $_POST['hoten'];
-    $email = $_POST['email'];
-    $sodt = $_POST['sodt'];
-    $ngaysinh = $_POST['ngaysinh'];
-
-    $sonha = isset($_POST['sonha']) ? trim($_POST['sonha']) : '';
-    $capxa = isset($_POST['xa']) ? trim($_POST['xa']) : '';
-    $caphuyen = isset($_POST['huyen']) ? trim($_POST['huyen']) : '';
-    $captinh = isset($_POST['tinh']) ? trim($_POST['tinh']) : '';
-
-    // Cập nhật CSDL
-    $stmt1 = $conn->prepare("UPDATE khachhang SET hoten=?, ngaysinh=? WHERE makh=?");
-    $stmt1->bind_param("sss", $hoten, $ngaysinh, $username);
-    $stmt1->execute();
-
-    $stmt2 = $conn->prepare("UPDATE thongtin_lienhe SET email=?, sodt=?, sonha=?, capxa=?, caphuyen=?, captinh=? WHERE makh=?");
-    $stmt2->bind_param("sssssss", $email, $sodt, $sonha, $capxa, $caphuyen, $captinh, $username);
-    $stmt2->execute();
-
-    echo "<script>alert('Cập nhật thành công!');</script>";
-}
 
 // Lấy thông tin hiện tại
 $sql = "SELECT kh.hoten, kh.ngaysinh, tl.sodt, tl.email, tl.sonha, tl.caphuyen, tl.capxa, tl.captinh
@@ -53,6 +29,7 @@ $user = $result->fetch_assoc();
     <title>Thông tin khách hàng</title>
     <link rel="stylesheet" href="accsets/css/base.css">
     <link rel="stylesheet" href="accsets/css/main.css">
+    <link rel="stylesheet" href="accsets/css/table.css">
     <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -62,7 +39,6 @@ $user = $result->fetch_assoc();
     load_top();
     load_backbtn();
     ?>
-    <form method="POST" autocomplete="off">
         <div class="myacc-container">
             <h2>Thông tin khách hàng</h2>
             <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
@@ -102,13 +78,17 @@ $user = $result->fetch_assoc();
             </div>
 
             <div class="form-actions">
-                <button class="btn-myacc" type="submit">Lưu</button>
-                <button class="btn-myacc-edit" type="button" onclick="enableEdit()">Chỉnh sửa</button>
-                <a href="reset-password.php" class="btn-myacc-pass">Đổi mật khẩu</a>
+                <button class="btn-myacc-edit js-edit-address" type="button">Chỉnh sửa</button>
             </div>
+            <a href="reset-password.php" class="btn-myacc-pass">Đổi mật khẩu</a>
         </div>
-    </form>
-<?php load_footer(); ?>
-<script src="./accsets/js/myaccount.js"></script>
+    <?php load_footer(); ?>
+    <div class="modal-address" style="display: none;">
+        <?php 
+            load_modal_address();
+        ?>
+    </div>
+
+    <script src="./accsets/js/modal-address.js"></script>
 </body>
 </html>

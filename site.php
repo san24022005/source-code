@@ -31,4 +31,8 @@
     {
         require('widget/backbtn.php');
     }
+    function load_modal_address()
+    {
+        require('widget/modal-address.php');
+    }
 ?>
