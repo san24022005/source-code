@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.forEach(item => {
                     const opt = document.createElement("option");
                     opt.value = item.size;
-                    opt.textContent = `${item.size} (Tối đa: ${item.soluong})`;
+                    opt.textContent = `${item.size}`;
                     modalSize.appendChild(opt);
                     currentSizes[item.size] = parseFloat(item.soluong);
                 });

@@ -17,39 +17,6 @@ if (!$soHD || $tongtien <= 0) {
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <style>
-        .thanhtoan-container {
-            display: flex;
-            justify-content: space-between;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .thanhtoan_left-container, 
-        .thanhtoan_right-container {
-            width: 48%;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
-
-        .thanhtoan_left-container h2 {
-            font-size: 26px;
-        }
-
-        .thanhtoan_left-container p {
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        .thanhtoan_right-container {
-            text-align: center;
-        }
-        
-        .thanhtoan_right-container button {
-            margin-top: 20px;
-        }
-
         img {
             max-width: 100%;
         }

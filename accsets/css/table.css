@@ -506,7 +506,6 @@ form .btn-dathang:hover {
 
 .modal-address-content {
     position: relative;
-    overflow-y: scroll;
     margin: auto;
     background-color: #fff;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
@@ -549,7 +548,7 @@ form .btn-dathang:hover {
 }
 
 .modal-address-content .close-icon {
-    padding: 10px;
+    padding: 14px;
     cursor: pointer;
 }
 
@@ -563,3 +562,155 @@ form .btn-dathang:hover {
         width: 95vw;
     }
 }
+
+/* START : DELTAIL */
+
+.delprd-container {
+    display: flex;
+    gap: 40px;
+    background: #fff;
+    padding: 44px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.delprd-container .delprd-image {
+    width: 50%;
+    position: relative;
+}
+
+.delprd-container .delprd-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.delprd-container .delprd-image img:hover {
+    transform: scale(1.05);
+}
+
+.delprd-container .delprd-chitiet {
+    width: 50%;
+    padding: 20px 0;
+}
+
+.delprd-container .delprd-chitiet h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.delprd-container .delprd-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.delprd-container .delprd-price {
+    font-size: 26px;
+    color: #d63031; /* Màu đỏ đậm hơn */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.delprd-container .promotion {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.delprd-container .promotion span {
+    color: #d63031;
+    font-weight: 500;
+}
+
+.delprd-container .promotion a {
+    color: #d63031;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.size-options {
+    margin: 20px 0;
+}
+
+.delprd-container .size-options span {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delprd-container .size-options span:hover {
+    border-color: #d63031;
+    background: #f8f8f8;
+}
+
+.delprd-container .size-options span.active {
+    border-color: #d63031;
+    background: #ffe6e6;
+}
+
+.delprd-container .size-options p {
+    margin-bottom: 10px;
+}
+
+.delprd-container .quantity-selector button:hover {
+    background: #ccc;
+}
+
+.delprd-container .actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.delprd-container .actions button {
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.delprd-container .actions button {
+    background: #d63031; /* Nút Mua ngay màu đỏ */
+    color: white;
+    flex: 1;
+}
+
+.delprd-container .actions button:hover {
+    background: #b12729; /* Đậm hơn khi hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .delprd-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .delprd-container .delprd-image, 
+    .delprd-container .delprd-chitiet {
+        width: 100%;
+    }
+
+    .delprd-container .delprd-chitiet h2 {
+        font-size: 24px;
+    }
+
+    .delprd-container .delprd-price {
+        font-size: 20px;
+    }
+
+    .delprd-container .actions button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* END : DELTAIL */

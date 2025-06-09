@@ -168,6 +168,10 @@
     border-radius: 4px;
 }
 
+.sub-setting > li:first-child {
+    border-top: none;
+}
+
 .sub-setting li a {
     line-height: 60px;
     color: var(--main-color);
@@ -375,14 +379,12 @@
     padding: 20px;
     background-color: #f8f8f8;
     width: 100%;
-    margin-top: 80px;
     gap: 40px; /* khoảng cách giữa các danh mục */
 }
 
 /* Block danh mục lớn */
 #products .danhmuc {
     flex: 1 1 100%; /* cho phép co giãn và đặt kích thước tối thiểu */
-    margin-bottom: 40px;
     background: #fff;
     padding: 15px;
     border-radius: 12px;
@@ -897,3 +899,52 @@
         width: 47.1%;
     }
 }
+
+/* START : THANH TOAN */
+
+.thanhtoan-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.thanhtoan_left-container, 
+.thanhtoan_right-container {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.thanhtoan_left-container h2 {
+    font-size: 26px;
+}
+
+.thanhtoan_left-container p {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.thanhtoan_right-container {
+    text-align: center;
+}
+        
+.thanhtoan_right-container button {
+    margin-top: 20px;
+}
+
+@media (max-width: 550px) {
+    .thanhtoan-container {
+        flex-direction: column;
+    }
+
+    .thanhtoan_left-container, 
+    .thanhtoan_right-container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* END : THANH TOAN */

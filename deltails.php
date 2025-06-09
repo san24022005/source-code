@@ -1,12 +1,6 @@
 <?php
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
-if ($conn->connect_error) {
-    die("Kết nối thất bại: " . $conn->connect_error);
-}
-?>
-<?php
-include "connect.php";
+session_start();
+require "connect.php";
 
 $masp = isset($_GET['masp']) ? $_GET['masp'] : '';
 
@@ -28,208 +22,6 @@ $sizes = $conn->query($sql_sizes);
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/css/table.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
-    <style>
-        .delprd-container {
-            display: flex;
-            gap: 40px;
-            background: #fff;
-            padding: 44px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .delprd-image {
-            width: 50%;
-            position: relative;
-        }
-
-        .delprd-image img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .delprd-image img:hover {
-            transform: scale(1.05);
-        }
-
-        .delprd-chitiet {
-            width: 50%;
-            padding: 20px 0;
-        }
-
-        .delprd-chitiet h2 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        .delprd-meta {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .delprd-price {
-            font-size: 26px;
-            color: #d63031; /* Màu đỏ đậm hơn */
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .promotion {
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .promotion span {
-            color: #d63031;
-            font-weight: 500;
-        }
-
-        .promotion a {
-            color: #d63031;
-            text-decoration: underline;
-            margin-left: 5px;
-        }
-
-        .color-options, .size-options, .quantity-selector {
-            margin: 20px 0;
-        }
-
-        .color-options span, .size-options span {
-            display: inline-block;
-            padding: 8px 15px;
-            margin: 5px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .color-options span:hover, .size-options span:hover {
-            border-color: #d63031;
-            background: #f8f8f8;
-        }
-
-        .color-options span.active, .size-options span.active {
-            border-color: #d63031;
-            background: #ffe6e6;
-        }
-
-        .size-options p {
-            margin-bottom: 10px;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .quantity-selector button {
-            width: 50px;
-            background: #ddd;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .quantity-selector button:hover {
-            background: #ccc;
-        }
-
-        .quantity-selector input {
-            width: 50px;
-            text-align: center;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .actions button, .actions i {
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .actions button {
-            background: #d63031; /* Nút Mua ngay màu đỏ */
-            color: white;
-            flex: 1;
-        }
-
-        .actions button:hover {
-            background: #b12729; /* Đậm hơn khi hover */
-        }
-
-        .actions i {
-            background: #28a745; /* Nút Thêm vào giỏ màu xanh */
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-        }
-
-        .actions i:hover {
-            background: #218838; /* Xanh đậm hơn khi hover */
-        }
-
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            color: #666;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #d63031;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .delprd-container {
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            .delprd-image, .delprd-chitiet {
-                width: 100%;
-            }
-
-            .delprd-chitiet h2 {
-                font-size: 24px;
-            }
-
-            .delprd-price {
-                font-size: 20px;
-            }
-
-            .actions button, .actions i {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
 <body>
     <?php
@@ -238,68 +30,65 @@ $sizes = $conn->query($sql_sizes);
     load_backbtn();
     ?>
 
-<?php if ($prd): ?>
-    <div class="delprd-container">
-        <div class="delprd-image">
-            <img src="<?= $prd['url'] ?>" alt="<?= $prd['tensp'] ?>">
+    <?php if ($prd): ?>
+        <div class="delprd-container">
+            <div class="delprd-image">
+                <img src="<?= $prd['url'] ?>" alt="<?= $prd['tensp'] ?>">
+            </div>
+            <div class="delprd-chitiet">
+                <h2><?= $prd['tensp'] ?> - <?= $prd['masp'] ?></h2>
+                <div class="delprd-meta">
+                    Thương hiệu: <?= $prd['brand'] ?? 'LStyle' ?> | Loại: <?= $prd['danhmuc'] ?> | Mã SP: <?= $prd['masp'] ?> | Xuất xứ: <?= $prd['nuocsx'] ?? 'Việt Nam' ?>
+                </div>
+                <div class="delprd-price"><?= number_format($prd['gia'], 0, ',', '.') ?>₫</div>
+
+                <!-- Khuyến mãi -->
+                <div class="promotion">
+                    <p><span>Giảm 10%</span> - <a href="#">Xem hướng dẫn</a></p>
+                    <p>Áp dụng miễn phí giao hàng toàn quốc cho đơn hàng từ 500K. <a href="#">Xem chi tiết</a></p>
+                </div>
+
+                <div class="size-options">
+                    <p><strong>Kích thước (size):</strong></p>
+                    <?php while($row = $sizes->fetch_assoc()): ?>
+                        <span><?= $row['size'] ?></span>
+                    <?php endwhile; ?>
+                </div>
+
+                <div class="mota">
+                    <h2>Mô tả sản phẩm</h2>
+                    <p><?= nl2br($prd['mota']) ?></p>
+                </div>
+
+                <!-- Nút hành động -->
+                <div class="actions">
+                    <button type="button" class="btn js-gio-hang"
+                        data-masp="<?= $prd['masp']; ?>"
+                        data-img="<?= $prd['url']; ?>"
+                        data-tensp="<?= htmlspecialchars($prd['tensp']); ?>"
+                        data-gia="<?= $prd['gia']; ?>">
+                        Thêm vào giỏ hàng
+                    </button>
+
+                    <button type="button" class="btn js-mua-ngay"
+                        data-masp="<?= $prd['masp']; ?>"
+                        data-img="<?= $prd['url']; ?>"
+                        data-tensp="<?= htmlspecialchars($prd['tensp']); ?>"
+                        data-gia="<?= $prd['gia']; ?>">
+                        Mua ngay
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="delprd-chitiet">
-            <h2><?= $prd['tensp'] ?> - <?= $prd['masp'] ?></h2>
-            <div class="delprd-meta">
-                Thương hiệu: <?= $prd['brand'] ?? 'LStyle' ?> | Loại: <?= $prd['danhmuc'] ?> | Mã SP: <?= $prd['masp'] ?> | Xuất xứ: <?= $prd['nuocsx'] ?? 'Việt Nam' ?>
-            </div>
-            <div class="delprd-price"><?= number_format($prd['gia'], 0, ',', '.') ?>₫</div>
-
-            <!-- Khuyến mãi -->
-            <div class="promotion">
-                <p><span>Giảm 10%</span> - <a href="#">Xem hướng dẫn</a></p>
-                <p>Áp dụng miễn phí giao hàng toàn quốc cho đơn hàng từ 500K. <a href="#">Xem chi tiết</a></p>
-            </div>
-
-            <!-- Lựa chọn kích thước -->
-            <div class="size-options">
-                <p><strong>Kích thước (size):</strong></p>
-                <?php while($row = $sizes->fetch_assoc()): ?>
-                    <span><?= $row['size'] ?></span>
-                <?php endwhile; ?>
-            </div>
-
-            <!-- Chọn số lượng -->
-            <div class="mota">
-                <h2>Mô tả sản phẩm</h2>
-                <p><?= nl2br($prd['mota']) ?></p>
-            </div>
-
-            <!-- Nút hành động -->
-            <div class="actions">
-                <button type="button" class="btn js-gio-hang"
-                    data-masp="<?= $prd['masp']; ?>"
-                    data-img="<?= $prd['url']; ?>"
-                    data-tensp="<?= htmlspecialchars($prd['tensp']); ?>"
-                    data-gia="<?= $prd['gia']; ?>">
-                    Thêm vào giỏ hàng
-                </button>
-
-                <button type="button" class="btn js-mua-ngay"
-                    data-masp="<?= $prd['masp']; ?>"
-                    data-img="<?= $prd['url']; ?>"
-                    data-tensp="<?= htmlspecialchars($prd['tensp']); ?>"
-                    data-gia="<?= $prd['gia']; ?>">
-                    Mua ngay
-                </button>
-            </div>
-
-        </div>
-    </div>
-<?php else: ?>
-    <p style="text-align: center; font-size: 18px; color: #d63031;">Không tìm thấy sản phẩm.</p>
-<?php endif; ?>
-<?php load_footer(); ?>
-<div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
-            <?php
+    <?php else: ?>
+        <p style="text-align: center; font-size: 18px; color: #d63031;">Không tìm thấy sản phẩm.</p>
+    <?php endif; ?>
+    <?php load_footer(); ?>
+    <div id="modal-mua-ngay" class="modal" style="display:none;" data-masp="">
+        <?php
             load_modal();
-            ?>
-        </div>
-<script src="accsets/js/modal.js"></script>
+        ?>
+    </div>
+    <script src="accsets/js/modal.js"></script>
 </body>
 </html>

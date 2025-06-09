@@ -10,10 +10,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
 }
 
 html {
-    font-family: "Oswald", sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -45,7 +45,6 @@ button {
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-    font-family: "Oswald", sans-serif;
     text-align: center;
 }
 
@@ -64,10 +63,6 @@ i {
 
 img {
     padding: 50% auto;
-}
-
-input, label, select {
-    font-family: "Oswald", sans-serif;
 }
 
 input:focus, select:focus {
