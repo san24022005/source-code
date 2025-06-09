@@ -1,15 +1,16 @@
 <?php
 session_start();
-
 $conn = new mysqli("localhost", "root", "123456", "qlbh");
 $conn->set_charset("utf8mb4");
 
 if (!isset($_SESSION['username'])) {
-    die("Bạn chưa đăng nhập.");
+    echo "error: not_logged_in";
+    exit;
 }
+
 $makh = $_SESSION['username'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['capnhat'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hoten = $conn->real_escape_string($_POST['hoten']);
     $email = $conn->real_escape_string($_POST['email']);
     $sodt = $conn->real_escape_string($_POST['sodt']);
@@ -19,16 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['capnhat'])) {
     $caphuyen = $conn->real_escape_string($_POST['caphuyen']);
     $captinh = $conn->real_escape_string($_POST['captinh']);
 
-    $sql_update_kh = "UPDATE khachhang SET hoten='$hoten', ngaysinh='$ngaysinh' WHERE makh='$makh'";
-    $conn->query($sql_update_kh);
+    $conn->query("UPDATE khachhang SET hoten='$hoten', ngaysinh='$ngaysinh' WHERE makh='$makh'");
+    $conn->query("UPDATE thongtin_lienhe SET email='$email', sodt='$sodt', sonha='$sonha', capxa='$capxa', caphuyen='$caphuyen', captinh='$captinh' WHERE makh='$makh'");
 
-    $sql_update_lienhe = "UPDATE thongtin_lienhe SET email='$email', sodt='$sodt', sonha='$sonha', capxa='$capxa', caphuyen='$caphuyen', captinh='$captinh' WHERE makh='$makh'";
-    $conn->query($sql_update_lienhe);
-    
-    $_SESSION['name'] = $_POST['hoten'];
-    // Không xóa session cart_temp
-    echo "<script>window.history.back();</script>";
+    $_SESSION['name'] = $hoten;
+    echo "success";
     exit;
-} else {
-    die("Yêu cầu không hợp lệ.");
 }
+echo "error: invalid_request";
+exit;

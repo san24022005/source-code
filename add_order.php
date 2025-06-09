@@ -1,7 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
+require 'connect.php';
 
 if (!isset($_POST['soHD'], $_POST['masp'], $_POST['size'], $_POST['soluong'], $_POST['gia'], $_POST['tongtien'])) {
     die("Thiếu dữ liệu để thanh toán.");
