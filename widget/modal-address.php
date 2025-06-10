@@ -82,26 +82,4 @@ $row = $result->fetch_assoc();
     <button type="submit" name="capnhat">Cập nhật</button>
   </form>
 </div>
-<script>
-document.querySelector('#modalAddress form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Không reload trang
-    const form = this;
-    const formData = new FormData(form);
-
-    fetch('update_address.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(res => res.text())
-    .then(data => {
-        if (data.trim() === "success") {
-            alert("Cập nhật thành công!");
-            // Tùy bạn: có thể ẩn modal và cập nhật phần hiển thị thông tin
-            document.getElementById('modalAddress').classList.remove('open');
-            location.reload(); // Hoặc chỉ cập nhật phần địa chỉ bằng JS nếu muốn
-        } else {
-            alert("Có lỗi xảy ra: " + data);
-        }
-    });
-});
-</script>
+<script scr="../accsets/js/modal-address.js"></script>

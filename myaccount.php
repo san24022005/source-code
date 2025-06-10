@@ -1,5 +1,4 @@
 <?php
-ob_start();
 session_start();
 if (!isset($_SESSION['username'])) {
     $_SESSION['username'] = 'KH001';

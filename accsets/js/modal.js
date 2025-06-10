@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal-mua-ngay");
     const closeBtn = modal.querySelector(".close");
     const muaNgayButtons = document.querySelectorAll(".js-mua-ngay");
@@ -155,4 +154,3 @@ document.addEventListener("DOMContentLoaded", function () {
             inputQty.value = current - 1;
         }
     });
-});
