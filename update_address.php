@@ -1,7 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
+require 'connect.php';
 
 if (!isset($_SESSION['username'])) {
     echo "error: not_logged_in";
@@ -29,3 +28,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 echo "error: invalid_request";
 exit;
+?>

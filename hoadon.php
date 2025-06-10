@@ -93,9 +93,6 @@ if (!$result_kh || $result_kh->num_rows == 0) {
 }
 $kh = $result_kh->fetch_assoc();
 
-// ... phần còn lại giữ nguyên như bạn đã có (HTML, form, modal, v.v)
-
-
 // Kiểm tra thông tin giao hàng bắt buộc
 $can_update_info = false;
 $required_fields = ['hoten', 'sodt', 'sonha', 'capxa', 'caphuyen', 'captinh'];
