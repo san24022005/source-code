@@ -166,6 +166,11 @@ form .btn-dathang:hover {
     padding: 10px;
 }
 
+.modal-right .close:hover {
+    background-color: red;
+    color: #fff;
+}
+
 .modal-right h3 {
     font-size: 24px;
     text-align: center;
