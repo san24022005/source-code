@@ -39,8 +39,9 @@ if (!isset($_SESSION['username'])) {
         ?>
     </div>
 
-    <script src="accsets/js/modal.js"></script>
-    <script src="accsets/js/header.js"></script>
+    <script src="./accsets/js/slider.js"></script>
+    <script src="./accsets/js/header.js"></script>
+    <script src="./accsets/js/modal.js"></script>
 </body>
 </html>
 

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Kết nối CSDL
-    $conn = mysqli_connect("localhost", "root", "123456", "QLBH");
+    require 'connect.php';
 
     if (!$conn) {
         die("Kết nối thất bại: " . mysqli_connect_error());

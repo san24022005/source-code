@@ -94,12 +94,12 @@ $result = $stmt->get_result();
 
             <?php } ?>
             
-        </div>
-            <br>
-            <button type="submit" name="thanhtoan" class="btn-thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Đặt hàng</button>
+            </div>
+        <br>
+        <button type="submit" name="thanhtoan" class="btn-thanhtoan" onclick="return confirm('Xác nhận thanh toán các sản phẩm đã chọn?');">Đặt hàng</button>
         </form>
     </div>
     <?php load_footer();?>
-    <script scr="accsets/js/cart.js"></script>
+    <script scr="./accsets/js/cart.js"></script>
 </body>
 </html>

@@ -330,6 +330,7 @@
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    justify-content: space-between;
 }
 
 .slides img {
@@ -350,6 +351,7 @@
 
 .navigation button {
     height: 100%;
+    width: 10%;
     background-color: rgba(255, 255, 255, 0);
     color: white;
     padding: 10px;
@@ -500,25 +502,25 @@
 
 /* Responsive cho tablet */
 /* Hiển thị 6 sản phâm trên 1 dòng*/
-@media (min-width: 1370px) and (max-width: 1565px) {
+@media (min-width: 1345px) and (max-width: 1559px) {
     .product {
-        width: 15.7%;
+        width: 15.6%;
     }
 }
 /* 5 sản phẩm / 1 dòng */
-@media (min-width: 1075px) and (max-width: 1369px) {
+@media (min-width: 1130px) and (max-width: 1344px) {
     .product {
         width: 18.8%;
     }
 }
 /* 4 sản phẩm trên 1 dòng */
-@media (min-width: 980px) and (max-width: 1074px) {
+@media (min-width: 900px) and (max-width: 1129px) {
     .product {
-        width: 23.7%;
+        width: 23.6%;
     }
 }
 /* 3 sản phẩm trên 1 dòng */
-@media (min-width: 650px) and (max-width: 979px) {
+@media (min-width: 620px) and (max-width: 899px) {
     .product {
         width: 32.1%;
     }
@@ -533,7 +535,7 @@
 }
 /* 2 sản phẩm / 1 dòng */
 /* Responsive cho mobile */
-@media (max-width: 649px) {
+@media (max-width: 619px) {
     #products {
         padding: 0;
     }
@@ -547,7 +549,7 @@
     }
 
     .product {
-        width: 49.2%;
+        width: 49.1%;
     }
 
     .product .btn {
@@ -666,7 +668,7 @@
 .intro-container {
     position: relative;
     width: 80vw;
-    margin: 44px auto;
+    margin: 44px auto 0;
     z-index: 1;
 }
 
@@ -950,6 +952,10 @@
         
 .thanhtoan_right-container button {
     margin-top: 20px;
+}
+
+.thanhtoan_right-container img {
+    width: 100%;
 }
 
 @media (max-width: 550px) {

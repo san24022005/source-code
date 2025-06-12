@@ -9,8 +9,7 @@ if (!isset($_SESSION['username'])) {
 $makh = $_SESSION['username'];
 
 // Kết nối CSDL
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
+require 'connect.php';
 
 if ($conn->connect_error) {
     die("Kết nối thất bại: " . $conn->connect_error);
@@ -44,10 +43,10 @@ while ($row = $result->fetch_assoc()) {
 <head>
     <meta charset="UTF-8">
     <title>Đơn hàng của tôi</title>
-    <link rel="stylesheet" href="accsets/css/base.css">
-    <link rel="stylesheet" href="accsets/css/table.css">
-    <link rel="stylesheet" href="accsets/css/main.css">
-    <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/table.css">
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

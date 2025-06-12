@@ -6,7 +6,7 @@
 session_start();
 
 // Kết nối đến MySQL
-$conn = mysqli_connect("localhost", "root", "123456", "QLBH");
+require 'connect.php';
 
 if (!$conn) {
     die("Không thể kết nối CSDL: " . mysqli_connect_error());

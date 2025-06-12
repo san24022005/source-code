@@ -89,6 +89,6 @@ $sizes = $conn->query($sql_sizes);
             load_modal();
         ?>
     </div>
-    <script src="accsets/js/modal.js"></script>
+    <script src="./accsets/js/modal.js"></script>
 </body>
 </html>

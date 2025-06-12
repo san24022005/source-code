@@ -6,8 +6,7 @@ if (!isset($_SESSION['username'])) {
 
 $username = $_SESSION['username'];
 
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
+require 'connect.php';
 
 // Lấy thông tin hiện tại
 $sql = "SELECT kh.hoten, kh.ngaysinh, tl.sodt, tl.email, tl.sonha, tl.caphuyen, tl.capxa, tl.captinh
@@ -26,10 +25,10 @@ $user = $result->fetch_assoc();
 <head>
     <meta charset="UTF-8" />
     <title>Thông tin khách hàng</title>
-    <link rel="stylesheet" href="accsets/css/base.css">
-    <link rel="stylesheet" href="accsets/css/main.css">
-    <link rel="stylesheet" href="accsets/css/table.css">
-    <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/table.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

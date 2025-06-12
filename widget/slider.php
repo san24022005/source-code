@@ -10,5 +10,3 @@
             <button id="next">❯</button>
         </div>
     </div>
-
-    <script src="accsets/js/slider.js"></script>

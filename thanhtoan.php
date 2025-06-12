@@ -16,11 +16,6 @@ if (!$soHD || $tongtien <= 0) {
     <link rel="stylesheet" href="./accsets/css/main.css">
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
-    <style>
-        img {
-            max-width: 100%;
-        }
-    </style>
 </head>
 <body>
     <div class="thanhtoan-container">
@@ -37,14 +32,6 @@ if (!$soHD || $tongtien <= 0) {
             <button onclick="thanhToan()">Tôi đã hoàn tất thanh toán trên app</button>
         </div>
     </div>
-    <script>
-    function thanhToan() {
-        const xacNhan = confirm('Cảm ơn bạn đã thanh toán. Chúng tôi sẽ kiểm tra lại đơn hàng và giao hàng sớm nhất.');
-        if (xacNhan) {
-            window.location.href = 'clear_cart.php';
-        } 
-    }
-</script>
-
+    <script src="./accsets/js/thanhtoan.js"></script>
 </body>
 </html>
