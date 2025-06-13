@@ -100,6 +100,7 @@ $result = $stmt->get_result();
         </form>
     </div>
     <?php load_footer();?>
+    
     <script scr="./accsets/js/cart.js"></script>
 </body>
 </html>

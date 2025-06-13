@@ -13,7 +13,6 @@ if ($keyword == null) {
     header('Location: index.php');
     exit();
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +101,7 @@ if ($keyword == null) {
         load_modal();
         ?>
     </div>
-    <script src="accsets/js/modal.js"></script>
+
+    <script src="./accsets/js/modal.js"></script>
 </body>
 </html>

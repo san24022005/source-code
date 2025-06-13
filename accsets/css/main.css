@@ -6,6 +6,8 @@
 
 /* START : TOP */
 #top {
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #00000020;
     overflow: hidden;
     height: 44px;
@@ -17,31 +19,36 @@
     background-color: #ffff;
 }
 
+#top .left-top,
+#top .right-top {
+    margin: 0 10px;
+}
+
 #top li {
     display: inline-block;
     margin: 0 20px;
 }
 
-#top-nav .left-top {
-    float: left;
-}
-
-#top-nav .right-top {
-    float: right;
-}
-
-#top-nav .top-icon {
+#top .top-icon {
     display: inline-block;
 }
  
-#top-nav li a {
+#top li a {
     line-height: 44px;
     display: inline-block;
 }
 
-@media (max-width: 575px) {
-    #top-nav .left-top {
+@media (max-width: 610px) {
+    #top .left-top {
         display: none;
+    }
+
+    #top {
+        justify-content: end;
+    }
+
+    #top li {
+        margin: 0 15px;
     }
 }
 /* END : TOP */
@@ -396,7 +403,7 @@
 /* Tiêu đề danh mục */
 #products .danhmuc h1 {
     font-size: 28px;
-    color: #222;
+    color: #000;
     margin-bottom: 20px;
     border-bottom: 2px solid #ddd;
     padding-bottom: 8px;
@@ -750,9 +757,9 @@
 }
   
 .myacc-container  h2 {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     font-weight: 600;
-  
+    font-size: 28px;
 }
 
 .myacc-container p {
@@ -971,3 +978,100 @@
 }
 
 /* END : THANH TOAN */
+
+/* START : CONTACT */
+
+.contact-section {
+    display: flex;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 44px auto;
+}
+
+.contact-section .contact-left {
+    background-color: var(--main-bg2-color);
+    color: var(--main-color);
+    padding: 40px;
+    width: 40%;
+}
+
+.contact-section .contact-left h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contact-section .contact-block {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-section .contact-block img {
+    width: 36px;
+    height: 36px;
+}
+
+.contact-section .contact-block a {
+    color: white;
+    text-decoration: underline;
+}
+
+.contact-section .contact-right {
+    width: 60%;
+    padding: 40px;
+}
+
+.contact-section .contact-right h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.contact-section .contact-form label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+.contact-section .contact-form input,
+.contact-section .contact-form select,
+.contact-section .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.contact-section .input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-section .input-group {
+    flex: 1;
+}
+
+.contact-section .phone-input {
+    display: flex;
+    gap: 10px;
+}
+.contact-section .contact-form textarea {
+    height: 100px;
+}
+
+.contact-section .contact-form button {
+    margin-top: 20px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.contact-section .contact-form button:hover {
+    background-color: #007acc;
+}
+
+/* END : CONTACT */

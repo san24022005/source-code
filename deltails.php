@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "connect.php";
+require 'connect.php';
 
 $masp = isset($_GET['masp']) ? $_GET['masp'] : '';
 

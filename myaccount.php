@@ -4,9 +4,9 @@ if (!isset($_SESSION['username'])) {
     $_SESSION['username'] = 'KH001';
 }
 
-$username = $_SESSION['username'];
-
 require 'connect.php';
+
+$username = $_SESSION['username'];
 
 // Lấy thông tin hiện tại
 $sql = "SELECT kh.hoten, kh.ngaysinh, tl.sodt, tl.email, tl.sonha, tl.caphuyen, tl.capxa, tl.captinh
@@ -19,7 +19,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 ?>
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>

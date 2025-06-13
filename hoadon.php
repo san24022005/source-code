@@ -135,7 +135,6 @@ if (!$stmt->execute()) {
 }
 $stmt->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>

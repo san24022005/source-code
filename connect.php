@@ -8,9 +8,9 @@ $password = '123456';
 $conn = new mysqli($host, $username, $password, $dbname);
 
 // Kiểm tra kết nối
-if ($conn->connect_error) {
-    die("Kết nối thất bại: " . $conn->connect_error);
+if (!$conn) {
+    die("Kết nối thất bại: " . mysqli_connect_error());
 }
 
-mysqli_set_charset($conn, "utf8"); // Thiết lập UTF-8 để tránh lỗi tiếng Việt
+mysqli_set_charset($conn, 'utf8mb4'); // Thiết lập UTF-8 để tránh lỗi tiếng Việt
 ?>
