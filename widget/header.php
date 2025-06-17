@@ -55,7 +55,7 @@
         </li>
 
 
-        <li><a href="shopping-cart.php">
+        <li title="Xem giỏ hàng" class="header_giohang_btn"><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
         </a></li>
 
@@ -96,7 +96,7 @@
                         Giới thiệu về BT SHOP
                     </a></li>
 
-                    <li><a href="./logout.php">
+                    <li><a href="logout.php">
                         <i class="sub-setting-icon ti-shift-right"></i>
                         Đăng xuất
                     </a></li>

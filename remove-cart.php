@@ -1,7 +1,7 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
+
+require 'connect.php';
 
 if (!isset($_SESSION['username'])) {
     die("Bạn chưa đăng nhập.");

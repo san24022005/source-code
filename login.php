@@ -49,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./accsets/css/main.css">
 </head>
-
 <body>
     <div class="login-container">
         <div class="left-panel">

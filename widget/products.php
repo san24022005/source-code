@@ -57,7 +57,7 @@ if ($result_danhmuc->num_rows > 0) {
                             data-masp='{$row['masp']}' 
                             data-img='{$row['url']}'
                             data-tensp='{$row['tensp']}'
-                            data-gia='{$row['gia']}'>
+                            data-gia='{$row['gia']}' title='Thêm vào giỏ hàng'>
                                 <i class='shopping-cart-icon ti-shopping-cart'></i>
                             </button>
                         </td>";

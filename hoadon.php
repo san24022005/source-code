@@ -134,9 +134,7 @@ if (!$stmt->execute()) {
     echo "<p class='error'>Lỗi tạo hóa đơn: " . $conn->error . "</p>";
 }
 $stmt->close();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -189,23 +187,23 @@ $stmt->close();
             </div>
 
             <?php if ($can_update_info): ?>
-    <p style="color: red; font-weight: bold;">
-        Vui lòng cập nhật đầy đủ thông tin giao hàng trước khi thanh toán.
-    </p>
-<?php else: ?>
-    <form action="add_order.php" method="post">
-        <?php foreach ($items as $item): ?>
-            <input type="hidden" name="masp[]" value="<?= htmlspecialchars($item['masp']) ?>">
-            <input type="hidden" name="size[]" value="<?= htmlspecialchars($item['size']) ?>">
-            <input type="hidden" name="soluong[]" value="<?= htmlspecialchars($item['soluong']) ?>">
-            <input type="hidden" name="gia[]" value="<?= htmlspecialchars($item['gia']) ?>">
-        <?php endforeach; ?>
-        <input type="hidden" name="soHD" value="<?= $soHD ?>">
-        <input type="hidden" name="tongtien" value="<?= $tong ?>">
-        <button type="submit" class="btn-dathang">Thanh toán</button>
-    </form>
-<?php endif; ?>
+                <p style="color: red; font-weight: bold;">
+                    Vui lòng cập nhật đầy đủ thông tin giao hàng trước khi thanh toán.
+                </p>
 
+            <?php else: ?>
+                <form action="add_order.php" method="post">
+                    <?php foreach ($items as $item): ?>
+                        <input type="hidden" name="masp[]" value="<?= htmlspecialchars($item['masp']) ?>">
+                        <input type="hidden" name="size[]" value="<?= htmlspecialchars($item['size']) ?>">
+                        <input type="hidden" name="soluong[]" value="<?= htmlspecialchars($item['soluong']) ?>">
+                        <input type="hidden" name="gia[]" value="<?= htmlspecialchars($item['gia']) ?>">
+                    <?php endforeach; ?>
+                        <input type="hidden" name="soHD" value="<?= $soHD ?>">
+                        <input type="hidden" name="tongtien" value="<?= $tong ?>">
+                        <button type="submit" class="btn-dathang">Thanh toán</button>
+                </form>
+            <?php endif; ?>
         </div>
     </div>
 

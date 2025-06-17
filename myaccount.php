@@ -4,10 +4,9 @@ if (!isset($_SESSION['username'])) {
     $_SESSION['username'] = 'KH001';
 }
 
-$username = $_SESSION['username'];
+require 'connect.php';
 
-$conn = new mysqli("localhost", "root", "123456", "qlbh");
-$conn->set_charset("utf8mb4");
+$username = $_SESSION['username'];
 
 // Lấy thông tin hiện tại
 $sql = "SELECT kh.hoten, kh.ngaysinh, tl.sodt, tl.email, tl.sonha, tl.caphuyen, tl.capxa, tl.captinh
@@ -20,16 +19,15 @@ $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 ?>
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8" />
     <title>Thông tin khách hàng</title>
-    <link rel="stylesheet" href="accsets/css/base.css">
-    <link rel="stylesheet" href="accsets/css/main.css">
-    <link rel="stylesheet" href="accsets/css/table.css">
-    <link rel="stylesheet" href="accsets/fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./accsets/css/base.css">
+    <link rel="stylesheet" href="./accsets/css/main.css">
+    <link rel="stylesheet" href="./accsets/css/table.css">
+    <link rel="stylesheet" href="./accsets/fonts/themify-icons/themify-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

@@ -82,4 +82,3 @@ $row = $result->fetch_assoc();
     <button type="submit" name="capnhat">Cập nhật</button>
   </form>
 </div>
-<script scr="../accsets/js/modal-address.js"></script>

@@ -124,6 +124,10 @@ form input {
     justify-content: center;
 }
 
+/* END : REGISTER */
+
+/* RESPONSIVE */
+
 @media (min-width: 1024px) {
     .right-panel{
         max-width: 40%;
@@ -156,22 +160,25 @@ form input {
     }
 }
 
-/* END : REGISTER */
-
 /* START : RESET PASS */
 
 #reset-pass {
-    margin: 44px;
-    flex: 1;
+    margin-top: 44px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 15px;
+    padding: 5%; 
     background-color: #f4f4f4;
+    background-image: url('../images/bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* hoặc contain */
+    background-position: center;
 }
 
 #reset-pass .form-container {
-    background-color: #ffffff;
+    background-color: #ffffffb7;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -183,7 +190,7 @@ form input {
     text-align: center;
     margin-bottom: 18px;
     color: #333;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 #reset-pass .form-container form {
@@ -194,7 +201,8 @@ form input {
 #reset-pass .form-container label {
     margin-bottom: 6px;
     color: #444;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #reset-pass .form-container input {
@@ -202,7 +210,7 @@ form input {
     margin-bottom: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 14px;
     transition: border-color 0.2s;
 }
 
@@ -212,33 +220,12 @@ form input {
 }
 
 #reset-pass .form-container button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
+    margin-top: 20px;
     transition: background-color 0.2s;
 }
 
 #reset-pass .form-container button:hover {
     background-color: #0056b3;
-}
-
-#reset-pass .link {
-    text-align: center;
-    margin-top: 12px;
-}
-
-#reset-pass .link a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-#reset-pass .link a:hover {
-    text-decoration: underline;
 }
 
 /* END : RESET PASS */

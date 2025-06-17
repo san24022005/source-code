@@ -53,5 +53,4 @@ $stmt->execute();
 
 header("Location: thanhtoan.php?soHD=" . urlencode($soHD) . "&total=" . urlencode($tongtien));
 exit;
-
 ?>
