@@ -36,9 +36,10 @@ $sizes = $conn->query($sql_sizes);
                 <img src="<?= $prd['url'] ?>" alt="<?= $prd['tensp'] ?>">
             </div>
             <div class="delprd-chitiet">
-                <h2><?= $prd['tensp'] ?> - <?= $prd['masp'] ?></h2>
+                <h2><?= $prd['tensp'] ?> </h2>
+                <h2> Mã sản phẩm: <?= $prd['masp'] ?></h2>
                 <div class="delprd-meta">
-                    Thương hiệu: <?= $prd['brand'] ?? 'LStyle' ?> | Loại: <?= $prd['danhmuc'] ?> | Mã SP: <?= $prd['masp'] ?> | Xuất xứ: <?= $prd['nuocsx'] ?? 'Việt Nam' ?>
+                    Thương hiệu: <?= $prd['brand'] ?? 'LStyle' ?> | Loại: <?= $prd['danhmuc'] ?> | Xuất xứ: <?= $prd['nuocsx'] ?? 'Việt Nam' ?>
                 </div>
                 <div class="delprd-price"><?= number_format($prd['gia'], 0, ',', '.') ?>₫</div>
 

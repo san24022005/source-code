@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BT SHOP - Đặt lại mật khẩu</title>
+    <title>Đặt lại mật khẩu</title>
     <link rel="stylesheet" href="./accsets/css/main.css">
     <link rel="stylesheet" href="./accsets/css/base.css">
     <link rel="stylesheet" href="./accsets/css/login.css">
@@ -79,11 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="confirm-password">Xác nhận mật khẩu mới</label>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận lại mật khẩu mới" required>
 
-                <button type="submit">Xác nhận</button>
+                <button type="submit">Đổi mật khẩu</button>
             </form>
-            <div class="link">
-                <a href="login.html">← Quay lại đăng nhập</a>
-            </div>
         </div>
     </div>
     <?php load_footer(); ?>
