@@ -45,7 +45,7 @@
     }
 
     #top {
-        justify-content: end;
+        flex-direction: row-reverse;
     }
 
     #top li {
@@ -142,6 +142,20 @@
     line-height: 60px;
 }
 
+#header .header__btn a,
+#header .setting-toggle {
+    line-height: 60px;
+    width: 48px;
+}
+
+#header .setting-toggle {
+    text-align: center;
+}
+
+#header .setting-toggle:hover {
+    line-height: 60px;
+}
+
 .sub-nav li a {
     color: var(--main-color);
     line-height: 60px;
@@ -163,7 +177,7 @@
 }
 
 .setting {
-    line-height: 52px;
+    line-height: 60px;
     background-image: linear-gradient(135deg, var(--main-bg2-color), var(--main-bg1-color));
     border-radius: 12px;
 }
@@ -208,7 +222,6 @@
 
 #header .nav-icon {
     font-size: 20px;
-    padding: 0 16px;
     color: var(--main-color);
 }
 
@@ -229,14 +242,19 @@
     background-image: linear-gradient(135deg, #ff3131, #ff8c00); 
     border-radius: 12px;
     line-height: 52px;
+    text-align: center;
 }
 
+#header .nav-right .header_giohang_btn a:hover {
+    background-image: linear-gradient(135deg, #ff8c00, #ff2222);
+    color: var(--main-color);
+}
 /* Search Box Styles */
 .search-box {
     display: flex;
     align-items: center;
     margin-right: 16px;
-    height: 100%;
+    margin: auto 0;
 }
 
 #header .nav-right .search-box:hover,
@@ -262,11 +280,13 @@
     border: none;
     outline: none;
     font-size: 14px;
-    width: 180px;
+    width: 200px;
+    height: 46px;
 }
 
 .search-box button {
     width: 60px;
+    height: 46px;
     background-color: #fff;
     padding: 6px 10px;
     cursor: pointer;
@@ -285,7 +305,7 @@
     font-size: 17px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 920px) {
     #header .nav {
         overflow: hidden;
         float: none;
@@ -352,6 +372,14 @@
 @media (max-height: 550px) {
     .sub-setting li a {
         line-height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header .nav-right .header_giohang_btn a,
+    #header .setting-toggle {
+        line-height: 44px;
+        width: 44px;
     }
 }
 
@@ -1094,9 +1122,13 @@
     resize: vertical;
 }
 
+.contact-section .contact-form .phone-input select {
+    max-width: 75px;
+}
+
 .contact-section .input-row {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .contact-section .input-group {
@@ -1130,7 +1162,21 @@
     .contact-section .contact-left,
     .contact-section .contact-right {
         width: 100%;
-        padding: 20px;
+        padding: 30px;
+    }
+
+    .contact-section .contact-form .hotro__responsive {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-section .contact-form .phone-input select {
+        width: 30%;
+    }
+
+    .contact-section .contact-form .phone-input input {
+        flex: 1;
     }
 }
 

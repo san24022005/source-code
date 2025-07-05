@@ -60,7 +60,7 @@ session_start();
             <form class="contact-form">
                 <label for="name">Họ và tên *</label>
                 <input type="text" id="name" placeholder="Nhập họ và tên">
-                <div class="input-row">
+                <div class="input-row hotro__responsive">
                     <div class="input-group">
                         <label for="email">Email *</label>
                         <input type="email" id="email" placeholder="example@mail.com">
@@ -74,7 +74,7 @@ session_start();
                                 <option>(+1)</option>
                                 <option>(+61)</option>
                             </select>
-                            <input type="text" placeholder="28 3997 8000">
+                            <input type="text" placeholder="0123 456 7890">
                         </div>
                     </div>
                 </div>

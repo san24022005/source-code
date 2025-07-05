@@ -55,11 +55,11 @@
         </li>
 
 
-        <li title="Xem giỏ hàng" class="header_giohang_btn"><a href="shopping-cart.php">
+        <li title="Xem giỏ hàng" class="header_giohang_btn header__btn"><a href="shopping-cart.php">
             <i class="nav-icon shopping-cart-icon ti-shopping-cart"></i>
         </a></li>
 
-        <li class="setting" id="setting-btn">
+        <li class="setting" id="setting-btn header__btn">
             <div class="setting-toggle">
                 <i class="nav-icon setting-icon ti-settings"></i>
             </div>

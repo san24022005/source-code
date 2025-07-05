@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="register">
         <div class="left-panel">
             <img src="accsets/images/logo.png" alt="Logo" class="logo">
-            <h2>BT SHOP</h2>
+            <h2>Chào mừng khách hàng đến với BT SHOP</h2>
             <p>Vua của các quý ông</p>
         </div>
 
