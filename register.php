@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Thêm người dùng vào CSDL
     $sql_insert_khachhang = "INSERT INTO khachhang (makh, doanhso, hoten) VALUES ('$username', 0, '$name')";
-    $sql_insert_taikhoan = "INSERT INTO taikhoan (username, password) VALUES ('$username', '$password')";
+    $sql_insert_taikhoan = "INSERT INTO taikhoan (username, password, vaitro) VALUES ('$username', '$password', 'user')";
     $sql_insert_thongtin = "INSERT INTO thongtin_lienhe (makh) VALUES ('$username')";
 
     if (!mysqli_query($conn, $sql_insert_khachhang)) {
