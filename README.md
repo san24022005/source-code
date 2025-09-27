@@ -10,7 +10,7 @@ Dự án giúp các thành viên rèn luyện kỹ năng làm việc nhóm, qu�
 - MySQL (cơ sở dữ liệu)  
 
 ## 🚀 Các tính năng cơ bản
-- Trang chủ (trang tổng hợp) bao gồm: navbar(top), header(chứa danh mục và các tiện ích khác), banner, hiển thị tất cả các sản phẩm, footer
+- Trang chủ (trang tổng hợp) bao gồm: navbar (top), header (chứa danh mục và các tiện ích khác), banner, hiển thị tất cả các sản phẩm, footer
 - Trang chi tiết
 - Modal mua hàng
 - Chức năng đăng nhập, đăng ký tài khoản  
